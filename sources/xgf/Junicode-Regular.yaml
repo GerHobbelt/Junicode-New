@@ -1,0 +1,5535 @@
+font:
+  in: /Users/peterbaker/work/GitHub/Junicode-New/sources/dist/Junicode-Regular.ttf
+  out: /Users/peterbaker/work/GitHub/Junicode-New/sources/dist/Junicode-Regular-hinted.ttf
+defaults:
+  no-round:
+  - stem
+cvt:
+  baseline:
+    val: 0
+    type: pos
+    axis: y
+  cap-height:
+    val: 663
+    type: pos
+    axis: y
+    cat: Lu
+    origin:
+      glyph: H
+      ptnum:
+      - 14
+  xheight:
+    val: 415
+    type: pos
+    axis: y
+    cat: Ll
+    origin:
+      glyph: x
+      ptnum:
+      - 12
+  cap-height-overshoot:
+    val: 676
+    type: pos
+    axis: y
+    cat: Lu
+    same-as:
+      below:
+        ppem: 40
+        cv: cap-height
+    origin:
+      glyph: O
+      ptnum:
+      - 9
+  cap-baseline-undershoot:
+    val: -13
+    type: pos
+    axis: y
+    cat: Lu
+    same-as:
+      below:
+        ppem: 40
+        cv: baseline
+    origin:
+      glyph: O
+      ptnum:
+      - 0
+  xheight-overshoot:
+    val: 425
+    type: pos
+    axis: y
+    cat: Ll
+    same-as:
+      below:
+        ppem: 40
+        cv: xheight
+    origin:
+      glyph: o
+      ptnum:
+      - 7
+  lc-baseline-undershoot:
+    val: -11
+    type: pos
+    axis: y
+    cat: Ll
+    same-as:
+      below:
+        ppem: 40
+        cv: baseline
+    origin:
+      glyph: o
+      ptnum:
+      - 0
+  lc-ascender:
+    val: 725
+    type: pos
+    axis: y
+    cat: Ll
+    origin:
+      glyph: b
+      ptnum:
+      - 24
+  lc-descender:
+    val: -269
+    type: pos
+    axis: y
+    cat: Ll
+    origin:
+      glyph: p
+      ptnum:
+      - 0
+  num-round-top:
+    val: 621
+    type: pos
+    axis: y
+    cat: Nd
+    same-as:
+      below:
+        ppem: 40
+        cv: xheight
+    origin:
+      glyph: eight
+      ptnum:
+      - 15
+  num-baseline-undershoot:
+    val: -11
+    type: pos
+    axis: y
+    cat: Nd
+    same-as:
+      below:
+        ppem: 40
+        cv: baseline
+    origin:
+      glyph: eight
+      ptnum:
+      - 0
+  num-flat-top:
+    val: 417
+    type: pos
+    axis: y
+    cat: Nd
+    origin:
+      glyph: five
+      ptnum:
+      - 18
+  lc-serif-undershoot:
+    axis: y
+    type: pos
+    val: -3
+    origin:
+      glyph: f
+      ptnum:
+      - 0
+    same-as:
+      below:
+        cv: xheight
+        ppem: 40
+  cap-serif-undershoot:
+    axis: y
+    type: pos
+    val: -3
+    origin:
+      glyph: I
+      ptnum:
+      - 0
+    same-as:
+      below:
+        cv: baseline
+        ppem: 40
+  lc-diacritic-height:
+    axis: y
+    type: pos
+    val: 512
+    origin:
+      glyph: i
+      ptnum:
+      - 0
+  lc-u-top:
+    axis: y
+    type: pos
+    val: 419
+    origin:
+      glyph: u
+      ptnum:
+      - 47
+    same-as:
+      below:
+        cv: xheight
+        ppem: 40
+  cap-G-serif-height:
+    axis: y
+    type: pos
+    val: 268
+    origin:
+      glyph: G
+      ptnum:
+      - 47
+    cat: Lu
+  punct-period-bottom:
+    axis: y
+    type: pos
+    val: -12
+    origin:
+      glyph: period
+      ptnum:
+      - 0
+    cat: P
+  punct-dash-height:
+    axis: y
+    type: pos
+    val: 238
+    origin:
+      glyph: hyphen
+      ptnum:
+      - 0
+    cat: Pd
+  num-zero-top:
+    axis: y
+    type: pos
+    val: 426
+    origin:
+      glyph: zero
+      ptnum:
+      - 8
+prep:
+  code: |-
+    <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+                <!-- Turn off hinting above 300 ppem -->
+                <if test="pixels-per-em &gt; 300">
+                    <disable-instructions/>
+                </if>
+                <!-- Dropout control -->
+                <push>4 511</push>
+                <command name="SCANCTRL"/>
+                <command name="SCANTYPE"/>
+                </code>
+functions:
+  delta:
+    primitive: true
+    stack-safe: true
+    size:
+      type: int
+      val: 25
+    distance:
+      type: int
+      val: 0
+    pt:
+      type: point
+      subtype: target
+    code: |-
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+              <command name="SDB"/>
+              <command name="DUP"/>
+              <push>0</push>
+              <command name="NEQ"/>
+              <command name="IF"/>
+              <command name="DUP"/>
+              <push>0</push>
+              <command name="LT"/>
+              <command name="IF"/>
+              <push>8</push>
+              <command name="ADD"/>
+              <command name="ELSE"/>
+              <push>7</push>
+              <command name="ADD"/>
+              <command name="EIF"/>
+              <command name="SWAP"/>
+              <push>1</push>
+              <command name="DELTAP1"/>
+              <command name="ELSE"/>
+              <command name="POP"/>
+              <command name="POP"/>
+              <command name="EIF"/>
+              <push>8</push>
+              <command name="SDB"/>
+              </code>
+  serif-helper:
+    stack-safe: true
+    base:
+      type: point
+      subtype: target
+    pt-a:
+      type: point
+      subtype: target
+    base-cv:
+      val: baseline
+      type: pos
+    cup-cv:
+      val: cap-baseline-undershoot
+      type: dist
+    ppem:
+      type: int
+      val: 190
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="base-cv">
+          <point num="base"/>
+        </move>
+        <if test="pixels-per-em &lt; ppem">
+          <align>
+            <point num="pt-a"/>
+          </align>
+          <else>
+            <command name="RTDG"/>
+            <move distance="cup-cv">
+              <reference>
+                <point num="base"/>
+              </reference>
+              <point num="pt-a"/>
+            </move>
+            <command name="RTG"/>
+          </else>
+        </if>
+      </code>
+  align-or-shift:
+    stack-safe: true
+    primitive: true
+    ppem:
+      type: int
+      val: 43
+    r:
+      type: point
+      subtype: ref
+    p:
+      type: point
+      subtype: target
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <command name="MPPEM"/>
+        <command name="GT"/>
+        <command name="IF"/>
+        <command name="SRP0"/>
+        <command name="ALIGNRP"/>
+        <command name="ELSE"/>
+        <command name="SRP1"/>
+        <command name="SHP" modifier="1"/>
+        <command name="EIF"/>
+      </code>
+  mid-stem-f:
+    stack-safe: true
+    primitive: true
+    top:
+      type: point
+      subtype: ref
+    bar-top:
+      type: point
+      subtype: target
+    bar-bot:
+      type: point
+      subtype: target
+    base:
+      type: point
+      subtype: ref
+    code: |-
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <command name="DUP"/>
+        <push>3</push>
+        <command name="CINDEX"/>
+        <command name="MD" modifier="1"/>
+        <push>4</push>
+        <command name="CINDEX"/>
+        <push>6</push>
+        <command name="CINDEX"/>
+        <command name="MD" modifier="1"/>
+        <command name="DUP"/>
+        <command name="ROLL"/>
+        <command name="ADD"/>
+        <command name="ROLL"/>
+        <push>6</push>
+        <command name="CINDEX"/>
+        <command name="MD" modifier="0"/>
+        <push>5</push>
+        <command name="CINDEX"/>
+        <command name="DUP"/>
+        <command name="SRP0"/>
+        <push>5</push>
+        <command name="CINDEX"/>
+        <command name="DUP"/>
+        <command name="MDRP" modifier="11001"/>
+        <command name="MD" modifier="0"/>
+        <command name="ADD"/>
+        <command name="ROLL"/>
+        <command name="MUL"/>
+        <command name="SWAP"/>
+        <command name="DIV"/>
+        <command name="ROUND" modifier="01"/>
+        <push>3</push>
+        <command name="CINDEX"/>
+        <push>5</push>
+        <command name="MINDEX"/>
+        <command name="MD" modifier="0"/>
+        <command name="SUB"/>
+        <command name="DUP"/>
+        <command name="ROLL"/>
+        <command name="SWAP"/>
+        <command name="SHPIX"/>
+        <command name="SHPIX"/>
+      </code>
+macros:
+  cap-serif:
+    base:
+      type: point
+      subtype: target
+    base-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-a:
+      type: point
+      subtype: target
+    pt-a-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-b:
+      type: point
+      subtype: target
+    pt-b-sh:
+      type: point
+      subtype: target
+      val: -1
+    base-cv:
+      val: baseline
+      type: pos
+    cup-cv:
+      val: cap-serif-undershoot
+      type: pos
+    ppem:
+      type: int
+      val: 160
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="base-cv">
+          <point num="base"/>
+          <shift compile-if="not( nan(base-sh) ) and base-sh &gt;= 0">
+            <point num="base-sh"/>
+          </shift>
+          <shift compile-if="nan(base-sh)">
+            <set ref="base-sh"/>
+          </shift>
+          <move round="no">
+            <point num="pt-b"/>
+            <shift compile-if="not( nan(pt-b-sh) ) and pt-b-sh &gt;= 0">
+              <point num="pt-b-sh"/>
+            </shift>
+            <shift compile-if="nan(pt-b-sh)">
+              <set ref="pt-b-sh"/>
+            </shift>
+          </move>
+        </move>
+        <call-function name="serif-helper">
+          <with-param name="base" value="base"/>
+          <with-param name="pt-a" value="pt-a"/>
+          <with-param name="base-cv" value="base-cv"/>
+          <with-param name="cup-cv" value="cup-cv"/>
+          <with-param name="ppem" value="ppem"/>
+        </call-function>
+        <shift compile-if="not( nan(pt-a-sh) ) and pt-a-sh &gt;= 0">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+          <point num="pt-a-sh"/>
+        </shift>
+        <shift compile-if="nan(pt-a-sh)">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+          <set ref="pt-a-sh"/>
+        </shift>
+      </code>
+  unbalanced-T:
+    base:
+      type: point
+      subtype: target
+    pt-left-top:
+      type: point
+      subtype: target
+    pt-left-bottom:
+      type: point
+      subtype: target
+    pt-right-top:
+      type: point
+      subtype: target
+    pt-right-bottom:
+      type: point
+      subtype: target
+    base-cv:
+      val: -1
+      type: pos
+    left-cv:
+      val: -1
+      type: dist
+    right-cv:
+      val: -1
+      type: dist
+    ppem:
+      type: int
+      val: 250
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <compile-if test="base-cv &lt; 0">
+          <push>base</push>
+          <command name="MDAP" modifier="1"/>
+          <else>
+            <push>base base-cv</push>
+            <command name="MIAP" modifier="1"/>
+          </else>
+        </compile-if>
+        <compile-if test="left-cv &lt; 0">
+          <push>pt-left-bottom</push>
+          <command name="MDRP" modifier="01101"/>
+          <else>
+            <push>pt-left-bottom left-cv</push>
+            <command name="MIRP" modifier="01101"/>
+          </else>
+        </compile-if>
+        <compile-if test="right-cv &lt; 0">
+          <push>pt-right-bottom</push>
+          <command name="MDAP" modifier="11101"/>
+          <else>
+            <push>pt-right-bottom right-cv</push>
+            <command name="MIRP" modifier="11101"/>
+          </else>
+        </compile-if>
+        <call-function name="serif-helper">
+          <with-param name="base" value="base"/>
+          <with-param name="pt-a" value="pt-left-top"/>
+          <with-param name="base-cv" value="base-cv"/>
+          <with-param name="ppem" value="ppem"/>
+        </call-function>
+        <call-function name="serif-helper">
+          <with-param name="base" value="base"/>
+          <with-param name="pt-a" value="pt-right-top"/>
+          <with-param name="base-cv" value="base-cv"/>
+          <with-param name="ppem" value="ppem"/>
+        </call-function>
+      </code>
+  lc-serif:
+    base:
+      type: point
+      subtype: target
+    base-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-a:
+      type: point
+      subtype: target
+    pt-a-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-b:
+      type: point
+      subtype: target
+    pt-b-sh:
+      type: point
+      subtype: target
+      val: -1
+    base-cv:
+      val: baseline
+      type: pos
+    cup-cv:
+      val: lc-serif-undershoot
+      type: pos
+    ppem:
+      type: int
+      val: 180
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <compile-if test="base-cv &gt;= 0">
+          <move distance="base-cv">
+            <point num="base"/>
+            <shift compile-if="not( nan(base-sh) ) and base-sh &gt;= 0">
+              <point num="base-sh"/>
+            </shift>
+            <shift compile-if="nan(base-sh)">
+              <set ref="base-sh"/>
+            </shift>
+            <move round="no">
+              <point num="pt-b"/>
+              <shift compile-if="not( nan(pt-b-sh) ) and pt-b-sh &gt;= 0">
+                <point num="pt-b-sh"/>
+              </shift>
+              <shift compile-if="nan(pt-b-sh)">
+                <set ref="pt-b-sh"/>
+              </shift>
+            </move>
+          </move>
+          <else>
+            <move>
+              <point num="base"/>
+              <shift compile-if="not( nan(base-sh) ) and base-sh &gt;= 0">
+                <point num="base-sh"/>
+              </shift>
+              <shift compile-if="nan(base-sh)">
+                <set ref="base-sh"/>
+              </shift>
+              <move round="no">
+                <point num="pt-b"/>
+                <shift compile-if="not( nan(pt-b-sh) ) and pt-b-sh &gt;= 0">
+                  <point num="pt-b-sh"/>
+                </shift>
+                <shift compile-if="nan(pt-b-sh)">
+                  <set ref="pt-b-sh"/>
+                </shift>
+              </move>
+            </move>
+          </else>
+        </compile-if>
+        <call-function name="serif-helper">
+          <with-param name="base" value="base"/>
+          <with-param name="pt-a" value="pt-a"/>
+          <with-param name="base-cv" value="base-cv"/>
+          <with-param name="cup-cv" value="cup-cv"/>
+          <with-param name="ppem" value="ppem"/>
+        </call-function>
+        <shift compile-if="not( nan(pt-a-sh) ) and pt-a-sh &gt;= 0">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+          <point num="pt-a-sh"/>
+        </shift>
+          <shift compile-if="nan(pt-a-sh)">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+        <set ref="pt-a-sh"/> </shift>
+      </code>
+  sc-serif:
+    base:
+      type: point
+      subtype: target
+    base-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-a:
+      type: point
+      subtype: target
+    pt-a-sh:
+      type: point
+      subtype: target
+      val: -1
+    pt-b:
+      type: point
+      subtype: target
+    pt-b-sh:
+      type: point
+      subtype: target
+      val: -1
+    base-cv:
+      val: baseline
+      type: pos
+    cup-cv:
+      val: lc-serif-undershoot
+      type: pos
+    ppem:
+      type: int
+      val: 180
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="base-cv">
+          <point num="base"/>
+          <shift compile-if="not( nan(base-sh) ) and base-sh &gt;= 0">
+            <point num="base-sh"/>
+          </shift>
+          <shift compile-if="nan(base-sh)">
+            <set ref="base-sh"/>
+          </shift>
+          <move round="no">
+            <point num="pt-b"/>
+            <shift compile-if="not( nan(pt-b-sh) ) and pt-b-sh &gt;= 0">
+              <point num="pt-b-sh"/>
+            </shift>
+            <shift compile-if="nan(pt-b-sh)">
+              <set ref="pt-b-sh"/>
+            </shift>
+          </move>
+        </move>
+        <call-function name="serif-helper">
+          <with-param name="base" value="base"/>
+          <with-param name="pt-a" value="pt-a"/>
+          <with-param name="base-cv" value="base-cv"/>
+          <with-param name="cup-cv" value="cup-cv"/>
+          <with-param name="ppem" value="ppem"/>
+        </call-function>
+        <shift compile-if="not( nan(pt-a-sh) ) and pt-a-sh &gt;= 0">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+          <point num="pt-a-sh"/>
+        </shift>
+        <shift compile-if="nan(pt-a-sh)">
+          <reference>
+            <point num="pt-a"/>
+          </reference>
+          <set ref="pt-a-sh"/>
+        </shift>
+      </code>
+  hook:
+    pt-a:
+      type: point
+      subtype: target
+    pt-b:
+      type: point
+      subtype: target
+    pt-c:
+      type: point
+      subtype: target
+    cv:
+      val: -1
+      type: pos
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <compile-if test="cv &gt;= 0">
+          <push>pt-c pt-b pt-a cv</push>
+          <command name="MIAP" modifier="1"/>
+          <command name="MDRP">
+            <modifier type="color" value="black"/>
+          </command>
+          <command name="MDRP">
+            <modifier type="color" value="black"/>
+          </command>
+          <else>
+            <push>pt-c pt-b pt-a</push>
+            <command name="MDAP" modifier="1"/>
+            <command name="MDRP">
+              <modifier type="color" value="black"/>
+            </command>
+            <command name="MDRP">
+              <modifier type="color" value="black"/>
+            </command>
+          </else>
+        </compile-if>
+      </code>
+  cap-round-stem:
+    pt-a:
+      type: point
+      subtype: target
+    pt-b:
+      type: point
+      subtype: target
+    cv:
+      val: cap-baseline-undershoot
+      type: pos
+    stem-cv:
+      val: -1
+      type: dist
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="cv">
+          <point num="pt-a"/>
+          <move round="no">
+            <point num="pt-b"/>
+          </move>
+        </move>
+      </code>
+  lc-round-stem:
+    pt-a:
+      type: point
+      subtype: target
+    pt-b:
+      type: point
+      subtype: target
+    cv:
+      val: lc-baseline-undershoot
+      type: pos
+    stem-cv:
+      val: -1
+      type: dist
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="cv">
+          <point num="pt-a"/>
+          <move round="no">
+            <point num="pt-b"/>
+          </move>
+        </move>
+      </code>
+  mid-stem:
+    pt-a:
+      type: point
+      subtype: target
+    pt-b:
+      type: point
+      subtype: target
+    ref1:
+      type: point
+      subtype: ref
+    ref2:
+      type: point
+      subtype: ref
+    cv:
+      val: -1
+      type: dist
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <push>pt-a pt-a ref2 ref1</push>
+        <command name="SRP1"/>
+        <command name="SRP2"/>
+        <command name="IP"/>
+        <command name="MDAP" modifier="1"/>
+        <compile-if test="cv != -1">
+          <push>pt-b cv</push>
+          <command name="MIRP" modifier="11000"/>
+          <else>
+            <push>pt-b</push>
+            <command name="MDRP" modifier="11000"/>
+          </else>
+        </compile-if>
+      </code>
+  mid-stem-serif:
+    pt-a:
+      type: point
+      subtype: target
+    pt-b:
+      type: point
+      subtype: target
+    sh-a:
+      type: point
+      subtype: target
+    sh-b:
+      type: point
+      subtype: target
+    ref1:
+      type: point
+      subtype: ref
+    ref2:
+      type: point
+      subtype: ref
+    cv:
+      type: dist
+      val: -1
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2"> <push>sh-a pt-a pt-a ref2 ref1</push> <command name="SRP1"/> <command name="SRP2"/> <command name="IP"/> <command name="MDAP" modifier="1"/> <command name="SHP" modifier="1"/> <compile-if test="cv &gt;= 0"> <push>sh-b pt-b cv</push> <command name="MIRP" modifier="11101"/> <command name="SHP" modifier="0"/> <else> <push>sh-b pt-b</push> <command name="MDRP" modifier="11101"/> <command name="SHP" modifier="0"/> </else> </compile-if>
+      </code>
+  cap-insular-serif:
+    top:
+      type: point
+      subtype: target
+    serif-a:
+      type: point
+      subtype: target
+    serif-b:
+      type: point
+      subtype: target
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <move distance="cpho">
+          <point num="top"/>
+          <move min-distance="no">
+            <point num="serif-a"/>
+            <move distance="cap-serif">
+              <point num="serif-b"/>
+            </move>
+          </move>
+        </move>
+      </code>
+  lc-ascender-top:
+    p1:
+      type: point
+      subtype: target
+    p2:
+      type: point
+      subtype: target
+    p3:
+      type: point
+      subtype: target
+    cv:
+      type: pos
+      val: lc-ascender
+    code: <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2"> <move distance="cv"> <point num="p1"/> <move> <point num="p2"/> <move distance="lc-serif"> <point num="p3"/> </move> </move> </move> </code>
+  half-grid-stem:
+    ref-pt:
+      type: point
+      subtype: ref
+    tgt-pt:
+      type: point
+      subtype: target
+    code: |
+      <code xmlns="http://xgridfit.sourceforge.net/Xgridfit2">
+        <set-minimum-distance value="0.5"/>
+        <move round="to-double-grid">
+          <reference>
+            <point num="ref-pt"/>
+          </reference>
+          <point num="tgt-pt"/>
+        </move>
+        <set-minimum-distance value="1.0"/>
+      </code>
+glyphs:
+  b:
+    y:
+      points:
+      - ptid: '{266;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{103;-11}'
+          rel: stem
+          min: false
+        - ptid: '{253;18}'
+          rel: stem
+      - ptid: '{264;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{233;386}'
+          rel: stem
+      - ptid: '{147;725}'
+        pos: lc-ascender
+        points:
+        - ptid: '{30;667}'
+          rel: stem
+          points:
+          - ptid: '{30;640}'
+            rel: stem
+            round: false
+  a:
+    y:
+      points:
+      - ptid: '{130;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{316;-11}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{345;42}'
+            rel: stem
+        - ptid: '{173;38}'
+          rel: stem
+      - ptid: '{202;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{169;388}'
+          rel: stem
+      - ptid:
+        - '{228;215}'
+        - '{235;241}'
+        ref:
+        - '{202;425}'
+        - '{130;-11}'
+        rel: interpolate
+  c:
+    y:
+      points:
+      - ptid: '{235;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{264;44}'
+          rel: stem
+      - ptid: '{270;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{249;392}'
+          rel: stem
+  d:
+    y:
+      points:
+      - ptid: '{204;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{246;36}'
+          rel: stem
+          round: false
+        - ptid: '{344;-16}'
+          rel: stem
+          min: false
+      - ptid: '{264;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{253;396}'
+          rel: stem
+          round: false
+      - ptid: '{408;725}'
+        pos: lc-ascender
+        points:
+        - ptid: '{291;667}'
+          rel: stem
+          points:
+          - ptid: '{291;640}'
+            rel: stem
+            round: false
+  f:
+    y:
+      points:
+      - ptid:
+          base: '{143;0}'
+          pt-a: '{41;-3}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{245;-3}'
+          pt-b-sh: '{245;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{328;726}'
+        pos: lc-ascender
+        points:
+        - ptid: '{279;680}'
+          rel: stem
+          round: false
+      - ptid: '{290;415}'
+        pos: xheight
+        points:
+        - ptid: '{173;373}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{98;373}'
+            - '{44;400}'
+            rel: shift
+  e:
+    y:
+      points:
+      - ptid: '{219;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{253;46}'
+          rel: stem
+          round: false
+      - ptid: '{216;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{214;396}'
+          rel: stem
+          round: false
+      - ptid:
+          pt-a: '{114;268}'
+          pt-b: '{121;301}'
+          ref1: '{216;425}'
+          ref2: '{219;-11}'
+        macro:
+          nm: mid-stem
+  g:
+    y:
+      points:
+      - ptid: '{211;-273}'
+        pos: lc-descender
+        points:
+        - ptid: '{250;-229}'
+          rel: stem
+          round: false
+      - ptid: '{225;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{215;396}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{315;34}'
+        - '{210;127}'
+        - '{379;387}'
+        ref:
+        - '{225;425}'
+        - '{211;-273}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{381;345}'
+          ref: '{379;387}'
+          rel: stem
+          round: false
+        - ptid: '{215;156}'
+          ref: '{210;127}'
+          rel: stem
+          round: false
+        - ptid: '{281;-27}'
+          ref: '{315;34}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{139;-23}'
+            - '{175;-27}'
+            rel: shift
+  h:
+    y:
+      points:
+      - ptid:
+          base: '{133;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: '{416;0}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{302;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{266;381}'
+          rel: stem
+          round: false
+      - ptid: '{170;725}'
+        pos: lc-ascender
+        points:
+        - ptid: '{53;667}'
+          rel: stem
+          points:
+          - ptid: '{53;640}'
+            rel: stem
+            round: false
+    names:
+      serif-sh-a:
+      - '{320;-4}'
+      - '{227;-4}'
+      - '{512;-4}'
+      serif-sh-b:
+      - '{320;24}'
+      - '{227;24}'
+      - '{512;24}'
+  i:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-3}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{231;-3}'
+          pt-b-sh: '{231;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{170;431}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{53;373}'
+          rel: stem
+          points:
+          - ptid: '{53;346}'
+            rel: stem
+            round: false
+      - ptid: '{125;512}'
+        pos: lc-diacritic-height
+        points:
+        - ptid: '{125;617}'
+          rel: stem
+          round: false
+  j:
+    y:
+      points:
+      - ptid: '{172;431}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{55;373}'
+          rel: stem
+          points:
+          - ptid: '{55;346}'
+            rel: stem
+            round: false
+      - ptid: '{0;-271}'
+        pos: lc-descender
+        points:
+        - ptid: '{56;-228}'
+          rel: stem
+          round: false
+      - ptid: '{125;512}'
+        pos: lc-diacritic-height
+        points:
+        - ptid: '{125;617}'
+          rel: stem
+          round: false
+  k:
+    y:
+      points:
+      - ptid:
+          base: '{133;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: '{384;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{358;415}'
+          pt-a: '{270;418}'
+          pt-b: '{270;392}'
+          pt-a-sh: '{447;418}'
+          pt-b-sh: '{447;392}'
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{166;725}'
+        pos: lc-ascender
+        points:
+        - ptid: '{49;667}'
+          rel: stem
+          points:
+          - ptid: '{49;640}'
+            rel: stem
+            round: false
+      - ptid: '{169;201}'
+        ref:
+        - '{133;0}'
+        - '{358;415}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{169;234}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{254;242}'
+            rel: shift
+    names:
+      serif-bot-sh-a:
+      - '{286;-4}'
+      - '{228;-4}'
+      - '{482;-4}'
+      serif-bot-sh-b:
+      - '{286;24}'
+      - '{228;24}'
+      - '{482;24}'
+  l:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-4}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{231;-4}'
+          pt-b-sh: '{231;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{170;725}'
+        pos: lc-ascender
+        points:
+        - ptid: '{53;667}'
+          rel: stem
+          points:
+          - ptid: '{53;640}'
+            rel: stem
+            round: false
+  m:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: serif-base-sh
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{301;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{560;425}'
+          rel: shift
+        - ptid: '{275;381}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{537;381}'
+            rel: shift
+      - ptid: '{168;431}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{51;373}'
+          rel: stem
+          points:
+          - ptid: '{51;346}'
+            rel: stem
+            round: false
+    names:
+      serif-base-sh:
+      - '{398;0}'
+      - '{663;0}'
+      serif-sh-a:
+      - '{303;-4}'
+      - '{229;-4}'
+      - '{568;-4}'
+      - '{493;-4}'
+      - '{758;-4}'
+      serif-sh-b:
+      - '{303;24}'
+      - '{229;24}'
+      - '{568;24}'
+      - '{493;24}'
+      - '{758;24}'
+  n:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: '{399;0}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{301;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{285;381}'
+          rel: stem
+          round: false
+        - ptid: '{168;431}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{51;374}'
+            - '{51;346}'
+            rel: shift
+    names:
+      serif-sh-a:
+      - '{304;-4}'
+      - '{229;-4}'
+      - '{494;-4}'
+      serif-sh-b:
+      - '{304;24}'
+      - '{229;24}'
+      - '{494;24}'
+  o:
+    y:
+      points:
+      - ptid: '{231;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{231;21}'
+          rel: stem
+          round: false
+      - ptid: '{231;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{231;396}'
+          rel: stem
+          round: false
+  p:
+    y:
+      points:
+      - ptid:
+          base: '{130;-269}'
+          pt-a: '{28;-273}'
+          pt-b: '{28;-245}'
+          pt-a-sh: '{232;-273}'
+          pt-b-sh: '{232;-245}'
+        macro:
+          nm: lc-serif
+          base-cv: lc-descender
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{248;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{253;20}'
+          rel: stem
+          round: false
+      - ptid: '{282;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{261;385}'
+          rel: stem
+          round: false
+        - ptid: '{154;431}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{43;344}'
+            - '{43;371}'
+            rel: shift
+  q:
+    y:
+      points:
+      - ptid:
+          base: '{374;-269}'
+          pt-a: '{279;-273}'
+          pt-b: '{279;-245}'
+          pt-a-sh: '{469;-273}'
+          pt-b-sh: '{469;-245}'
+        macro:
+          nm: lc-serif
+          base-cv: lc-descender
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{235;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{238;20}'
+          rel: stem
+          round: false
+      - ptid: '{238;424}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{235;385}'
+          rel: stem
+          round: false
+        - ptid: '{405;423}'
+          rel: stem
+          min: false
+  r:
+    y:
+      points:
+      - ptid:
+          base: '{127;0}'
+          pt-a: '{28;-4}'
+          pt-b: '{28;24}'
+          pt-a-sh: '{228;-4}'
+          pt-b-sh: '{228;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{284;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{230;351}'
+          rel: stem
+          round: false
+        - ptid: '{153;431}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{44;343}'
+            - '{44;370}'
+            rel: shift
+  s:
+    y:
+      points:
+      - ptid: '{165;-12}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{176;19}'
+          rel: stem
+          round: false
+      - ptid: '{190;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{185;395}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{164;180}'
+        - '{199;247}'
+        ref:
+        - '{190;425}'
+        - '{165;-12}'
+        rel: interpolate
+  t:
+    y:
+      points:
+      - ptid: '{209;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{247;36}'
+          rel: stem
+          round: false
+      - ptid: '{169;415}'
+        pos: xheight
+        points:
+        - ptid: '{169;371}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{94;371}'
+            rel: stem
+            round: false
+            min: false
+            points:
+            - ptid: '{39;394}'
+              rel: stem
+              round: false
+  u:
+    y:
+      points:
+      - ptid: '{416;419}'
+        pos: lc-u-top
+        points:
+        - ptid: '{153;419}'
+          rel: shift
+        - ptid: '{293;410}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{31;410}'
+            rel: shift
+          - ptid: '{293;383}'
+            rel: stem
+            round: false
+            points:
+            - ptid: '{31;383}'
+              rel: shift
+      - ptid: '{224;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{261;36}'
+          rel: stem
+          round: false
+        - ptid: '{355;-16}'
+          rel: stem
+          min: false
+  v:
+    y:
+      points:
+      - ptid:
+          base: '{93;415}'
+          pt-a: '{6;418}'
+          pt-b: '{6;392}'
+          base-sh: '{344;415}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{206;-11}'
+        pos: lc-baseline-undershoot
+      - ptid: '{230;99}'
+        ref:
+        - '{206;-11}'
+        - '{93;415}'
+        rel: interpolate
+    names:
+      serif-sh-a:
+      - '{179;418}'
+      - '{273;418}'
+      - '{414;418}'
+      serif-sh-b:
+      - '{179;392}'
+      - '{273;392}'
+      - '{414;392}'
+  w:
+    y:
+      points:
+      - ptid:
+          base: '{93;415}'
+          pt-a: '{6;418}'
+          pt-b: '{6;392}'
+          base-sh: serif-sh-base
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{212;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{462;-11}'
+          rel: shift
+      - ptid:
+        - '{230;99}'
+        - '{480;99}'
+        - '{329;281}'
+        - '{313;338}'
+        - '{393;351}'
+        ref:
+        - '{212;-11}'
+        - '{93;415}'
+        rel: interpolate
+    names:
+      serif-sh-base:
+      - '{343;415}'
+      - '{594;415}'
+      serif-sh-a:
+      - '{179;418}'
+      - '{256;418}'
+      - '{429;418}'
+      - '{523;418}'
+      - '{664;418}'
+      serif-sh-b:
+      - '{179;392}'
+      - '{256;392}'
+      - '{429;392}'
+      - '{523;392}'
+      - '{664;392}'
+  x:
+    y:
+      points:
+      - ptid:
+          base: '{83;0}'
+          pt-a: '{11;-4}'
+          pt-b: '{11;24}'
+          base-sh: '{352;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{127;415}'
+          pt-a: '{44;418}'
+          pt-b: '{44;392}'
+          base-sh: '{359;415}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid:
+        - '{201;205}'
+        - '{245;252}'
+        - '{264;228}'
+        - '{217;180}'
+        ref:
+        - '{127;415}'
+        - '{83;0}'
+        rel: interpolate
+    names:
+      serif-bot-sh-a:
+      - '{256;-4}'
+      - '{155;-4}'
+      - '{448;-4}'
+      serif-bot-sh-b:
+      - '{155;24}'
+      - '{256;24}'
+      - '{448;24}'
+      serif-top-sh-a:
+      - '{211;418}'
+      - '{287;418}'
+      - '{431;418}'
+      serif-top-sh-b:
+      - '{211;392}'
+      - '{287;392}'
+      - '{431;392}'
+  y:
+    y:
+      points:
+      - ptid:
+          base: '{97;415}'
+          pt-a: '{6;418}'
+          pt-b: '{6;392}'
+          base-sh: '{368;415}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{88;-270}'
+        pos: lc-descender
+        points:
+        - ptid: '{87;-196}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{244;82}'
+        - '{201;-31}'
+        ref:
+        - '{88;-270}'
+        - '{97;415}'
+        rel: interpolate
+    names:
+      serif-sh-a:
+      - '{187;418}'
+      - '{288;418}'
+      - '{448;418}'
+      serif-sh-b:
+      - '{187;392}'
+      - '{288;392}'
+      - '{448;392}'
+  z:
+    y:
+      points:
+      - ptid: '{147;415}'
+        pos: xheight
+        points:
+        - ptid: '{136;387}'
+          rel: stem
+          round: false
+      - ptid: '{244;0}'
+        pos: baseline
+        points:
+        - ptid: '{199;29}'
+          rel: stem
+          round: false
+  A:
+    y:
+      points:
+      - ptid:
+          base: '{109;0}'
+          pt-a: '{5;-3}'
+          pt-b: '{5;34}'
+          base-sh: '{556;0}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{371;677}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{330;581}'
+          rel: shift
+      - ptid:
+          pt-a: '{204;257}'
+          pt-b: '{218;296}'
+          ref1: '{371;677}'
+          ref2: '{109;0}'
+        macro:
+          nm: mid-stem
+    names:
+      serif-sh-a:
+      - '{443;-3}'
+      - '{212;-3}'
+      - '{668;-3}'
+      serif-sh-b:
+      - '{443;34}'
+      - '{212;34}'
+      - '{668;34}'
+  B:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          pt-a-sh: '{310;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{303;28}'
+        ref: '{174;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{174;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;629}'
+          pt-a-sh: '{310;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{239;636}'
+        ref: '{174;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{213;339}'
+          pt-b: '{213;369}'
+          ref1: '{174;663}'
+          ref2: '{174;0}'
+        macro:
+          nm: mid-stem
+      - ptid: '{401;356}'
+        ref:
+        - '{213;369}'
+        - '{213;339}'
+        rel: interpolate
+  C:
+    y:
+      points:
+      - ptid: '{394;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{393;23}'
+          rel: stem
+          round: false
+      - ptid: '{399;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{375;642}'
+          rel: stem
+          round: false
+  D:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          pt-a-sh: '{370;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{336;26}'
+        ref: '{174;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{174;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;629}'
+          pt-a-sh: '{346;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{306;636}'
+        ref: '{174;663}'
+        rel: stem
+        round: false
+  E:
+    y:
+      points:
+      - ptid:
+          base: '{173;0}'
+          pt-a: '{43;-3}'
+          pt-b: '{43;34}'
+          pt-a-sh: '{531;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{289;30}'
+        ref: '{173;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{173;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;629}'
+          pt-a-sh: '{499;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{232;632}'
+        ref: '{173;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{212;295}'
+          pt-b: '{212;334}'
+          ref1: '{173;663}'
+          ref2: '{173;0}'
+        macro:
+          nm: mid-stem
+  F:
+    y:
+      points:
+      - ptid:
+          base: '{175;0}'
+          pt-a: '{46;-3}'
+          pt-b: '{46;34}'
+          pt-a-sh: '{304;-3}'
+          pt-b-sh: '{304;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{173;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;629}'
+          pt-a-sh: '{507;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{232;629}'
+        ref: '{173;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{212;313}'
+          pt-b: '{212;352}'
+          ref1: '{173;663}'
+          ref2: '{175;0}'
+        macro:
+          nm: mid-stem
+  G:
+    y:
+      points:
+      - ptid: '{375;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{408;23}'
+          rel: stem
+          round: false
+      - ptid: '{408;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{393;642}'
+          rel: stem
+          round: false
+      - ptid:
+          base: '{552;268}'
+          pt-a: '{411;271}'
+          pt-b: '{411;233}'
+          pt-a-sh: '{669;271}'
+          pt-b-sh: '{669;233}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-G-serif-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+  H:
+    y:
+      points:
+      - ptid:
+          base: '{175;0}'
+          pt-a: '{48;-3}'
+          pt-b: '{48;34}'
+          base-sh: '{634;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          base-sh: '{631;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+          pt-a: '{213;322}'
+          pt-b: '{213;363}'
+          ref1: '{172;663}'
+          ref2: '{175;0}'
+        macro:
+          nm: mid-stem
+    names:
+      serif-bot-sh-a:
+      - '{507;-3}'
+      - '{301;-3}'
+      - '{760;-3}'
+      serif-bot-sh-b:
+      - '{507;34}'
+      - '{301;34}'
+      - '{760;34}'
+      serif-top-sh-a:
+      - '{301;666}'
+      - '{502;666}'
+      - '{760;666}'
+      serif-top-sh-b:
+      - '{301;628}'
+      - '{502;628}'
+      - '{760;628}'
+  I:
+    y:
+      points:
+      - ptid:
+          base: '{175;0}'
+          pt-a: '{48;-3}'
+          pt-b: '{48;34}'
+          pt-a-sh: '{301;-3}'
+          pt-b-sh: '{301;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          pt-a-sh: '{301;666}'
+          pt-b-sh: '{301;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+  J:
+    y:
+      points:
+      - ptid:
+          base: '{182;663}'
+          pt-a: '{50;666}'
+          pt-b: '{50;628}'
+          pt-a-sh: '{314;666}'
+          pt-b-sh: '{314;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{32;-205}'
+        points:
+        - ptid: '{14;-105}'
+          rel: stem
+          round: false
+  K:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          base-sh: '{524;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{174;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          base-sh: '{498;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+          pt-a: '{213;315}'
+          pt-b: '{213;348}'
+          ref1: '{174;0}'
+          ref2: '{174;663}'
+        macro:
+          nm: mid-stem
+      - ptid: '{313;358}'
+        ref: '{213;348}'
+        rel: shift
+    names:
+      serif-bot-sh-a:
+      - '{394;-3}'
+      - '{301;-3}'
+      - '{655;-3}'
+      serif-bot-sh-b:
+      - '{394;34}'
+      - '{301;34}'
+      - '{655;34}'
+      serif-top-sh-a:
+      - '{305;666}'
+      - '{409;666}'
+      - '{586;666}'
+      serif-top-sh-b:
+      - '{305;628}'
+      - '{409;628}'
+      - '{586;628}'
+  L:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{49;-3}'
+          pt-b: '{49;34}'
+          pt-a-sh: '{581;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{300;30}'
+        ref: '{174;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{171;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          pt-a-sh: '{298;628}'
+          pt-b-sh: '{298;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+  M:
+    y:
+      points:
+      - ptid:
+          base: '{132;0}'
+          pt-a: '{35;-3}'
+          pt-b: '{35;34}'
+          base-sh: '{739;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{436;-11}'
+        pos: cap-baseline-undershoot
+      - ptid:
+          base: '{121;663}'
+          pt-a: '{47;666}'
+          pt-b: '{47;628}'
+          base-sh: '{793;663}'
+          pt-a-sh: '{864;666}'
+          pt-b-sh: '{864;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+        - '{177;521}'
+        - '{691;521}'
+        - '{460;108}'
+        ref:
+        - '{121;663}'
+        - '{132;0}'
+        rel: interpolate
+    names:
+      serif-bot-sh-a:
+      - '{229;-3}'
+      - '{625;-3}'
+      - '{854;-3}'
+      serif-bot-sh-b:
+      - '{229;34}'
+      - '{625;34}'
+      - '{854;34}'
+  N:
+    y:
+      points:
+      - ptid:
+          base: '{149;0}'
+          pt-a: '{53;-3}'
+          pt-b: '{53;34}'
+          pt-a-sh: '{245;-3}'
+          pt-b-sh: '{245;34}'
+        macro:
+          nm: cap-serif
+      - ptid: '{628;-10}'
+        pos: cap-baseline-undershoot
+      - ptid:
+          base: '{115;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          base-sh: '{611;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+        - '{603;143}'
+        - '{168;550}'
+        ref:
+        - '{115;663}'
+        - '{628;-10}'
+        rel: interpolate
+    names:
+      serif-top-sh-a:
+      - '{519;666}'
+      - '{702;666}'
+      serif-top-sh-b:
+      - '{519;628}'
+      - '{702;628}'
+  O:
+    y:
+      points:
+      - ptid: '{356;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+  P:
+    y:
+      points:
+      - ptid:
+          base: '{176;0}'
+          pt-a: '{48;-3}'
+          pt-b: '{48;34}'
+          pt-a-sh: '{304;-3}'
+          pt-b-sh: '{304;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;631}'
+          pt-a-sh: '{317;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{265;635}'
+        ref: '{172;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{314;293}'
+          pt-b: '{284;324}'
+          ref1: '{172;663}'
+          ref2: '{176;0}'
+        macro:
+          nm: mid-stem
+  Q:
+    y:
+      points:
+      - ptid: '{241;4}'
+        pos: baseline
+        points:
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+      - ptid: '{476;11}'
+        ref:
+        - '{241;4}'
+        - '{356;23}'
+        rel: interpolate
+  R:
+    y:
+      points:
+      - ptid:
+          base: '{178;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          pt-a-sh: '{308;-3}'
+          pt-b-sh: '{308;34}'
+        macro:
+          nm: cap-serif
+      - ptid: '{661;-3}'
+        ref: '{178;0}'
+        rel: stem
+        min: false
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          pt-a-sh: '{317;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{280;635}'
+        ref: '{172;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{277;291}'
+          pt-b: '{284;321}'
+          ref1: '{172;663}'
+          ref2: '{178;0}'
+        macro:
+          nm: mid-stem
+      - ptid: '{416;308}'
+        ref:
+        - '{277;291}'
+        - '{284;321}'
+        rel: interpolate
+  S:
+    y:
+      points:
+      - ptid: '{244;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{257;23}'
+          rel: stem
+          round: false
+      - ptid: '{271;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{258;644}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{265;293}'
+        - '{279;392}'
+        ref:
+        - '{271;676}'
+        - '{244;-13}'
+        rel: interpolate
+  T:
+    y:
+      points:
+      - ptid:
+          base: '{318;0}'
+          pt-a: '{185;-3}'
+          pt-b: '{185;34}'
+          pt-a-sh: '{451;-3}'
+          pt-b-sh: '{451;34}'
+        macro:
+          nm: cap-serif
+      - ptid: '{320;663}'
+        pos: cap-height
+        points:
+        - ptid: '{281;628}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{359;628}'
+            rel: shift
+  U:
+    y:
+      points:
+      - ptid:
+          base: '{170;663}'
+          pt-a: '{35;666}'
+          pt-b: '{35;628}'
+          base-sh: '{601;663}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{370;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{382;23}'
+          rel: stem
+          round: false
+    names:
+      serif-sh-a:
+      - '{305;666}'
+      - '{484;666}'
+      - '{717;666}'
+      serif-sh-b:
+      - '{305;628}'
+      - '{484;628}'
+      - '{717;628}'
+  V:
+    y:
+      points:
+      - ptid:
+          base: '{128;663}'
+          pt-a: '{16;666}'
+          pt-b: '{16;628}'
+          base-sh: '{545;663}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{315;-19}'
+        pos: cap-baseline-undershoot
+      - ptid: '{344;124}'
+        ref:
+        - '{315;-19}'
+        - '{128;663}'
+        rel: interpolate
+    names:
+      serif-sh-a:
+      - '{240;666}'
+      - '{450;666}'
+      - '{640;666}'
+      serif-sh-b:
+      - '{240;628}'
+      - '{450;628}'
+      - '{640;628}'
+  W:
+    y:
+      points:
+      - ptid:
+          base: '{121;663}'
+          pt-a: '{16;666}'
+          pt-b: '{16;628}'
+          base-sh: serif-sh-base
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{356;-19}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{624;-19}'
+          rel: shift
+      - ptid:
+        - '{512;431}'
+        - '{532;375}'
+        - '{468;317}'
+        - '{487;264}'
+        - '{381;128}'
+        - '{646;128}'
+        ref:
+        - '{356;-19}'
+        - '{121;663}'
+        rel: interpolate
+    names:
+      serif-sh-base:
+      - '{389;663}'
+      - '{626;663}'
+      - '{895;663}'
+      serif-sh-a:
+      - '{225;666}'
+      - '{287;666}'
+      - '{491;666}'
+      - '{533;666}'
+      - '{718;666}'
+      - '{807;666}'
+      - '{982;666}'
+      serif-sh-b:
+      - '{225;628}'
+      - '{287;628}'
+      - '{491;628}'
+      - '{533;628}'
+      - '{718;628}'
+      - '{807;628}'
+      - '{982;628}'
+  X:
+    y:
+      points:
+      - ptid:
+          base: '{97;0}'
+          pt-a: '{-14;-3}'
+          pt-b: '{-14;34}'
+          base-sh: '{528;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{146;663}'
+          pt-a: '{9;666}'
+          pt-b: '{9;628}'
+          base-sh: '{540;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+        - '{341;401}'
+        - '{287;328}'
+        - '{302;294}'
+        - '{357;367}'
+        ref:
+        - '{97;0}'
+        - '{146;663}'
+        rel: interpolate
+    names:
+      serif-bot-sh-a:
+      - '{402;-3}'
+      - '{207;-3}'
+      - '{653;-3}'
+      serif-bot-sh-b:
+      - '{402;34}'
+      - '{207;34}'
+      - '{653;34}'
+      serif-top-sh-a:
+      - '{281;666}'
+      - '{442;666}'
+      - '{637;666}'
+      serif-top-sh-b:
+      - '{281;628}'
+      - '{442;628}'
+      - '{637;628}'
+  Y:
+    y:
+      points:
+      - ptid:
+          base: '{297;0}'
+          pt-a: '{178;-3}'
+          pt-b: '{178;34}'
+          pt-a-sh: '{417;-3}'
+          pt-b-sh: '{417;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{110;663}'
+          pt-a: '{-6;666}'
+          pt-b: '{-6;628}'
+          base-sh: '{531;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+        - '{325;334}'
+        - '{245;310}'
+        - '{352;310}'
+        ref:
+        - '{110;663}'
+        - '{297;0}'
+        rel: interpolate
+    names:
+      serif-top-sh-a:
+      - '{226;666}'
+      - '{435;666}'
+      - '{627;666}'
+      serif-top-sh-b:
+      - '{226;628}'
+      - '{435;628}'
+      - '{627;628}'
+  Z:
+    y:
+      points:
+      - ptid: '{236;0}'
+        pos: baseline
+        points:
+        - ptid: '{155;34}'
+          rel: stem
+          round: false
+      - ptid: '{402;663}'
+        pos: cap-height
+        points:
+        - ptid: '{482;631}'
+          rel: stem
+          round: false
+  bracketleft:
+    y:
+      points:
+      - ptid: '{151;-173}'
+        points:
+        - ptid: '{215;-135}'
+          rel: stem
+          round: false
+      - ptid: '{150;747}'
+        points:
+        - ptid: '{218;709}'
+          rel: stem
+          round: false
+  bracketright:
+    y:
+      points:
+      - ptid: '{210;-173}'
+        points:
+        - ptid: '{147;-135}'
+          rel: stem
+          round: false
+      - ptid: '{211;747}'
+        points:
+        - ptid: '{144;709}'
+          rel: stem
+          round: false
+  underscore:
+    y:
+      points:
+      - ptid: '{0;-75}'
+        points:
+        - ptid: '{500;-125}'
+          rel: stem
+          round: false
+  period:
+    y:
+      points:
+      - ptid: '{127;-12}'
+        pos: punct-period-bottom
+        points:
+        - ptid: '{127;103}'
+          rel: stem
+          round: false
+  exclam:
+    y:
+      points:
+      - ptid: '{127;-12}'
+        pos: punct-period-bottom
+        points:
+        - ptid: '{127;103}'
+          rel: stem
+          points:
+          - ptid: '{127;205}'
+            rel: stem
+            points:
+            - ptid: '{129;683}'
+              rel: stem
+              round: false
+  numbersign:
+    y:
+      points:
+      - ptid: '{106;161}'
+        points:
+        - ptid:
+          - '{272;161}'
+          - '{149;161}'
+          - '{228;161}'
+          rel: shift
+        - ptid: '{95;119}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{260;119}'
+            - '{217;119}'
+            - '{138;119}'
+            rel: shift
+      - ptid: '{137;276}'
+        points:
+        - ptid:
+          - '{303;276}'
+          - '{259;276}'
+          - '{180;276}'
+          rel: shift
+        - ptid: '{148;318}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{191;318}'
+            - '{270;318}'
+            - '{314;318}'
+            rel: shift
+  dollar:
+    y:
+      points:
+      - ptid: '{156;-8}'
+        points:
+        - ptid: '{114;-3}'
+          rel: shift
+        - ptid: '{162;21}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{123;33}'
+            rel: shift
+      - ptid: '{211;417}'
+        points:
+        - ptid: '{254;416}'
+          rel: shift
+        - ptid: '{206;392}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{247;387}'
+            rel: shift
+      - ptid:
+        - '{158;187}'
+        - '{214;246}'
+        - '{175;259}'
+        - '{197;172}'
+        ref:
+        - '{156;-8}'
+        - '{211;417}'
+        rel: interpolate
+  percent:
+    y:
+      points:
+      - ptid: '{444;-13}'
+        points:
+        - ptid: '{168;-33}'
+          rel: shift
+        - ptid: '{444;15}'
+          rel: stem
+          round: false
+      - ptid: '{444;249}'
+        points:
+        - ptid: '{444;223}'
+          rel: stem
+          round: false
+      - ptid: '{133;162}'
+        points:
+        - ptid: '{133;190}'
+          rel: stem
+          round: false
+      - ptid: '{133;425}'
+        points:
+        - ptid: '{406;433}'
+          rel: shift
+        - ptid: '{133;398}'
+          rel: stem
+          round: false
+  ampersand:
+    y:
+      points:
+      - ptid: '{242;-13}'
+        pos: punct-period-bottom
+        points:
+        - ptid: '{674;-13}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{702;37}'
+            rel: stem
+            round: false
+        - ptid: '{271;48}'
+          rel: stem
+          round: false
+      - ptid: '{277;670}'
+        pos: lc-diacritic-height
+        points:
+        - ptid: '{268;640}'
+          rel: stem
+          round: false
+      - ptid:
+          base: '{658;441}'
+          pt-a: '{542;444}'
+          pt-b: '{542;416}'
+          pt-a-sh: '{776;444}'
+          pt-b-sh: '{776;416}'
+        macro:
+          nm: lc-serif
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid:
+        - '{210;400}'
+        - '{303;421}'
+        - '{278;439}'
+        - '{235;382}'
+        - '{499;211}'
+        - '{520;180}'
+        - '{476;123}'
+        - '{455;154}'
+        ref:
+        - '{277;670}'
+        - '{242;-13}'
+        rel: interpolate
+    props:
+      category: Ll
+  quotesingle:
+    y:
+      points:
+      - ptid: '{104;397}'
+        points:
+        - ptid: '{104;663}'
+          rel: stem
+  asterisk:
+    y:
+      points:
+      - ptid: '{179;676}'
+      - ptid: '{179;339}'
+      - ptid:
+        - '{179;479}'
+        - '{162;510}'
+        - '{179;541}'
+        - '{214;540}'
+        - '{232;510}'
+        - '{214;479}'
+        ref:
+        - '{179;339}'
+        - '{179;676}'
+        rel: interpolate
+  plus:
+    y:
+      points:
+      - ptid: '{221;181}'
+        points:
+        - ptid: '{280;181}'
+          rel: shift
+        - ptid: '{221;230}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{280;230}'
+            rel: shift
+  comma:
+    y:
+      points:
+      - ptid: '{116;115}'
+        points:
+        - ptid: '{67;-173}'
+          rel: stem
+  hyphen:
+    y:
+      points:
+      - ptid: '{60;238}'
+        pos: punct-dash-height
+        points:
+        - ptid: '{282;294}'
+          rel: stem
+          round: false
+  zero:
+    y:
+      points:
+      - ptid: '{259;-11}'
+        pos: num-baseline-undershoot
+        points:
+        - ptid: '{259;32}'
+          rel: stem
+          round: false
+      - ptid: '{259;426}'
+        pos: num-zero-top
+        points:
+        - ptid: '{259;381}'
+          rel: stem
+          round: false
+  one:
+    y:
+      points:
+      - ptid:
+          base: '{167;0}'
+          pt-a: '{68;-4}'
+          pt-b: '{68;24}'
+          pt-a-sh: '{259;-4}'
+          pt-b-sh: '{259;24}'
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{167;415}'
+          pt-a: '{68;418}'
+          pt-b: '{68;392}'
+          pt-a-sh: '{259;418}'
+          pt-b-sh: '{259;392}'
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+    props:
+      category: Ll
+  two:
+    y:
+      points:
+      - ptid: '{137;0}'
+        pos: baseline
+        points:
+        - ptid: '{180;58}'
+          rel: stem
+          round: false
+      - ptid: '{201;425}'
+        pos: num-zero-top
+        points:
+        - ptid: '{171;367}'
+          rel: stem
+          round: false
+  three:
+    y:
+      points:
+      - ptid: '{191;425}'
+        pos: num-zero-top
+        points:
+        - ptid: '{155;376}'
+          rel: stem
+          round: false
+      - ptid: '{76;-184}'
+        points:
+        - ptid: '{108;-134}'
+          rel: stem
+          round: false
+      - ptid: '{150;153}'
+        ref:
+        - '{76;-184}'
+        - '{191;425}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{210;203}'
+          rel: stem
+          round: false
+        - ptid: '{78;154}'
+          rel: shift
+  four:
+    y:
+      points:
+      - ptid: '{355;26}'
+        points:
+        - ptid: '{279;26}'
+          rel: shift
+        - ptid: '{355;74}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{279;74}'
+            rel: shift
+        - ptid: '{317;-191}'
+          rel: stem
+          round: false
+      - ptid: '{343;433}'
+        points:
+        - ptid: '{264;295}'
+          rel: shift
+  five:
+    y:
+      points:
+      - ptid: '{155;417}'
+        pos: num-flat-top
+        points:
+        - ptid: '{174;359}'
+          rel: stem
+          round: false
+      - ptid: '{99;-245}'
+  six:
+    y:
+      points:
+      - ptid: '{226;-11}'
+        pos: num-baseline-undershoot
+        points:
+        - ptid: '{254;22}'
+          rel: stem
+          round: false
+      - ptid: '{456;637}'
+        points:
+        - ptid: '{463;616}'
+          rel: shift
+      - ptid: '{269;370}'
+        ref:
+        - '{456;637}'
+        - '{226;-11}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{250;315}'
+          rel: stem
+          round: false
+  seven:
+    y:
+      points:
+      - ptid: '{80;417}'
+        pos: num-flat-top
+        points:
+        - ptid: '{133;359}'
+          rel: stem
+          round: false
+      - ptid: '{115;-197}'
+  eight:
+    y:
+      points:
+      - ptid: '{197;-11}'
+        pos: num-baseline-undershoot
+        points:
+        - ptid: '{203;20}'
+          rel: stem
+          round: false
+      - ptid: '{209;621}'
+        pos: num-round-top
+        points:
+        - ptid: '{201;591}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{159;293}'
+        - '{249;320}'
+        - '{223;339}'
+        - '{183;274}'
+        ref:
+        - '{209;621}'
+        - '{197;-11}'
+        rel: interpolate
+  nine:
+    y:
+      points:
+      - ptid: '{251;424}'
+        pos: num-zero-top
+        points:
+        - ptid: '{224;391}'
+          rel: stem
+          round: false
+      - ptid: '{48;-225}'
+        points:
+        - ptid: '{40;-204}'
+          rel: shift
+      - ptid: '{208;41}'
+        ref:
+        - '{48;-225}'
+        - '{251;424}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{227;96}'
+          rel: stem
+          round: false
+  colon:
+    y:
+      points:
+      - ptid: '{172;-12}'
+        pos: punct-period-bottom
+        points:
+        - ptid: '{172;103}'
+          rel: stem
+          points:
+          - ptid: '{172;302}'
+            rel: stem
+            points:
+            - ptid: '{172;417}'
+              rel: stem
+  semicolon:
+    y:
+      points:
+      - ptid: '{150;115}'
+        points:
+        - ptid: '{102;-173}'
+          rel: stem
+        - ptid: '{148;301}'
+          rel: stem
+          points:
+          - ptid: '{148;417}'
+            rel: stem
+  equal:
+    y:
+      points:
+      - ptid: '{58;210}'
+        points:
+        - ptid: '{58;291}'
+          rel: stem
+          points:
+          - ptid: '{58;340}'
+            rel: stem
+            round: false
+        - ptid: '{58;161}'
+          rel: stem
+          round: false
+  question:
+    y:
+      points:
+      - ptid: '{165;-12}'
+        pos: punct-period-bottom
+        points:
+        - ptid: '{165;103}'
+          rel: stem
+          points:
+          - ptid: '{163;205}'
+            rel: stem
+      - ptid: '{144;665}'
+        pos: lc-diacritic-height
+      - ptid:
+        - '{136;583}'
+        - '{171;385}'
+        - '{200;319}'
+        ref:
+        - '{144;665}'
+        - '{163;205}'
+        rel: interpolate
+  at:
+    y:
+      points:
+      - ptid: '{386;-16}'
+        points:
+        - ptid: '{416;19}'
+          rel: stem
+          round: false
+      - ptid: '{444;676}'
+        points:
+        - ptid: '{445;642}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{292;176}'
+        - '{445;495}'
+        - '{480;175}'
+        ref:
+        - '{444;676}'
+        - '{386;-16}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{323;216}'
+          ref: '{292;176}'
+          rel: stem
+          round: false
+        - ptid: '{435;471}'
+          ref: '{445;495}'
+          rel: stem
+          round: false
+  braceleft:
+    y:
+      points:
+      - ptid: '{349;729}'
+        points:
+        - ptid: '{349;706}'
+          rel: stem
+          round: false
+      - ptid: '{349;-156}'
+        points:
+        - ptid: '{349;-133}'
+          rel: stem
+          round: false
+      - ptid: '{37;293}'
+        ref:
+        - '{349;-156}'
+        - '{349;729}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{37;310}'
+          rel: stem
+          round: false
+      - ptid: '{127;300}'
+        ref:
+        - '{37;293}'
+        - '{37;310}'
+        rel: interpolate
+  bar:
+    y:
+      points:
+      - ptid: '{114;700}'
+      - ptid: '{114;-163}'
+  braceright:
+    y:
+      points:
+      - ptid: '{39;729}'
+        points:
+        - ptid: '{39;706}'
+          rel: stem
+          round: false
+      - ptid: '{39;-156}'
+        points:
+        - ptid: '{39;-133}'
+          rel: stem
+          round: false
+      - ptid: '{351;293}'
+        ref:
+        - '{39;-156}'
+        - '{39;729}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{351;310}'
+          rel: stem
+          round: false
+      - ptid: '{261;303}'
+        ref:
+        - '{351;293}'
+        - '{351;310}'
+        rel: interpolate
+  asciitilde:
+    y:
+      points:
+      - ptid: '{316;188}'
+        points:
+        - ptid: '{336;266}'
+          rel: stem
+          round: false
+        - ptid: '{140;266}'
+          rel: stem
+          points:
+          - ptid: '{160;344}'
+            rel: stem
+            round: false
+  exclamdown:
+    y:
+      points:
+      - ptid: '{127;425}'
+        points:
+        - ptid: '{127;310}'
+          rel: stem
+          points:
+          - ptid: '{126;208}'
+            rel: stem
+            points:
+            - ptid: '{125;-271}'
+              rel: stem
+  cent:
+    y:
+      points:
+      - ptid: '{217;109}'
+        points:
+        - ptid: '{174;116}'
+          rel: shift
+        - ptid: '{262;164}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{228;169}'
+            - '{188;193}'
+            rel: shift
+        - ptid: '{179;10}'
+          rel: stem
+      - ptid: '{250;545}'
+        points:
+        - ptid: '{294;543}'
+          rel: shift
+        - ptid: '{244;512}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{287;502}'
+            rel: shift
+        - ptid: '{290;642}'
+          rel: stem
+  sterling:
+    y:
+      points:
+      - ptid: '{262;-20}'
+        points:
+        - ptid: '{73;-20}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{73;4}'
+            rel: stem
+            round: false
+        - ptid: '{258;36}'
+          rel: stem
+          round: false
+      - ptid: '{235;425}'
+        points:
+        - ptid: '{231;403}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{77;77}'
+        - '{129;195}'
+        ref:
+        - '{235;425}'
+        - '{262;-20}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{78;54}'
+          ref: '{77;77}'
+          rel: stem
+          round: false
+        - ptid: '{117;226}'
+          ref: '{129;195}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{194;226}'
+            rel: shift
+        - ptid: '{200;195}'
+          ref: '{129;195}'
+          rel: shift
+      - ptid:
+        - '{143;62}'
+        - '{181;50}'
+        - '{162;22}'
+        - '{134;39}'
+        ref:
+        - '{73;-20}'
+        - '{129;195}'
+        rel: interpolate
+  currency:
+    y:
+      points:
+      - ptid: '{250;538}'
+        points:
+        - ptid: '{250;495}'
+          rel: stem
+          round: false
+      - ptid: '{251;114}'
+        points:
+        - ptid: '{251;157}'
+          rel: stem
+          round: false
+  yen:
+    y:
+      points:
+      - ptid:
+          base: '{209;0}'
+          pt-a: '{126;-2}'
+          pt-b: '{126;27}'
+          pt-a-sh: '{291;-2}'
+          pt-b-sh: '{291;27}'
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{88;415}'
+          pt-a: '{10;417}'
+          pt-b: '{10;387}'
+          base-sh: '{361;415}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: lc-serif
+      - ptid:
+        - '{144;220}'
+        - '{167;178}'
+        ref:
+        - '{88;415}'
+        - '{209;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{119;259}'
+          ref: '{144;220}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{298;259}'
+            rel: shift
+        - ptid: '{171;139}'
+          ref: '{167;178}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{246;139}'
+            rel: shift
+        - ptid: '{271;220}'
+          ref: '{144;220}'
+          rel: shift
+        - ptid: '{248;178}'
+          ref: '{167;178}'
+          rel: shift
+    props:
+      category: Ll
+    names:
+      serif-top-sh-a:
+      - '{166;417}'
+      - '{291;417}'
+      - '{431;417}'
+      serif-top-sh-b:
+      - '{166;387}'
+      - '{291;387}'
+      - '{431;387}'
+  brokenbar:
+    y:
+      points:
+      - ptid: '{114;407}'
+        points:
+        - ptid: '{114;316}'
+          rel: stem
+          points:
+          - ptid: '{114;54}'
+            rel: stem
+        - ptid: '{114;670}'
+          rel: stem
+  section:
+    y:
+      points:
+      - ptid: '{223;-197}'
+        points:
+        - ptid: '{230;-159}'
+          rel: stem
+          round: false
+      - ptid: '{249;674}'
+        points:
+        - ptid: '{237;636}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{139;408}'
+        - '{163;389}'
+        - '{341;90}'
+        - '{314;110}'
+        ref:
+        - '{223;-197}'
+        - '{249;674}'
+        rel: interpolate
+  dieresis:
+    y:
+      points:
+      - ptid: '{106;512}'
+        pos: lc-diacritic-height
+        points:
+        - ptid: '{292;512}'
+          rel: shift
+        - ptid: '{106;617}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{292;617}'
+            rel: shift
+  copyright:
+    y:
+      points:
+      - ptid: '{401;717}'
+        points:
+        - ptid: '{401;683}'
+          rel: stem
+          round: false
+      - ptid: '{401;13}'
+        points:
+        - ptid: '{397;47}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{396;158}'
+        - '{412;572}'
+        ref:
+        - '{401;13}'
+        - '{401;717}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{404;551}'
+          ref: '{412;572}'
+          rel: stem
+          round: false
+        - ptid: '{403;180}'
+          ref: '{396;158}'
+          rel: stem
+          round: false
+  ordfeminine:
+    y:
+      points:
+      - ptid: '{97;246}'
+        points:
+        - ptid: '{237;246}'
+          rel: shift
+        - ptid: '{129;284}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{258;284}'
+            rel: shift
+      - ptid: '{150;560}'
+        points:
+        - ptid: '{126;530}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{159;423}'
+        - '{163;401}'
+        ref:
+        - '{150;560}'
+        - '{97;246}'
+        rel: interpolate
+  logicalnot:
+    y:
+      points:
+      - ptid: '{0;262}'
+        points:
+        - ptid: '{0;321}'
+          rel: stem
+      - ptid: '{607;0}'
+        pos: baseline
+  registered:
+    y:
+      points:
+      - ptid: '{401;717}'
+        points:
+        - ptid: '{401;683}'
+          rel: stem
+          round: false
+      - ptid: '{401;13}'
+        points:
+        - ptid: '{397;47}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{296;178}'
+        - '{277;575}'
+        - '{586;171}'
+        - '{356;353}'
+        ref:
+        - '{401;717}'
+        - '{401;13}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{375;198}'
+          ref: '{296;178}'
+          rel: stem
+          points:
+          - ptid: '{218;198}'
+            rel: shift
+        - ptid: '{357;558}'
+          ref: '{277;575}'
+          rel: stem
+          round: false
+        - ptid: '{215;554}'
+          ref: '{277;575}'
+          rel: stem
+          round: false
+        - ptid: '{360;371}'
+          ref: '{356;353}'
+          rel: stem
+          round: false
+        - ptid: '{605;183}'
+          ref: '{586;171}'
+          rel: stem
+          round: false
+      - ptid: '{442;358}'
+        ref:
+        - '{356;353}'
+        - '{360;371}'
+        rel: interpolate
+  macron:
+    y:
+      points:
+      - ptid: '{38;512}'
+        points:
+        - ptid: '{38;558}'
+          rel: stem
+          round: false
+        pos: lc-diacritic-height
+  degree:
+    y:
+      points:
+      - ptid: '{174;387}'
+        points:
+        - ptid: '{174;422}'
+          rel: stem
+          round: false
+      - ptid: '{174;645}'
+        points:
+        - ptid: '{174;610}'
+          rel: stem
+          round: false
+  plusminus:
+    y:
+      points:
+      - ptid: '{58;1}'
+        pos: baseline
+        points:
+        - ptid: '{58;50}'
+          rel: stem
+          points:
+          - ptid: '{221;110}'
+            rel: stem
+            points:
+            - ptid: '{221;504}'
+              rel: stem
+      - ptid: '{221;291}'
+        ref:
+        - '{221;504}'
+        - '{221;110}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{221;340}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{280;340}'
+            rel: shift
+        - ptid: '{280;291}'
+          rel: shift
+  uni00B5:
+    y:
+      points:
+      - ptid: '{417;418}'
+        pos: lc-u-top
+        points:
+        - ptid:
+          - '{426;405}'
+          - '{155;418}'
+          rel: shift
+        - ptid: '{294;410}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{32;410}'
+            rel: shift
+          - ptid: '{294;382}'
+            rel: stem
+            round: false
+            points:
+            - ptid: '{32;382}'
+              rel: shift
+      - ptid: '{215;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{239;36}'
+          rel: stem
+          round: false
+        - ptid: '{356;-16}'
+          rel: stem
+          min: false
+      - ptid: '{105;-240}'
+  paragraph:
+    y:
+      points:
+      - ptid:
+          base: '{264;0}'
+          pt-a: '{181;-4}'
+          pt-b: '{181;24}'
+          base-sh: '{389;0}'
+          pt-a-sh: '{466;-4}'
+          pt-b-sh: '{466;24}'
+        macro:
+          nm: cap-serif
+      - ptid: '{323;24}'
+        ref: '{264;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{384;661}'
+          pt-a: '{466;664}'
+          pt-b: '{466;636}'
+          base-sh: '{221;663}'
+        macro:
+          nm: lc-serif
+          base-cv: cap-height
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{323;635}'
+        ref: '{384;661}'
+        rel: stem
+        round: false
+      - ptid: '{213;292}'
+        ref:
+        - '{384;661}'
+        - '{264;0}'
+        rel: interpolate
+        round: true
+    props:
+      category: Lu
+  periodcentered:
+    y:
+      points:
+      - ptid: '{133;245}'
+        points:
+        - ptid: '{133;360}'
+          rel: stem
+          round: false
+  cedilla:
+    y:
+      points:
+      - ptid: '{202;5}'
+        points:
+        - ptid: '{157;-221}'
+          rel: stem
+      - ptid:
+        - '{152;-96}'
+        - '{203;-46}'
+        - '{177;-189}'
+        ref:
+        - '{157;-221}'
+        - '{202;5}'
+        rel: interpolate
+  ordmasculine:
+    y:
+      points:
+      - ptid: '{175;276}'
+        points:
+        - ptid: '{172;303}'
+          rel: stem
+          round: false
+      - ptid: '{173;590}'
+        points:
+        - ptid: '{173;567}'
+          rel: stem
+          round: false
+  questiondown:
+    y:
+      points:
+      - ptid: '{228;425}'
+        points:
+        - ptid: '{228;310}'
+          rel: stem
+          points:
+          - ptid: '{231;204}'
+            rel: stem
+            points:
+            - ptid: '{250;-257}'
+              rel: stem
+      - ptid:
+        - '{194;89}'
+        - '{224;23}'
+        - '{258;-175}'
+        ref:
+        - '{231;204}'
+        - '{250;-257}'
+        rel: interpolate
+  Aring:
+    y:
+      points:
+      - ptid:
+          base: '{109;0}'
+          pt-a: '{5;-3}'
+          pt-b: '{5;34}'
+          base-sh: '{556;0}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{345;837}'
+      - ptid: '{204;259}'
+        ref:
+        - '{345;837}'
+        - '{109;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{215;293}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{345;805}'
+        - '{330;581}'
+        - '{345;681}'
+        - '{311;652}'
+        - '{386;655}'
+        ref:
+        - '{345;837}'
+        - '{204;259}'
+        rel: interpolate
+    names:
+      serif-sh-a:
+      - '{443;-3}'
+      - '{212;-3}'
+      - '{668;-3}'
+      serif-sh-b:
+      - '{212;34}'
+      - '{443;34}'
+      - '{668;34}'
+  AE:
+    y:
+      points:
+      - ptid:
+          base: '{109;0}'
+          pt-a: '{5;-3}'
+          pt-b: '{5;34}'
+          base-sh: '{477;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{477;663}'
+          pt-a: '{341;666}'
+          pt-b: '{341;629}'
+          pt-a-sh: '{802;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{438;295}'
+        ref:
+        - '{477;663}'
+        - '{109;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{438;334}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{516;334}'
+            rel: shift
+        - ptid: '{516;295}'
+          rel: shift
+      - ptid: '{536;632}'
+        ref: '{477;663}'
+        rel: stem
+        round: false
+      - ptid: '{592;30}'
+        ref: '{477;0}'
+        rel: stem
+        round: false
+      - ptid: '{418;595}'
+        ref: '{477;663}'
+        rel: shift
+    names:
+      serif-bot-sh-a:
+      - '{346;-3}'
+      - '{212;-3}'
+      - '{834;-3}'
+      serif-bot-sh-b:
+      - '{212;34}'
+      - '{346;34}'
+  Oslash:
+    y:
+      points:
+      - ptid: '{356;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{109;-3}'
+          rel: shift
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{600;647}'
+          rel: shift
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+  Thorn:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{48;-3}'
+          pt-b: '{48;34}'
+          pt-a-sh: '{301;-3}'
+          pt-b-sh: '{301;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          pt-a-sh: '{301;666}'
+          pt-b-sh: '{301;628}'
+        macro:
+          nm: cap-serif
+      - ptid:
+        - '{317;536}'
+        - '{314;164}'
+        ref:
+        - '{174;0}'
+        - '{172;663}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{284;194}'
+          ref: '{314;164}'
+          rel: stem
+          round: false
+        - ptid: '{252;506}'
+          ref: '{317;536}'
+          rel: stem
+          round: false
+  germandbls:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-4}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{230;-4}'
+          pt-b-sh: '{230;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{358;-12}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{372;19}'
+          rel: stem
+          round: false
+      - ptid: '{329;726}'
+        pos: lc-ascender
+        points:
+        - ptid: '{290;686}'
+          rel: stem
+          round: false
+      - ptid: '{85;348}'
+        ref:
+        - '{329;726}'
+        - '{136;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{43;375}'
+          rel: stem
+          round: false
+  ae:
+    y:
+      points:
+      - ptid: '{145;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{417;-11}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{448;46}'
+            rel: stem
+            round: false
+        - ptid: '{182;36}'
+          rel: stem
+          round: false
+      - ptid: '{208;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{176;387}'
+          rel: stem
+          round: false
+        - ptid: '{430;425}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{420;395}'
+            rel: stem
+            round: false
+      - ptid:
+        - '{242;243}'
+        - '{243;214}'
+        - '{312;242}'
+        - '{316;274}'
+        ref:
+        - '{208;425}'
+        - '{145;-11}'
+        rel: interpolate
+  ccedilla:
+    y:
+      points:
+      - ptid: '{246;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{212;-10}'
+          rel: shift
+        - ptid: '{264;44}'
+          rel: stem
+          round: false
+      - ptid: '{270;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{249;392}'
+          rel: stem
+          round: false
+      - ptid: '{177;-221}'
+      - ptid:
+        - '{223;-46}'
+        - '{163;-86}'
+        - '{197;-189}'
+        ref:
+        - '{246;-11}'
+        - '{177;-221}'
+        rel: interpolate
+  eth:
+    y:
+      points:
+      - ptid: '{244;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{242;21}'
+          rel: stem
+          round: false
+      - ptid: '{246;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{252;396}'
+          rel: stem
+          round: false
+      - ptid: '{127;725}'
+      - ptid:
+        - '{161;474}'
+        - '{386;677}'
+        - '{264;549}'
+        - '{244;574}'
+        - '{284;603}'
+        - '{307;580}'
+        ref:
+        - '{127;725}'
+        - '{246;425}'
+        rel: interpolate
+  divide:
+    y:
+      points:
+      - ptid: '{256;14}'
+        points:
+        - ptid: '{256;115}'
+          rel: stem
+          points:
+          - ptid: '{456;181}'
+            rel: stem
+            points:
+            - ptid: '{456;230}'
+              rel: stem
+              points:
+              - ptid: '{256;296}'
+                rel: stem
+                points:
+                - ptid: '{256;397}'
+                  rel: stem
+  oslash:
+    y:
+      points:
+      - ptid: '{231;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{80;-32}'
+          rel: shift
+        - ptid: '{231;21}'
+          rel: stem
+          round: false
+      - ptid: '{231;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{373;447}'
+          rel: shift
+        - ptid: '{231;396}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{90;44}'
+        - '{118;22}'
+        - '{128;97}'
+        - '{148;65}'
+        - '{337;396}'
+        - '{365;375}'
+        - '{310;357}'
+        - '{330;326}'
+        ref:
+        - '{231;425}'
+        - '{231;-11}'
+        rel: interpolate
+  aogonek:
+    y:
+      points:
+      - ptid: '{130;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{173;38}'
+          rel: stem
+          round: false
+        - ptid: '{298;-9}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{345;42}'
+            rel: stem
+            round: false
+        - ptid: '{276;-251}'
+          rel: stem
+          points:
+          - ptid: '{315;-197}'
+            rel: stem
+            round: false
+      - ptid: '{202;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{169;388}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{235;241}'
+        - '{228;215}'
+        ref:
+        - '{202;425}'
+        - '{130;-11}'
+        rel: interpolate
+  thorn:
+    y:
+      points:
+      - ptid:
+          base: '{130;-269}'
+          pt-a: '{28;-272}'
+          pt-b: '{28;-245}'
+          pt-a-sh: '{232;-272}'
+          pt-b-sh: '{232;-245}'
+        macro:
+          nm: lc-serif
+      - ptid: '{157;725}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{40;640}'
+          - '{40;667}'
+          rel: shift
+      - ptid: '{248;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{253;20}'
+          rel: stem
+          round: false
+      - ptid: '{282;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{261;385}'
+          rel: stem
+          round: false
+  dcroat:
+    y:
+      points:
+      - ptid: '{204;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{246;36}'
+          rel: stem
+          round: false
+        - ptid: '{344;-16}'
+          rel: stem
+          min: false
+      - ptid: '{264;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{253;396}'
+          rel: stem
+          round: false
+      - ptid: '{409;725}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{291;640}'
+          - '{291;667}'
+          rel: shift
+      - ptid: '{336;513}'
+        ref:
+        - '{409;725}'
+        - '{264;425}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{336;559}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{411;559}'
+            rel: shift
+        - ptid: '{411;513}'
+          rel: shift
+  Hbar:
+    y:
+      points:
+      - ptid:
+          base: '{175;0}'
+          pt-a: '{48;-3}'
+          pt-b: '{48;34}'
+          base-sh: '{634;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{172;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          base-sh: '{631;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          pt-a: '{213;322}'
+          pt-b: '{213;363}'
+          ref1: '{172;663}'
+          ref2: '{175;0}'
+        macro:
+          nm: mid-stem
+      - ptid: '{135;482}'
+        ref:
+        - '{175;0}'
+        - '{172;663}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{135;523}'
+          rel: stem
+          round: false
+          points:
+          - ptid:
+            - '{213;523}'
+            - '{672;523}'
+            rel: shift
+        - ptid:
+          - '{213;482}'
+          - '{672;482}'
+          rel: shift
+    names:
+      serif-bot-sh-a:
+      - '{507;-3}'
+      - '{301;-3}'
+      - '{760;-3}'
+      serif-bot-sh-b:
+      - '{301;34}'
+      - '{507;34}'
+      - '{760;34}'
+      serif-top-sh-a:
+      - '{301;666}'
+      - '{502;666}'
+      - '{760;666}'
+      serif-top-sh-b:
+      - '{301;628}'
+      - '{502;628}'
+      - '{760;628}'
+  hbar:
+    y:
+      points:
+      - ptid:
+          base: '{133;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: '{416;0}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{302;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{266;381}'
+          rel: stem
+          round: false
+      - ptid: '{170;725}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{53;640}'
+          - '{53;667}'
+          rel: shift
+      - ptid: '{173;509}'
+        ref:
+        - '{170;725}'
+        - '{302;425}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{173;555}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{98;555}'
+            rel: shift
+        - ptid: '{98;509}'
+          rel: shift
+    names:
+      serif-sh-a:
+      - '{320;-4}'
+      - '{227;-4}'
+      - '{512;-4}'
+      serif-sh-b:
+      - '{320;24}'
+      - '{227;24}'
+      - '{512;24}'
+  dotlessi:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-3}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{231;-3}'
+          pt-b-sh: '{231;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{170;431}'
+        pos: num-zero-top
+        points:
+        - ptid:
+          - '{53;346}'
+          - '{53;373}'
+          rel: shift
+  kgreenlandic:
+    y:
+      points:
+      - ptid:
+          base: '{124;0}'
+          pt-a: '{28;-4}'
+          pt-b: '{28;24}'
+          pt-a-sh: '{218;-4}'
+          pt-b-sh: '{218;24}'
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{122;415}'
+          pt-a: '{27;418}'
+          pt-b: '{27;391}'
+          pt-a-sh: '{217;418}'
+          pt-b-sh: '{217;391}'
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{386;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{332;351}'
+          rel: stem
+          round: false
+      - ptid: '{396;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{415;28}'
+          rel: stem
+          round: false
+      - ptid: '{171;204}'
+        ref:
+        - '{124;0}'
+        - '{122;415}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{169;257}'
+          rel: stem
+          round: false
+      - ptid: '{239;254}'
+        ref:
+        - '{171;204}'
+        - '{169;257}'
+        rel: interpolate
+  ldot:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-4}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{231;-4}'
+          pt-b-sh: '{231;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{170;725}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{53;640}'
+          - '{53;667}'
+          rel: shift
+      - ptid: '{312;245}'
+        ref:
+        - '{136;0}'
+        - '{170;725}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{312;360}'
+          rel: stem
+          round: false
+  Lslash:
+    y:
+      points:
+      - ptid:
+          base: '{176;0}'
+          pt-a: '{51;-3}'
+          pt-b: '{51;34}'
+          pt-a-sh: '{583;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{302;30}'
+        ref: '{176;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{173;663}'
+          pt-a: '{45;666}'
+          pt-b: '{45;628}'
+          pt-a-sh: '{300;666}'
+          pt-b-sh: '{300;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+        - '{137;281}'
+        - '{137;341}'
+        - '{215;382}'
+        - '{215;322}'
+        ref:
+        - '{173;663}'
+        - '{176;0}'
+        rel: interpolate
+  lslash:
+    y:
+      points:
+      - ptid:
+          base: '{127;0}'
+          pt-a: '{32;-4}'
+          pt-b: '{32;24}'
+          pt-a-sh: '{222;-4}'
+          pt-b-sh: '{222;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{161;726}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{44;641}'
+          - '{44;668}'
+          rel: shift
+      - ptid:
+        - '{89;319}'
+        - '{89;362}'
+        - '{164;404}'
+        - '{164;362}'
+        ref:
+        - '{161;726}'
+        - '{127;0}'
+        rel: interpolate
+  Eng:
+    y:
+      points:
+      - ptid:
+          base: '{149;0}'
+          pt-a: '{53;-3}'
+          pt-b: '{53;34}'
+          pt-a-sh: '{245;-3}'
+          pt-b-sh: '{245;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{115;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          base-sh: '{611;663}'
+          pt-a-sh: serif-top-sh-a
+          pt-b-sh: serif-top-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+        - '{168;550}'
+        - '{603;143}'
+        - '{603;10}'
+        ref:
+        - '{115;663}'
+        - '{149;0}'
+        rel: interpolate
+      - ptid: '{467;-253}'
+        points:
+        - ptid: '{521;-213}'
+          rel: stem
+          round: false
+    names:
+      serif-top-sh-a:
+      - '{519;666}'
+      - '{702;666}'
+      serif-top-sh-b:
+      - '{519;628}'
+      - '{702;628}'
+  eng:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          pt-a-sh: '{229;-4}'
+          pt-b-sh: '{229;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{260;-271}'
+        pos: lc-descender
+        points:
+        - ptid: '{313;-228}'
+          rel: stem
+          round: false
+      - ptid: '{301;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{285;381}'
+          rel: stem
+          round: false
+        - ptid: '{168;431}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{51;346}'
+            - '{51;374}'
+            rel: shift
+  OE:
+    y:
+      points:
+      - ptid: '{511;663}'
+        pos: cap-height
+        points:
+        - ptid: '{570;632}'
+          rel: stem
+          round: false
+        - ptid: '{358;632}'
+          rel: stem
+          round: false
+      - ptid: '{511;0}'
+        pos: baseline
+        points:
+        - ptid: '{629;30}'
+          rel: stem
+          round: false
+        - ptid: '{365;33}'
+          rel: stem
+          round: false
+      - ptid: '{550;293}'
+        ref:
+        - '{511;663}'
+        - '{511;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{550;333}'
+          rel: stem
+          round: false
+  oe:
+    y:
+      points:
+      - ptid: '{231;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{231;21}'
+          rel: stem
+          round: false
+        - ptid: '{537;-11}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{572;46}'
+            rel: stem
+            round: false
+      - ptid: '{231;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{534;425}'
+          rel: shift
+        - ptid: '{231;396}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{532;396}'
+            rel: shift
+      - ptid:
+          pt-a: '{433;268}'
+          pt-b: '{440;301}'
+          ref1: '{231;-11}'
+          ref2: '{231;425}'
+        macro:
+          nm: mid-stem
+  Uogonek:
+    y:
+      points:
+      - ptid:
+          base: '{170;663}'
+          pt-a: '{35;666}'
+          pt-b: '{35;628}'
+          base-sh: '{601;663}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{370;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{382;23}'
+          rel: stem
+          round: false
+        - ptid: '{427;-251}'
+          rel: stem
+          points:
+          - ptid: '{465;-197}'
+            rel: stem
+            round: false
+    names:
+      serif-sh-a:
+      - '{305;666}'
+      - '{484;666}'
+      - '{717;666}'
+      serif-sh-b:
+      - '{305;628}'
+      - '{484;628}'
+      - '{717;628}'
+  uogonek:
+    y:
+      points:
+      - ptid: '{416;419}'
+        pos: lc-u-top
+        points:
+        - ptid: '{153;419}'
+          rel: shift
+        - ptid: '{293;410}'
+          rel: stem
+          min: false
+          points:
+          - ptid: '{31;410}'
+            rel: shift
+          - ptid: '{293;383}'
+            rel: stem
+            round: false
+            points:
+            - ptid: '{31;383}'
+              rel: shift
+  longs:
+    y:
+      points:
+      - ptid:
+          base: '{143;0}'
+          pt-a: '{41;-4}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{245;-4}'
+          pt-b-sh: '{245;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{328;726}'
+        pos: lc-ascender
+        points:
+        - ptid: '{279;680}'
+          rel: stem
+          round: false
+      - ptid: '{98;348}'
+        ref:
+        - '{328;726}'
+        - '{143;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{44;375}'
+          rel: stem
+          round: false
+  uni0181:
+    y:
+      points:
+      - ptid:
+          base: '{292;0}'
+          pt-a: '{165;-3}'
+          pt-b: '{165;34}'
+          pt-a-sh: '{428;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{421;28}'
+        ref: '{292;0}'
+        rel: stem
+        round: false
+      - ptid: '{292;663}'
+        pos: cap-height
+        points:
+        - ptid: '{160;628}'
+          rel: stem
+          round: false
+        - ptid: '{357;636}'
+          rel: stem
+          round: false
+      - ptid: '{331;339}'
+        ref:
+        - '{292;663}'
+        - '{292;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{331;369}'
+          rel: stem
+          round: false
+      - ptid: '{519;356}'
+        ref:
+        - '{331;369}'
+        - '{331;339}'
+        rel: interpolate
+  uni0182:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          pt-a-sh: '{294;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{335;28}'
+        ref: '{174;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{174;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;629}'
+          pt-a-sh: '{489;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{243;635}'
+        ref: '{174;663}'
+        rel: stem
+        round: false
+      - ptid: '{297;368}'
+        ref:
+        - '{174;663}'
+        - '{174;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{284;339}'
+          rel: stem
+          round: false
+  uni0183:
+    y:
+      points:
+      - ptid:
+          base: '{114;655}'
+          pt-a: '{31;657}'
+          pt-b: '{31;625}'
+          pt-a-sh: '{343;657}'
+        macro:
+          nm: lc-serif
+          base-cv: lc-ascender
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{160;625}'
+        ref: '{114;655}'
+        rel: stem
+        round: false
+      - ptid: '{267;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{104;-11}'
+          rel: stem
+          min: false
+        - ptid: '{254;18}'
+          rel: stem
+          round: false
+      - ptid: '{265;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{234;386}'
+          rel: stem
+          round: false
+  uni0184:
+    y:
+      points:
+      - ptid:
+          base: '{170;0}'
+          pt-a: '{43;-3}'
+          pt-b: '{43;34}'
+          pt-a-sh: '{305;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{313;28}'
+        ref: '{170;0}'
+        rel: stem
+        round: false
+      - ptid: '{196;625}'
+        pos: cap-height
+        points:
+        - ptid:
+          - '{45;492}'
+          - '{45;529}'
+          rel: shift
+      - ptid: '{313;369}'
+        ref:
+        - '{196;625}'
+        - '{170;0}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{293;333}'
+          rel: stem
+          round: false
+  uni0185:
+    y:
+      points:
+      - ptid: '{267;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{102;-12}'
+          rel: stem
+          min: false
+        - ptid: '{257;18}'
+          rel: stem
+          round: false
+      - ptid: '{265;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{236;386}'
+          rel: stem
+          round: false
+      - ptid: '{150;588}'
+        points:
+        - ptid:
+          - '{34;490}'
+          - '{34;521}'
+          rel: shift
+  uni0186:
+    y:
+      points:
+      - ptid: '{260;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{274;23}'
+          rel: stem
+          round: false
+      - ptid: '{287;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{275;640}'
+          rel: stem
+          round: false
+  uni0187:
+    y:
+      points:
+      - ptid: '{376;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{389;23}'
+          rel: stem
+          round: false
+      - ptid: '{397;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{371;642}'
+          rel: stem
+          round: false
+        - ptid: '{697;770}'
+          rel: stem
+          points:
+          - ptid: '{649;729}'
+            rel: stem
+            round: false
+  uni0188:
+    y:
+      points:
+      - ptid: '{235;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{264;44}'
+          rel: stem
+          round: false
+      - ptid: '{270;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{249;392}'
+          rel: stem
+          round: false
+        - ptid: '{473;524}'
+          rel: stem
+          points:
+          - ptid: '{421;482}'
+            rel: stem
+            round: false
+  uni018A:
+    y:
+      points:
+      - ptid:
+          base: '{273;0}'
+          pt-a: '{146;-3}'
+          pt-b: '{146;34}'
+          pt-a-sh: '{468;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{435;26}'
+        ref: '{273;0}'
+        rel: stem
+        round: false
+      - ptid: '{273;663}'
+        pos: cap-height
+        points:
+        - ptid: '{141;626}'
+          rel: stem
+          round: false
+        - ptid: '{405;636}'
+          rel: stem
+          round: false
+  uni018B:
+    y:
+      points:
+      - ptid:
+          base: '{439;663}'
+          pt-a: '{570;666}'
+          pt-b: '{570;626}'
+          pt-a-sh: '{124;666}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{371;632}'
+        ref: '{439;663}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{439;0}'
+          pt-a: '{566;-3}'
+          pt-b: '{566;34}'
+          pt-a-sh: '{319;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{279;28}'
+        ref: '{439;0}'
+        rel: stem
+        round: false
+      - ptid: '{298;368}'
+        ref:
+        - '{439;0}'
+        - '{439;663}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{311;339}'
+          rel: stem
+          round: false
+  uni018C:
+    y:
+      points:
+      - ptid: '{204;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{246;36}'
+          rel: stem
+          round: false
+        - ptid: '{344;-16}'
+          rel: stem
+          min: false
+      - ptid: '{264;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{253;396}'
+          rel: stem
+          round: false
+      - ptid:
+          base: '{374;656}'
+          pt-a: '{467;658}'
+          pt-b: '{467;626}'
+          pt-a-sh: '{144;658}'
+        macro:
+          nm: lc-serif
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{327;626}'
+        ref: '{374;656}'
+        rel: stem
+        round: false
+  uni018D:
+    y:
+      points:
+      - ptid: '{235;597}'
+        points:
+        - ptid: '{236;564}'
+          rel: stem
+          round: false
+      - ptid: '{236;161}'
+        points:
+        - ptid: '{234;189}'
+          rel: stem
+          round: false
+      - ptid: '{261;-139}'
+        points:
+        - ptid: '{276;-113}'
+          rel: stem
+          round: false
+  uni018E:
+    y:
+      points:
+      - ptid:
+          base: '{433;0}'
+          pt-a: '{563;-3}'
+          pt-b: '{563;34}'
+          pt-a-sh: '{75;-3}'
+        macro:
+          nm: cap-serif
+      - ptid: '{317;30}'
+        ref: '{433;0}'
+        rel: stem
+        round: false
+      - ptid:
+          base: '{433;663}'
+          pt-a: '{563;666}'
+          pt-b: '{563;628}'
+          pt-a-sh: '{107;666}'
+        macro:
+          nm: cap-serif
+      - ptid: '{374;632}'
+        ref: '{433;663}'
+        rel: stem
+        round: false
+      - ptid:
+          pt-a: '{394;298}'
+          pt-b: '{394;332}'
+          ref1: '{433;663}'
+          ref2: '{433;0}'
+        macro:
+          nm: mid-stem
+  uni018F:
+    y:
+      points:
+      - ptid: '{359;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{366;23}'
+          rel: stem
+          round: false
+      - ptid: '{364;677}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{343;629}'
+          rel: stem
+          round: false
+      - ptid:
+          pt-a: '{576;240}'
+          pt-b: '{581;292}'
+          ref1: '{364;677}'
+          ref2: '{359;-13}'
+        macro:
+          nm: mid-stem
+  uni0190:
+    y:
+      points:
+      - ptid: '{264;-11}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{283;37}'
+          rel: stem
+          round: false
+      - ptid: '{235;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{252;633}'
+          rel: stem
+          round: false
+      - ptid: '{276;350}'
+        ref:
+        - '{235;676}'
+        - '{264;-11}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{338;382}'
+          rel: stem
+          round: false
+      - ptid: '{192;375}'
+        ref:
+        - '{276;350}'
+        - '{338;382}'
+        rel: interpolate
+  uni0191:
+    y:
+      points:
+      - ptid:
+          base: '{213;663}'
+          pt-a: '{83;666}'
+          pt-b: '{83;629}'
+          pt-a-sh: '{547;666}'
+        macro:
+          nm: cap-serif
+      - ptid: '{272;629}'
+        ref: '{213;663}'
+        rel: stem
+        round: false
+      - ptid: '{34;-205}'
+        points:
+        - ptid: '{75;-159}'
+          rel: stem
+          round: false
+      - ptid:
+          pt-a: '{252;314}'
+          pt-b: '{252;351}'
+          ref1: '{213;663}'
+          ref2: '{34;-205}'
+        macro:
+          nm: mid-stem
+  florin:
+    y:
+      points:
+      - ptid: '{-2;-271}'
+        pos: lc-descender
+        points:
+        - ptid: '{50;-228}'
+          rel: stem
+          round: false
+      - ptid: '{328;726}'
+        pos: lc-ascender
+        points:
+        - ptid: '{279;680}'
+          rel: stem
+          round: false
+      - ptid: '{173;415}'
+        pos: xheight
+        points:
+        - ptid: '{173;373}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{98;373}'
+            rel: shift
+          - ptid: '{44;400}'
+            rel: stem
+            round: false
+  uni0193:
+    y:
+      points:
+      - ptid: '{375;-13}'
+        pos: cap-baseline-undershoot
+      - ptid: '{408;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{393;642}'
+          rel: stem
+          round: false
+        - ptid: '{701;770}'
+          rel: stem
+          points:
+          - ptid: '{653;729}'
+            rel: stem
+            round: false
+      - ptid:
+          base: '{552;268}'
+          pt-a: '{411;271}'
+          pt-b: '{669;233}'
+          base-sh: '{411;233}'
+          pt-a-sh: '{669;271}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-G-serif-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+  uni0194:
+    y:
+      points:
+      - ptid:
+          base: '{110;663}'
+          pt-a: '{-5;666}'
+          pt-b: '{-5;628}'
+          base-sh: '{530;663}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{317;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{307;28}'
+          rel: stem
+          round: false
+      - ptid:
+        - '{275;258}'
+        - '{322;330}'
+        - '{342;297}'
+        - '{296;225}'
+        ref:
+        - '{317;-13}'
+        - '{110;663}'
+        rel: interpolate
+    names:
+      serif-sh-a:
+      - '{226;666}'
+      - '{434;665}'
+      - '{626;665}'
+      serif-sh-b:
+      - '{226;628}'
+      - '{434;628}'
+      - '{626;628}'
+  uni0195:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          pt-a-sh: '{229;-4}'
+          pt-b-sh: '{229;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{538;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{537;21}'
+          rel: stem
+          round: false
+      - ptid: '{168;727}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{51;642}'
+          - '{51;669}'
+          rel: shift
+      - ptid: '{300;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{622;425}'
+          rel: shift
+        - ptid: '{264;381}'
+          rel: stem
+          round: false
+  uni0196:
+    y:
+      points:
+      - ptid: '{210;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{248;45}'
+          rel: stem
+          round: false
+      - ptid: '{198;681}'
+        pos: cap-height-overshoot
+        points:
+        - ptid:
+          - '{43;611}'
+          - '{43;648}'
+          rel: shift
+  uni0197:
+    y:
+      points:
+      - ptid:
+          base: '{172;0}'
+          pt-a: '{45;-3}'
+          pt-b: '{45;34}'
+          pt-a-sh: '{298;-3}'
+          pt-b-sh: '{298;34}'
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{169;663}'
+          pt-a: '{40;666}'
+          pt-b: '{40;628}'
+          pt-a-sh: '{298;666}'
+          pt-b-sh: '{298;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid:
+          pt-a: '{132;326}'
+          pt-b: '{132;359}'
+          ref1: '{169;663}'
+          ref2: '{172;0}'
+        macro:
+          nm: mid-stem
+      - ptid: '{210;359}'
+        ref: '{132;359}'
+        rel: shift
+      - ptid: '{210;326}'
+        ref: '{132;326}'
+        rel: shift
+  uni0198:
+    y:
+      points:
+      - ptid:
+          base: '{174;0}'
+          pt-a: '{47;-3}'
+          pt-b: '{47;34}'
+          base-sh: '{524;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: cap-serif
+      - ptid:
+          base: '{174;663}'
+          pt-a: '{43;666}'
+          pt-b: '{43;628}'
+          pt-a-sh: '{305;666}'
+          pt-b-sh: '{305;628}'
+        macro:
+          nm: cap-serif
+          base-cv: cap-height
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+      - ptid: '{548;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{518;630}'
+          rel: stem
+          round: false
+      - ptid:
+          pt-a: '{213;315}'
+          pt-b: '{213;348}'
+          ref1: '{174;663}'
+          ref2: '{174;0}'
+        macro:
+          nm: mid-stem
+      - ptid:
+        - '{220;348}'
+        - '{309;368}'
+        ref: '{213;348}'
+        rel: shift
+    names:
+      serif-bot-sh-a:
+      - '{394;-3}'
+      - '{301;-3}'
+      - '{655;-3}'
+      serif-bot-sh-b:
+      - '{394;34}'
+      - '{301;34}'
+      - '{655;34}'
+  uni0199:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          base-sh: '{402;0}'
+          pt-a-sh: serif-bot-sh-a
+          pt-b-sh: serif-bot-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{322;726}'
+        pos: lc-ascender
+        points:
+        - ptid: '{266;680}'
+          rel: stem
+          round: false
+      - ptid:
+          base: '{380;415}'
+          pt-a: '{288;418}'
+          pt-b: '{288;392}'
+          pt-a-sh: '{465;418}'
+          pt-b-sh: '{465;392}'
+        macro:
+          nm: lc-serif
+          base-cv: xheight
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid:
+          pt-a: '{187;201}'
+          pt-b: '{193;234}'
+          ref1: '{380;415}'
+          ref2: '{134;0}'
+        macro:
+          nm: mid-stem
+    names:
+      serif-bot-sh-a:
+      - '{304;-4}'
+      - '{228;-4}'
+      - '{500;-4}'
+      serif-bot-sh-b:
+      - '{304;24}'
+      - '{228;24}'
+      - '{500;24}'
+  uni019A:
+    y:
+      points:
+      - ptid:
+          base: '{136;0}'
+          pt-a: '{41;-4}'
+          pt-b: '{41;24}'
+          pt-a-sh: '{231;-4}'
+          pt-b-sh: '{231;24}'
+        macro:
+          nm: lc-serif
+      - ptid: '{170;726}'
+        pos: lc-ascender
+        points:
+        - ptid:
+          - '{53;641}'
+          - '{53;668}'
+          rel: shift
+      - ptid:
+          pt-a: '{98;377}'
+          pt-b: '{98;423}'
+          ref1: '{170;726}'
+          ref2: '{136;0}'
+        macro:
+          nm: mid-stem
+      - ptid: '{173;377}'
+        ref: '{98;377}'
+        rel: shift
+      - ptid: '{173;423}'
+        ref: '{98;423}'
+        rel: shift
+  uni019B:
+    y:
+      points:
+      - ptid: '{402;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{427;41}'
+          rel: stem
+          round: false
+      - ptid: '{133;0}'
+        pos: baseline
+      - ptid: '{130;725}'
+        points:
+        - ptid: '{125;676}'
+          rel: shift
+      - ptid:
+        - '{228;408}'
+        - '{250;325}'
+        - '{198;520}'
+        - '{187;556}'
+        - '{267;540}'
+        - '{256;575}'
+        ref:
+        - '{130;725}'
+        - '{402;-11}'
+        rel: interpolate
+  uni019C:
+    y:
+      points:
+      - ptid:
+          base: '{169;663}'
+          pt-a: '{41;666}'
+          pt-b: '{41;628}'
+          base-sh: serif-sh-base
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: lc-serif
+      - ptid: '{625;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{299;-13}'
+          rel: shift
+        - ptid: '{663;32}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{325;32}'
+            rel: shift
+        - ptid: '{800;-20}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{916;73}'
+            - '{916;44}'
+            rel: shift
+    names:
+      serif-sh-base:
+      - '{500;663}'
+      - '{831;663}'
+      serif-sh-a:
+      - '{297;666}'
+      - '{372;666}'
+      - '{628;666}'
+      - '{703;666}'
+      - '{958;666}'
+      serif-sh-b:
+      - '{297;628}'
+      - '{372;628}'
+      - '{628;628}'
+      - '{703;628}'
+      - '{958;628}'
+  uni019D:
+    y:
+      points:
+      - ptid:
+          base: '{102;663}'
+          pt-a: '{29;666}'
+          pt-b: '{29;628}'
+          base-sh: '{598;663}'
+          pt-a-sh: serif-sh-a
+          pt-b-sh: serif-sh-b
+        macro:
+          nm: cap-serif
+      - ptid: '{614;-10}'
+        pos: cap-baseline-undershoot
+      - ptid:
+        - '{154;550}'
+        - '{589;143}'
+        ref:
+        - '{614;-10}'
+        - '{102;663}'
+        rel: interpolate
+      - ptid: '{-9;-219}'
+        points:
+        - ptid: '{40;-179}'
+          rel: stem
+          round: false
+    names:
+      serif-sh-a:
+      - '{506;666}'
+      - '{689;666}'
+      serif-sh-b:
+      - '{506;628}'
+      - '{689;628}'
+  uni019E:
+    y:
+      points:
+      - ptid:
+          base: '{134;0}'
+          pt-a: '{39;-4}'
+          pt-b: '{39;24}'
+          pt-a-sh: '{229;-4}'
+          pt-b-sh: '{229;24}'
+        macro:
+          nm: lc-serif
+      - ptid:
+          base: '{399;-269}'
+          pt-a: '{304;-273}'
+          pt-b: '{304;-245}'
+          pt-a-sh: '{494;-273}'
+          pt-b-sh: '{494;-245}'
+        macro:
+          nm: lc-serif
+          base-cv: lc-descender
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
+      - ptid: '{301;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{285;381}'
+          rel: stem
+          round: false
+        - ptid: '{168;431}'
+          rel: stem
+          min: false
+          points:
+          - ptid:
+            - '{51;346}'
+            - '{51;374}'
+            rel: shift
+  uni019F:
+    y:
+      points:
+      - ptid: '{356;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+      - ptid:
+          pt-a: '{135;309}'
+          pt-b: '{134;354}'
+          ref1: '{356;676}'
+          ref2: '{356;-13}'
+        macro:
+          nm: mid-stem
+  Ohorn:
+    y:
+      points:
+      - ptid: '{356;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+        - ptid: '{642;709}'
+          rel: stem
+      - ptid: '{575;580}'
+        ref:
+        - '{356;676}'
+        - '{356;-13}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{544;609}'
+          rel: stem
+          round: false
+  ohorn:
+    y:
+      points:
+      - ptid: '{231;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{231;21}'
+          rel: stem
+          round: false
+      - ptid: '{231;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{231;396}'
+          rel: stem
+          round: false
+        - ptid: '{393;490}'
+          rel: stem
+      - ptid: '{347;390}'
+        ref:
+        - '{231;425}'
+        - '{231;-11}'
+        rel: interpolate
+        round: true
+        points:
+        - ptid: '{378;363}'
+          rel: stem
+          round: false
+  uni01A2:
+    y:
+      points:
+      - ptid: '{356;-13}'
+        pos: cap-baseline-undershoot
+        points:
+        - ptid: '{356;23}'
+          rel: stem
+          round: false
+      - ptid: '{356;676}'
+        pos: cap-height-overshoot
+        points:
+        - ptid: '{683;676}'
+          rel: shift
+        - ptid: '{356;642}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{663;642}'
+            rel: shift
+      - ptid:
+          base: '{799;-220}'
+          pt-a: '{673;-224}'
+          pt-b: '{673;-187}'
+          pt-a-sh: '{926;-224}'
+          pt-b-sh: '{926;-187}'
+        macro:
+          nm: cap-serif
+          cup-cv: cap-serif-undershoot
+          ppem: '160'
+  uni01A3:
+    y:
+      points:
+      - ptid: '{237;-11}'
+        pos: lc-baseline-undershoot
+        points:
+        - ptid: '{231;21}'
+          rel: stem
+          round: false
+      - ptid: '{233;425}'
+        pos: xheight-overshoot
+        points:
+        - ptid: '{425;425}'
+          rel: shift
+        - ptid: '{232;396}'
+          rel: stem
+          round: false
+          points:
+          - ptid: '{432;396}'
+            rel: shift
+      - ptid:
+          base: '{538;-269}'
+          pt-a: '{443;-273}'
+          pt-b: '{443;-245}'
+          pt-a-sh: '{633;-273}'
+          pt-b-sh: '{633;-245}'
+        macro:
+          nm: lc-serif
+          base-cv: lc-descender
+          cup-cv: lc-serif-undershoot
+          ppem: '180'
