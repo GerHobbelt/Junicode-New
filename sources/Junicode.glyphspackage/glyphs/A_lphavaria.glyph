@@ -7,10 +7,12 @@ layers = (
 layerId = master01;
 shapes = (
 {
+alignment = -1;
 pos = (39,0);
 ref = gravecomb.loclELL.case;
 },
 {
+alignment = -1;
 ref = A;
 }
 );

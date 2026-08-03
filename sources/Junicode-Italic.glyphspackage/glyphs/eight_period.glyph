@@ -52,9 +52,11 @@ width = 715;
 layerId = "E06D8587-1A71-4EC2-BD94-397D882F5FC1";
 shapes = (
 {
+alignment = -1;
 ref = eight.lt;
 },
 {
+alignment = -1;
 pos = (439,0);
 ref = period;
 }
