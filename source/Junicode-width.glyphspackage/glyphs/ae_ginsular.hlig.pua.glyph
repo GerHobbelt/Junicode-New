@@ -1,4 +1,6 @@
 {
+case = lower;
+category = Letter;
 glyphname = ae_ginsular.hlig.pua;
 layers = (
 {
@@ -56,6 +58,7 @@ ref = ae_ginsular.hlig;
 width = 1032;
 }
 );
-production = u10A064;
+script = latin;
+subCategory = Ligature;
 unicode = 1089636;
 }

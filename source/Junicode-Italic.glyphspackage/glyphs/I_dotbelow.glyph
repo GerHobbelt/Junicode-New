@@ -1,7 +1,5 @@
 {
 glyphname = Idotbelow;
-kernLeft = KO_H;
-kernRight = KO_H;
 layers = (
 {
 layerId = master01;
@@ -10,7 +8,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (379,0);
 ref = dotbelowcomb;
 }
@@ -24,7 +21,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (395,0);
 ref = dotbelowcomb;
 }
@@ -38,7 +34,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (373,0);
 ref = dotbelowcomb;
 }
@@ -52,7 +47,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (356,0);
 ref = dotbelowcomb;
 }
@@ -66,7 +60,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (397,0);
 ref = dotbelowcomb;
 }
@@ -80,7 +73,6 @@ shapes = (
 ref = I;
 },
 {
-alignment = 1;
 pos = (379,0);
 ref = dotbelowcomb;
 }
@@ -89,10 +81,4 @@ width = 335;
 }
 );
 unicode = 7882;
-userData = {
-KernOnSpecialSpacing = {
-L = NoKerning;
-R = NoKerning;
-};
-};
 }

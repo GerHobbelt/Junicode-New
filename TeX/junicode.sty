@@ -54,6 +54,9 @@
 \newcommand{\SmExpMediumDef}{}
 \newcommand{\SmExpSmBoldDef}{}
 
+\def\junicode@renderer{OpenType}
+\DeclareOptionX{renderer}{\def\junicode@renderer{#1}}
+
 % Choose the type of font: otf or ttf.
 
 \newcommand*{\junicode@fonttype}{otf}
@@ -223,7 +226,7 @@
 \fi
 \ifluatex
 \setmainfont
-  [Renderer =          HarfBuzz,
+  [Renderer =          {\junicode@renderer},
    Numbers =           {\junicode@figurealign,\junicode@figurestyle},
    SmallCapsFeatures = {Letters=SmallCaps},
    UprightFont =       *-\junicode@regstylename,
@@ -248,7 +251,7 @@
 \ifluatex
 \newcommand{\junicode@newfont}[3]{
     \newfontface#1{#2}[
-        Renderer =          HarfBuzz,
+        Renderer =          {\junicode@renderer},
         #3
         Numbers =           {\junicode@figurealign,\junicode@figurestyle},
         SmallCapsFeatures = {Letters=SmallCaps},
@@ -364,7 +367,7 @@
 
 \newcommand{\EnlargedMinuscules}{\addfontfeature{StylisticSet=6}} % ss06
 
-\newcommand{\textEnlargedMinuscules}[1]{\addfontfeature{{StylisticSet=6}#1}}
+\newcommand{\textEnlargedMinuscules}[1]{{\addfontfeature{StylisticSet=6}#1}}
 
 \newcommand{\Underdotted}{\addfontfeature{StylisticSet=7}} % ss07
 
