@@ -11,10 +11,10 @@ and other electronic document formats.
 
 The Junicode 2 font
 
-- will, when complete, have the same character set in all faces;
+- has the same character set in all faces (unlike Junicode 1);
 - has five weights (Light, Regular, Medium, Semibold, Bold)
 - and five widths (Regular, SemiCondensed, Condensed, SemiExpanded, Expanded);
-- includes a variable font (in both tff and cff2 flavors) with three axes:
+- includes a ttf-flavored variable font with three axes:
   width, weight, and the custom
   [Enlarge](https://psb1558.github.io/Junicode-font/EnlargedAxis.html) axis;
 - has improved outlines,
@@ -31,15 +31,14 @@ documents that use the OpenType features of Junicode 1 (aside from basics like
 kerning and standard ligatures) may not be displayed properly when changed over
 to Junicode 2.
 
-Junicode 1 is still (as of October 2021) the current stable version of the
+Junicode 1 is still (as of June 2023) the current stable version of the
 font. However, no new features will be added to Junicode 1, though bugs will be
 fixed when necessary.
 
-The roman face of Junicode 2 is in beta testing. Interested users are encouraged
-to try it out and report bugs by opening issues on this site. The italic face is
-about 91% complete and still in a rough condition. It should not be relied upon
-for production work until the character set is complete (probably some time in
-2022).
+Beginning with version 1.060, the glyph sets of the roman and italic fonts are
+the same (leaving aside face-specific features like italic swashes and certain
+discretionary ligatures). After a period of testing, the version number will
+skip to 2.0 and “Beta” will be removed from the font’s name.
 
 # Resources
 
@@ -55,3 +54,37 @@ An [introduction](https://psb1558.github.io/Junicode-font/EnlargedAxis.html) to 
 
 [Test/demonstration](https://psb1558.github.io/Junicode-font/Junicode-2-feature-test.html) of
 high-level CSS font properties in Junicode 2
+
+# Building Junicode
+
+If you want to build Junicode for yourself, you'll need a Python environment with
+version 3.10.4 or higher and these Open Source apps:
+
+- fontmake (Python app -- install with pip)
+- glyphspkg (Python app -- install with pip)
+- psautohint (for `.otf` fonts -- Python app -- install with pip)
+- xgridfit (for `.ttf` fonts -- Python app -- install with pip)
+- [ttfautohint](http://freetype.org/ttfautohint/) (for static `.ttf` fonts)
+- Various utilities that should already be installed on Mac OS and Linux systems: the Bash shell, xsltproc, sed, mktemp, basename.
+
+The Bash script `build_font` must be run once for roman fonts and again for italic.
+It creates two directories: `build`, a temporary directory,
+which will be replaced next time the script is run (or you can delete it yourself),
+and `dist`, where it will place the finished
+fonts. Make sure the script is executable and run it from the command line:
+
+- with no argument (or **ttf**) to create a collection of static `.ttf` fonts.
+- with the argument **otf** to create `.otf` fonts
+- with the argument **variable** to create TrueType-flavored variable fonts
+
+These options are available:
+
+- **-r** build roman fonts (this is the default).
+- **-i** build italic fonts.
+- **-n** skip hinting the fonts.
+- **-s** produce a minimal set of fonts or instances: Regular, Italic, Bold, Bold Italic.
+- **-u** skip the step of replacing the `build` directory and use previously generated UFOs in that directory.
+- **-d &lt;dir&gt;** source directory (default is `./`).
+- **-b &lt;dir&gt;** build directory (default is `./build`).
+- **-o &lt;dir&gt;** output directory (default is `./dist`).
+
