@@ -23,11 +23,13 @@ weightDict = dict(
     name="Weight",
     values=[
         dict(nominalValue=300, name="Light", rangeMinValue=300, rangeMaxValue=350),
+        # Glyphs includes both format 1 and 3 entries for Regular. Does not stop crash.
         dict(nominalValue=400, name="Regular", flags=0x2, rangeMinValue=350, rangeMaxValue=450),
+        #dict(value=400, name="Regular", linkedValue=700, flags=0x2),
         dict(nominalValue=500, name="Medium", rangeMinValue=450, rangeMaxValue=550),
-        dict(nominalValue=600, name="SemiBold", rangeMinValue=550, rangeMaxValue=650),
-        dict(nominalValue=700, name="Bold", rangeMinValue=650, rangeMaxValue=750),
-        dict(value=400, name="Regular", linkedValue=700, flags=0x2)
+        dict(nominalValue=600, name="SmBold", rangeMinValue=550, rangeMaxValue=650),
+        dict(nominalValue=700, name="Bold", rangeMinValue=650, rangeMaxValue=700),
+        # dict(value=400, name="Regular", linkedValue=700, flags=0x2)
     ]
 )
 
@@ -35,17 +37,11 @@ widthDict = dict(
     tag="wdth",
     name="Width",
     values=[
-#       dict(nominalValue=60, name="Condensed", rangeMinValue=60, rangeMaxValue=70),
-#       dict(nominalValue=80, name="SemiCondensed", rangeMinValue=70, rangeMaxValue=90),
-#       dict(nominalValue=100, name="Normal", flags=0x2, rangeMinValue=90, rangeMaxValue=110),
-#       dict(nominalValue=120, name="SemiExpanded", rangeMinValue=110, rangeMaxValue=125),
-#       dict(nominalValue=140, name="Expanded", rangeMinValue=125, rangeMaxValue=140),
-# Recalculated, since glyphslib changes scale to 75-125 with 100 default
-        dict(nominalValue=75, name="Condensed", rangeMinValue=75, rangeMaxValue=81),
-        dict(nominalValue=87.5, name="SemiCondensed", rangeMinValue=81, rangeMaxValue=94),
-        dict(nominalValue=100, name="Normal", flags=0x2, rangeMinValue=94, rangeMaxValue=106),
-        dict(nominalValue=112.5, name="SemiExpanded", rangeMinValue=106, rangeMaxValue=119),
-        dict(nominalValue=125, name="Expanded", rangeMinValue=119, rangeMaxValue=125),
+        dict(nominalValue=75, name="Cond", rangeMinValue=75.0, rangeMaxValue=81.25),
+        dict(nominalValue=87.5, name="SmCond", rangeMinValue=81.25, rangeMaxValue=93.75),
+        dict(nominalValue=100, name="Normal", flags=0x2, rangeMinValue=93.75, rangeMaxValue=106.25),
+        dict(nominalValue=112.5, name="SmExp", rangeMinValue=106.25, rangeMaxValue=118.75),
+        dict(nominalValue=125, name="Exp", rangeMinValue=118.75, rangeMaxValue=125),
     ]
 )
 
@@ -53,9 +49,9 @@ enlargeDict = dict(
     tag="ENLA",
     name="Enlarge",
     values=[
-        dict(nominalValue=0, name="Normal", flags=0x2, rangeMinValue=0, rangeMaxValue=33),
-        dict(nominalValue=47, name="Enlarged", rangeMinValue=33, rangeMaxValue=66),
-        dict(nominalValue=100, name="CapSize", rangeMinValue=66, rangeMaxValue=100),
+        dict(nominalValue=0, name="Normal", flags=0x2, rangeMinValue=0, rangeMaxValue=23.5),
+        dict(nominalValue=47, name="Enlarged", rangeMinValue=23.5, rangeMaxValue=73.5),
+        dict(nominalValue=100, name="CapSize", rangeMinValue=73.5, rangeMaxValue=100),
     ]
 )
 
@@ -64,7 +60,7 @@ format2RomanAxes = [
     dict(
         tag="ital",
         name="Italic",
-        values=[dict(value=0, name="Italic", linkedValue=1, flags=0x2)]
+        values=[dict(value=0, name="Roman", linkedValue=1, flags=0x2)]
     )
 ]
 
@@ -73,7 +69,7 @@ format2ItalicAxes = [
     dict(
         tag="ital",
         name="Italic",
-        values=[dict(value=1, name="Italic")]
+        values=[dict(value=1, name="Italic", linkedValue=0.0)]
     )
 ]
 
@@ -82,20 +78,25 @@ if whichFont == "italic":
     print("Adding STAT table to italic font "  + inFont)
     builder.buildStatTable(ttfont,format2ItalicAxes)
     # Add stuff to name table. First the Variations PostScript Name Prefix (table entry 25).
-    ttfont['name'].setName("JunicodeVF", 25, 3, 1, 0x409)
-# Glyphs takes care of the naming table now.
+    psNamePrefix = "JunicodeVFItalic"
+    ttfont['name'].setName(psNamePrefix, 25, 3, 1, 0x409)
+    # Glyphs takes care of the naming table now.
     # Cycle through fvar, getting instance names, building a correct postscriptNameID,
     # recording that in the name table, and adding the ID to the postscriptNameID field
     # of the fvar instance. Whew!
     for inst in ttfont['fvar'].instances:
-        # if (inst.coordinates['wght'] == 400.0 and inst.coordinates['wdth'] == 100.0
-        #    and inst.coordinates['ENLA'] == 0.0):
-        if False:
+        if (inst.coordinates['wght'] == 400.0 and inst.coordinates['wdth'] == 100.0
+            and inst.coordinates['ENLA'] == 0.0):
             inst.subfamilyNameID = 2
             inst.postscriptNameID = 6
         else:
-            subfamilyName = ttfont['name'].getName(inst.subfamilyNameID,3,1,0x409).toUnicode().replace(" ","")
-            inst.postscriptNameID = ttfont['name'].addName("JunicodeVF" + "-" + subfamilyName,
+            subfamilyName = ttfont['name'].getName(inst.subfamilyNameID,3,1,0x409).toUnicode()
+            if subfamilyName == "Italic":
+                subfamilyName = "Regular"
+            else:
+                subfamilyName = subfamilyName.replace("Italic", "").replace(" ", "")
+            # subfamilyName = subfamilyName.replace(" ", "")
+            inst.postscriptNameID = ttfont['name'].addName("JunicodeVFItalic-" + subfamilyName,
                                                        platforms=((3,1,0x409),))
     # We don't need platform 1 names. If there are any, remove them.
     ttfont['name'].removeNames(platformID=1)
@@ -105,7 +106,8 @@ elif whichFont == "roman":
     ttfont = ttLib.TTFont(inFont)
     builder.buildStatTable(ttfont,format2RomanAxes)
     # Add stuff to name table. First the Variations PostScript Name Prefix (table entry 25).
-    ttfont['name'].setName("JunicodeVF", 25, 3, 1, 0x409)
+    psNamePrefix = "JunicodeVFRoman"
+    ttfont['name'].setName(psNamePrefix, 25, 3, 1, 0x409)
     # Cycle through fvar, getting instance names, building a correct postscriptNameID,
     # recording that in the name table, and adding the ID to the postscriptNameID field
     # of the fvar instance. Whew!
@@ -116,8 +118,8 @@ elif whichFont == "roman":
             inst.postscriptNameID = 6
         else:
             subfamilyName = ttfont['name'].getName(inst.subfamilyNameID,3,1,0x409).toUnicode().replace(" ","")
-            inst.postscriptNameID = ttfont['name'].addName("JunicodeVF" + "-" + subfamilyName,
-                                                       platforms=((3,1,0x409),))
+            inst.postscriptNameID = ttfont['name'].addName("JunicodeVFRoman" + "-" + subfamilyName,
+                                                       platforms=((3,1,0x409),(1,0,0)))
     # We don't need platform 1 names. If there are any, remove them.
     ttfont['name'].removeNames(platformID=1)
     ttfont.save(outFont)

@@ -13,7 +13,7 @@ pos = (345,0);
 ref = macroncomb;
 },
 {
-pos = (284,117);
+pos = (490,117);
 ref = brevecomb;
 }
 );
@@ -30,7 +30,7 @@ pos = (343,0);
 ref = macroncomb;
 },
 {
-pos = (279,121);
+pos = (485,121);
 ref = brevecomb;
 }
 );
@@ -47,7 +47,7 @@ pos = (329,0);
 ref = macroncomb;
 },
 {
-pos = (286,117);
+pos = (492,117);
 ref = brevecomb;
 }
 );
@@ -60,15 +60,15 @@ shapes = (
 ref = u;
 },
 {
-pos = (276,0);
+pos = (284,0);
 ref = macroncomb;
 },
 {
-pos = (235,121);
+pos = (438,121);
 ref = brevecomb;
 }
 );
-width = 393;
+width = 388;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -77,15 +77,15 @@ shapes = (
 ref = u;
 },
 {
-pos = (389,0);
+pos = (387,0);
 ref = macroncomb;
 },
 {
-pos = (326,117);
+pos = (532,117);
 ref = brevecomb;
 }
 );
-width = 574;
+width = 578;
 },
 {
 layerId = "997BDFA1-EC67-4686-8CFE-E56BDBE179FE";
@@ -98,7 +98,7 @@ pos = (492,260);
 ref = macroncomb;
 },
 {
-pos = (453,377);
+pos = (637,377);
 ref = brevecomb;
 }
 );

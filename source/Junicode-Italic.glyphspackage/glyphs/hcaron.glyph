@@ -36,7 +36,7 @@ shapes = (
 ref = h;
 },
 {
-pos = (183,39);
+pos = (439,39);
 ref = caroncomb.case;
 }
 );
@@ -49,11 +49,11 @@ shapes = (
 ref = h;
 },
 {
-pos = (159,39);
+pos = (405,39);
 ref = caroncomb.case;
 }
 );
-width = 360;
+width = 352;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -75,7 +75,7 @@ shapes = (
 ref = h;
 },
 {
-pos = (174,39);
+pos = (428,39);
 ref = caroncomb.case;
 }
 );

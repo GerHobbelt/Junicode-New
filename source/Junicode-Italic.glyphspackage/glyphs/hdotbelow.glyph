@@ -10,7 +10,7 @@ shapes = (
 ref = h;
 },
 {
-pos = (256,0);
+pos = (452,0);
 ref = dotbelowcomb;
 }
 );
@@ -23,7 +23,7 @@ shapes = (
 ref = h;
 },
 {
-pos = (268,0);
+pos = (445,0);
 ref = dotbelowcomb;
 }
 );
@@ -36,7 +36,7 @@ shapes = (
 ref = h;
 },
 {
-pos = (289,0);
+pos = (461,0);
 ref = dotbelowcomb;
 }
 );
@@ -49,11 +49,11 @@ shapes = (
 ref = h;
 },
 {
-pos = (225,0);
+pos = (397,0);
 ref = dotbelowcomb;
 }
 );
-width = 360;
+width = 352;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
