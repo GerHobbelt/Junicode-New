@@ -5,13 +5,6 @@ export = 0;
 glyphname = E.ans01;
 layers = (
 {
-background = {
-shapes = (
-{
-ref = e.sc;
-}
-);
-};
 guides = (
 {
 angle = 180;

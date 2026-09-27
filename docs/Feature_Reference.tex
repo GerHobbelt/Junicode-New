@@ -134,26 +134,30 @@ Note: The variants of Ŋ (\unic{U+014A}—see \hyperlink{OtherLatin}{Other Latin
 accessed only through this feature.
 
 \subsection{\textSourceText{case} – Case-Sensitive Forms}
-Produces\index{case} combining marks that harmonize with capital letters: {\addfontfeature{Letters=Uppercase}\v{R}, X̉}, etc. Use of this feature reduces the
+Produces\index{case} combining marks that harmonize with capital letters:
+{\addfontfeature{Letters=Uppercase}\v{R}, X̉}, etc. Use of this feature reduces the
 likelihood that a combining mark will collide with a glyph in the line above. Some applications turn this
 feature on automatically for runs of capitals, and precomposed characters
 (e.g. \textex{É} \unic{U+00C9}, \textex{Ū} \unic{U+016A})
-already use case-appropriate combining marks. This feature also changes oldstyle to 
-lining figures, since these harmonize better with uppercase letters.
+already use case-appropriate combining marks. This feature also changes oldstyle to
+lining figures, since these harmonize better with uppercase letters. (Some fonts use this feature
+to raise hyphens and dashes between capitals and lining numbers, but Junicode uses contextual
+kerning instead: a–b A–B.)
 
 \section{Alphabetic Variants}
-\subsection{\textSourceText{cv01-cv52} – Basic Latin Variants}
+\subsection{\textSourceText{cv01-cv52} – Basic Latin and Greek Variants}\hypertarget{LatGrkVariants}
 These features also affect small cap (\textSourceText{smcp}\index{smcp}) and underdotted
 (\textSourceText{ss07}\index{ss07}) forms,
 where available. Variants in \cvc{magenta} are also available via \textSourceText{ss06}\index{ss06} “Enlarged Minuscules.”
 Use the \textSourceText{cvNN} features instead of \textSourceText{ss06}\index{ss06} when you want to substitute an
-enlarged minuscule for a capital (or, less likely, a lowercase) letter everywhere in a text.
+enlarged minuscule for a capital (or, less likely, a lowercase) letter everywhere in a text. See the
+\hyperlink{enlarge}{Enlarge Axis} for a more flexible method of producing enlarged minuscules.
 
 \begin{center}
 \tablefirsthead{\hline
 \bfseries Variant of &\
 \bfseries cvNN &
-\arraybslash{\bfseries Variants}\\\hline}
+\centering\arraybslash{\bfseries Variants}\\\hline}
 \tablehead{\hline
 \bfseries Variant of &
 \bfseries cvNN &
@@ -173,8 +177,8 @@ a & cv02 &
 \bluerow B & cv03 &
 1=\cvc{\cvd{3}{B}}, 2=\cvd[1]{3}{B}\index{cv03|textbf}\\
 %
-b & cv04 &
-1=\cvc{\cvd{4}{b}}\index{cv04|textbf}\\
+b β & cv04 &
+Latin: 1=\cvc{\cvd{4}{b}}\index{cv04|textbf}\\
 %
 \bluerow C & cv05 &
 {1=\cvd{5}{C}, 2=\cvc{\cvd[1]{5}{C}}}\index{cv05|textbf}\\
@@ -354,6 +358,47 @@ quotation of the \textit{Ormulum}. The feature produces a p that differs from
 the default only in the way it forms a double-p ligature with \textSourceText{hlig}\index{hlig}:
 \cvd[1]{32}{\hlig{pp}}, not \hlig{pp}.
 
+When the active script is Greek (set automatically by many apps), 
+a few of these features behave differently,
+substituting the “Symbol” forms of several letters (which are also accessible
+via their Unicode encodings):
+
+\begin{center}
+  \tablefirsthead{\hline
+  \bfseries Variant of &\
+  \bfseries cvNN &
+  \centering\arraybslash{\bfseries Variants}\\\hline}
+  \tablehead{\hline
+  \bfseries Variant of &
+  \bfseries cvNN &
+  \centering\arraybslash{\bfseries Variants}\\\hline}
+  \tabletail{\hline}
+  \tablelasttail{\hline}
+  \begin{supertabular}{| c | c | p{2.9212599in} |}
+    \bluerow\color{black}β & cv04 &
+    1={\addfontfeature{Script=Greek}\cvd{4}{β}} (\unic{U+03D0})\\
+    %
+    \color{black}ε & cv10 &
+    1={\addfontfeature{Script=Greek}\cvd{10}{ε}} (\unic{U+03F5})\\
+    %
+    \bluerow\color{black}φ & cv12 &
+    1={\addfontfeature{Script=Greek}\cvd{12}{φ}} (\unic{U+03D5})\\
+    %
+    \color{black}κ & cv22 &
+    1={\addfontfeature{Script=Greek}\cvd{22}{κ}} (\unic{U+03F0})\\
+    %
+    \bluerow\color{black}π & cv32 &
+    1={\addfontfeature{Script=Greek}\cvd{32}{π}} (\unic{U+03D6})\\
+    %
+    \color{black}ρ & cv36 &
+    1={\addfontfeature{Script=Greek}\cvd{36}{ρ}} (\unic{U+03F1})\\
+    %
+    \bluerow\color{black}θ & cv40 &
+    1={\addfontfeature{Script=Greek}\cvd{40}{θ}} (\unic{U+03D1})\\
+  \end{supertabular}
+\end{center}
+
+
 \subsection{\textSourceText{cv53-cv66}, \textSourceText{cv91}\index{cv91} – Other Latin Letters}\hypertarget{OtherLatin}{}
 Some features affect both upper- and lowercase forms. \textSourceText{cv62}\index{cv62} also affects
 combining \textex{e} with ogonek, accessible via either \textSourceText{\hyperlink{cv84}{cv84}}\index{cv84} or
@@ -368,7 +413,7 @@ entity reference \textSourceText{\&\_eogo;}.
 \tablehead{\hline
 \bfseries Variant of &
 \bfseries cvNN &
-\arraybslash{\bfseries Variants}\\\hline}
+\centering\arraybslash{\bfseries Variants}\\\hline}
 \tabletail{\hline}
 \tablelasttail{\hline}
 \begin{supertabular}{| c | c |p{2.3212599in}|}
@@ -440,7 +485,7 @@ cv66\index{cv66|textbf} &
 \subsection{\textSourceText{swsh} – Swash letters (italic only)}
 Produces swash versions of several capitals: \textex{\textit{\addfontfeature{Style=Swash}A Æ D J}}. There are three swash
 versions of Q\,, selected via index (if indexing of \textSourceText{swsh} is supported by your
-application): 1=\textex{\textit{\cvd[2]{33}{Qui}}}, 
+application): 1=\textex{\textit{\cvd[2]{33}{Qui}}},
 2=\textex{\textit{\cvd[4]{33}{Qui}}}, 3=\textex{\textit{\cvd[3]{33}{Qui}}}.
 Note that swash versions of Q can also be selected with \textSourceText{cv33}. Swash Q is not permitted in
 word-final position; there plain italic Q is substituted. Also, if Q with extended tail might collide with
@@ -458,7 +503,7 @@ thorn (\textex{ꝥ \textAltThornEth{ꝥ}}—see also
 \hyperlink{OtherLatin}{\textSourceText{cv66}}), combining mark eth
 (\unic{U+1DD9}, \textex{◌ᷙ \textAltThornEth{◌ᷙ}}), and enlarged thorn and eth
 (see \textSourceText{\hyperlink{ss06}{ss06}}\index{ss06}).
-This feature depends on \textSourceText{\hyperlink{req}{loca}}\index{loca} (Localized Forms), which in most applications will
+This feature depends on \textSourceText{\hyperlink{req}{locl}}\index{locl} (Localized Forms), which in most applications will
 always be enabled.
 
 \subsection{\textSourceText{ss02} – Insular Letter-Forms}
@@ -628,10 +673,11 @@ caps, e.g. \textex{{\addfontfeature{StylisticSet=7}\textsc{hijklmn θικλμν�
 If this feature fails for any letter, use \unic{U+0323}, combining dot below.
 
 \subsection{\textSourceText{ss08} – Contextual Long s}
-In\index{ss08|textbf} English, French, and Latin text only, varies \textex{s} and \textex{ſ} according to rules
+In\index{ss08|textbf} English, French, and Latin text, varies \textex{s} and \textex{ſ} according to rules
 followed by many early printers: \textex{\ContextualLongS\addfontfeature{Language=English} sports,
 essence, stormy, disheveled, transfusions,
-slyness, cliffside}. For this
+slyness, cliffside}. For other languages, the English rules are applied, though these may not always be
+appropriate, and for some languages additional editing may be required. For this
 feature to work properly, \textSourceText{calt}\index{calt} “Contextual Alternates” must also be enabled (as it should be by
 default: see \hyperlink{req}{Required Features} below). This feature does not work in {\ltech}, except in harf mode.
 
@@ -643,6 +689,9 @@ most common rules of medieval manuscripts:
 For this feature to work properly,
 \textSourceText{calt}\index{calt} “Contextual Alternates” must also be enabled (as it should be by default: see
 \hyperlink{req}{Required Features} below).  This feature does not work in {\ltech}, except in harf mode.
+
+\subsection{\textSourceText{cv68} – Variant of ʔ (\unic{U+0294}, glottal stop)}
+1=\cvd{68}{ʔ}\index{cv68|textbf}.
 
 \subsection{\textSourceText{salt} –
 Stylistic\index{salt|textbf} Alternates (medieval capitals, etc.)}\hypertarget{salt}{}
@@ -674,12 +723,11 @@ unavailable) are also gathered here:
 
 ꝭ: 1=\salti{0}{ꝭ}.
 
-ƿ: 1=\salti{0}{ƿ}.
+Ƿ: 1=\salti{0}{Ƿ}, 2= 1=\salti{1}{Ƿ}.
+
+ƿ: 1=\salti{0}{ƿ}, 2= 1=\salti{1}{ƿ}.
 \end{multicols}
 
-
-\subsection{\textSourceText{cv68} – Variant of ʔ (\unic{U+0294}, glottal stop)}
-1=\cvd{68}{ʔ}\index{cv68|textbf}.
 
 \section{Greek}
 Junicode has two distinct styles of Greek. In the roman face, it is upright and
@@ -728,10 +776,14 @@ preferred result, try placing \unic{U+034F} \textUName{combining grapheme joiner
 in the sequence of combining marks—for example, before the \textit{ypogegrammeni}
 to make \textex{\addfontfeatures{Language=Greek} Ὤ͏ͅ}.
 
+For alternate Greek letter-shapes, see \hyperlink{LatGrkVariants}{Basic Latin and Greek Variants} above
+and the next section.
+
 \subsection{\textSourceText{ss03} – Alternate Greek}
 Provides\index{ss03|textbf} alternate shapes of {\addfontfeature{Language=Greek}β γ θ π φ χ ω}:
 \textex{\addfontfeature{StylisticSet=3}β γ θ π φ χ ω}.
-These are chiefly useful in linguistics, as they harmonize with IPA characters.
+These are chiefly useful in linguistics, as they harmonize with IPA characters. This feature
+will work whether the Greek or Latin script is active.
 
 \section{Gothic}
 \subsection{\textSourceText{ss19} – Latin to Gothic Transliteration}
@@ -775,7 +827,7 @@ Old-style fonts typically contain a standard collection of ligatures (conjoined 
 Most software will display these ligatures automatically (except
 Microsoft Word, for which they must be enabled explicitly). Junicode has a large number of ligatures,
 including the standard f-ligatures, a similar set for long s, e.g. \textex{ſl}, \textex{ſſ}, \textex{ſſi}, but also
-more unusual forms like \textex{ſꞇ}, 
+more unusual forms like \textex{ſꞇ},
 \textex{\addfontfeatures{StylisticSet=2,CharacterVariant=38:10}st},
 \textex{\addfontfeatures{Language=English,StylisticSet=2,CharacterVariant=38:10}sw}
 (the last two with \textSourceText{ss02}\index{ss02} and \textSourceText{cv38[11]}\index{cv38}).
@@ -846,6 +898,36 @@ a{\textcompwordmark}R\hfill→\hfill{}aR}
 a{\textcompwordmark}v\hfill→\hfill{}av}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}c\hfill→\hfill{}æc}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}ꝼ\hfill→\hfill{}æꝼ}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}ᵹ\hfill→\hfill{}æᵹ}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}m\hfill→\hfill{}æm}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}n\hfill→\hfill{}æn}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}p\hfill→\hfill{}æp}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}ꞃ\hfill→\hfill{}æꞃ}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}ꞅ\hfill→\hfill{}æꞅ}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}ꞇ\hfill→\hfill{}æꞇ}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+æ{\textcompwordmark}x\hfill→\hfill{}æx}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 \cvd[1]{2}{a}{\textcompwordmark}{v}\hfill→\hfill{}\cvd[1]{2}{av}}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -867,10 +949,22 @@ c{\textcompwordmark}k\hfill→\hfill{}ck}
 ꝺ{\textcompwordmark}ꝺ\hfill→\hfill{}ꝺꝺ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+ꝺ{\textcompwordmark}e\hfill→\hfill{}ꝺe}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+ꝺ{\textcompwordmark}o\hfill→\hfill{}ꝺo}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+ꝺ{\textcompwordmark}v\hfill→\hfill{}ꝺv}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 d{\textcompwordmark}e\hfill→\hfill{}de}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
-ꝺ{\textcompwordmark}e\hfill→\hfill{}ꝺe}
+d{\textcompwordmark}o\hfill→\hfill{}do}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+D{\textcompwordmark}o\hfill→\hfill{}Do}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 e{\textcompwordmark}a\hfill→\hfill{}ea}
@@ -894,6 +988,9 @@ e{\textcompwordmark}n\hfill→\hfill{}en}
 e{\textcompwordmark}o\hfill→\hfill{}eo}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+e{\textcompwordmark}p\hfill→\hfill{}ep}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 e{\textcompwordmark}ꞃ\hfill→\hfill{}eꞃ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -910,6 +1007,9 @@ e{\textcompwordmark}y\hfill→\hfill{}ey}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 f{\textcompwordmark}ä\hfill→\hfill{}fä}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+f{\textcompwordmark}o\hfill→\hfill{}fo}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 g{\textcompwordmark}d\hfill→\hfill{}gd}
@@ -936,6 +1036,9 @@ g{\textcompwordmark}p\hfill→\hfill{}gp}
 g{\textcompwordmark}r\hfill→\hfill{}gr}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+g{\textcompwordmark}v\hfill→\hfill{}gv}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 H{\textcompwordmark}r\hfill→\hfill{}Hr}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -960,13 +1063,25 @@ k{\textcompwordmark}ẝ\hfill→\hfill{}kẝ}
 l{\textcompwordmark}l\hfill→\hfill{}ll}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+m{\textcompwordmark}a\hfill→\hfill{}ma}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+m{\textcompwordmark}e\hfill→\hfill{}me}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+m{\textcompwordmark}i\hfill→\hfill{}mi}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 n{\textcompwordmark}a\hfill→\hfill{}na}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+n{\textcompwordmark}e\hfill→\hfill{}ne}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 n{\textcompwordmark}i\hfill→\hfill{}ni}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
-\textsc{n}{\textcompwordmark}ſ\hfill→\hfill{}\textsc{nſ}}
+\textsc{n}{\textcompwordmark}ſ\hfill→\hfill{}\textsc{nſ}}**
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 n{\textcompwordmark}v\hfill→\hfill{}nv}
@@ -980,10 +1095,16 @@ O{\textcompwordmark}Ꝛ\hfill→\hfill{}OꝚ}
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 o{\textcompwordmark}ꝛ\hfill→\hfill{}oꝛ}
 
+\textsc{\color[rgb]{0.38039216,0.09019608,0.16078432}
+o{\textcompwordmark}ꝛ\hfill→\hfill{}oꝛ}
+
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 O{\textcompwordmark}Ꝝ\hfill→\hfill{}OꝜ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+o{\textcompwordmark}ꝝ\hfill→\hfill{}oꝝ}
+
+\textsc{\color[rgb]{0.38039216,0.09019608,0.16078432}
 o{\textcompwordmark}ꝝ\hfill→\hfill{}oꝝ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -994,6 +1115,9 @@ p{\textcompwordmark}p\hfill→\hfill{}pp}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 ꝓ{\textcompwordmark}p\hfill→\hfill{}ꝓp}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
+ꝑ{\textcompwordmark}ꝑ\hfill→\hfill{}ꝑꝑ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
 P{\textcompwordmark}s\hfill→\hfill{}Ps}
@@ -1044,6 +1168,9 @@ q{\textcompwordmark}ꝛ\hfill→\hfill{}qꝛ}
 ꞇ{\textcompwordmark}ꞇ\hfill→\hfill{}ꞇꞇ}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+U{\textcompwordmark}✝D\hfill→\hfill{}U✝D}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 U{\textcompwordmark}E\hfill→\hfill{}UE}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -1068,6 +1195,9 @@ u{\textcompwordmark}u\hfill→\hfill{}uu}
 ð{\textcompwordmark}ð\hfill→\hfill{}ðð}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
+ð{\textcompwordmark}v\hfill→\hfill{}ðv}
+
+{\color[rgb]{0.38039216,0.09019608,0.16078432}
 {\th}\textcompwordmark{\th}\hfill→\hfill{}{\th}{\th}}
 
 {\color[rgb]{0.38039216,0.09019608,0.16078432}
@@ -1079,9 +1209,20 @@ u{\textcompwordmark}u\hfill→\hfill{}uu}
 \end{multicols}
 
 \noindent\addfontfeatures{Ligatures=histoff}
-Note: For the ligature \textex{\textsc{\hlig{nſ}}} to
+*\,The \textex{\hlig{aa}} ligature looks like \unic{U+A733} \textex{ꜳ}, but behaves differently.
+As in most other ligatures, each element has a set of anchors so that diacritics can be placed 
+over or under the element, e.g. \textex{\hlig{a{\char"34F\char"301}a}},
+\textex{\hlig{aa\char"34F\char"301}}.
+**\,For the ligature \textex{\textsc{\hlig{nſ}}} to
 work properly, \unic{U+017F} \textex{ſ} must be entered directly, not by applying an OpenType feature to
 \textex{s}.
+
+An alternative way to generate any of the ligatures listed above is to place
+\unic{U+200D} \textUName{zero width joiner}
+between the ligature’s elements (most ligatures require one joiner—a few three-part ligatures require
+two). This method does not require that \textSourceText{hlig} be on, and so can reduce 
+the amount of tagging needed in a text. \unic{U+200D} is not visible and is normally ignored in searching.
+Using it is as safe as using \textSourceText{hlig}.
 
 \subsection{\textSourceText{dlig} –
 Discretionary Ligatures}
@@ -1091,8 +1232,36 @@ The collection of discretionary ligatures in the italic face also includes
 \textex{\textit{\addfontfeature{Ligatures=Rare}as, is, us}}.
 
 
+\subsection{\unic{U+200D} \textUName{zero width joiner}}\hypertarget{zwj}{}
+
+The Unicode character \unic{U+200D} \textUName{zero width joiner} (ZWJ) provides an
+alternate method of entering many ligatures and diagraphs, including all ligatures
+available via \textSourceText{hlig} and the digraphs \textex{a‍a a‍e a‍o a‍u a‍v a‍y o‍e o‍o v‍y},
+with uppercase equivalents. For ligatures from
+\textSourceText{hlig}, the advantage of the ZWJ is that a text with many historic
+ligatures will require less tagging to turn \textSourceText{hlig} on and off (the
+feature is disruptive when it is on where it is not needed). The ZWJ causes two
+letters to be combined as a ligature.  Use it where you want a digraph to be searchable
+as its elements: for example, \unic{U+A733} \textUName{latin small letter aa} cannot
+ordinarily be searched as \textex{a} or \textex{aa}; if entered as \textSourceText{a
+\unic{U+200D} a}, it will be searchable as \textex{aa} (but not as \unic{U+A733}).
+Also, combining marks can be placed over the individual elements of ligatures but not
+over the elements of digraphs: the sequences \textSourceText{a \unic{U+034F U+0301
+U+200D} a} and \textSourceText{a \unic{U+200D} a \unic{U+034F
+U+0301}}\footnote{\ \unic{U+034F} \textUName{combining grapheme joiner} is needed to
+prevent the sequence \textSourceText{a \unic{U+0301}} being resolved as \textex{á}
+before the font’s OpenType programming can be run, preventing the formation of a
+ligature.} yield \textex{a{\char"034F\char"0301\char"200D}a} and
+\textex{a{\char"200D}a\char"034F\char"0301}, while an accent on \unic{U+A733} is
+centered on the digraph: \textex{ꜳ\char"0301}.
+
+
 \subsection{\textSourceText{ss17} – Rare
 Digraphs}\hypertarget{ss17}{}
+
+{\color{red}Note}: \textSourceText{ss17} is deprecated as of version 2.220, and it will be removed in version 2.225.
+Instead of \textSourceText{ss17}, use \unic{U+200D} \textUName{zero width joiner} (see previous section).
+
 By\index{ss17|textbf} “digraph” we mean conjoined letters that represent a phonetic value: the most common examples
 for western languages are \textex{{\ae}} and \textex{{\oe}} (though these, because they
 are so common, are not included in this feature). Use of this feature in web pages enables easier searches: for
@@ -1100,7 +1269,7 @@ example, producing \textex{\addfontfeature{StylisticSet=17}{\th}au} from
 \textex{{\th}au} allows the word to be
 searched as “{\th}au.” The digraphs covered by this feature are \textcolor[rgb]{0.5529412,0.15686275,0.11764706}{%
 \addfontfeature{StylisticSet=17,Language=Icelandic}aa, ao, au, av, ay, ꝺv, ðv, gv, oo, vy,} plus capital and small cap
-equivalents and digraph + 
+equivalents and digraph +
 diacritic combinations anticipated in the
 MUFI recommendation. To produce such a digraph + diacritic combination, either type a letter + diacritic combination as
 the second element of the digraph or type the diacritic after the second element. For example,
@@ -1171,18 +1340,23 @@ its zero is a plain ring. This feature provides more modern-looking figures:
 are affected by this feature.
 
 \section{Superscripts and Subscripts}
+
 \subsection{\textSourceText{sups} – Superscripts}
-Produces\index{sups|textbf} superscript numbers and letters. Superscript numbers are in one of two styles: oldstyle proportional
-(from oldstyle numbers) and lining tabular (from lining numbers). All lowercase
-letters of the basic Latin alphabet are covered, and most uppercase letters: \sups{\ltab{0123} \oprop{4567} abcde ABDEG}. Wherever
-superscripts are needed (e.g. for footnote numbers), use \textSourceText{sups} instead of the raised and scaled
-characters generated by some programs. With sups: \sups{4567}. Scaled: \textsuperscript{4567}.
+Produces\index{sups|textbf} superscript numbers and letters. Superscript numbers are in one of two styles: 
+oldstyle proportional (from oldstyle numbers) and lining tabular (from lining numbers). All lowercase
+letters of the basic Latin alphabet are covered, and most uppercase letters (those encoded in Unicode).
+The lowercase Greek modifier letters are also covered:  \sups{\ltab{0123} \oprop{4567} abcde ABDEG βγδε}.
+Wherever superscripts are needed (e.g. for footnote numbers), use \textSourceText{sups} instead of the raised 
+and scaled characters generated by some programs. With sups: \sups{4567}. Scaled: \textsuperscript{4567}. 
+Latin superscripts have anchors so that diacritics can be added.
 
 \subsection{\textSourceText{subs} – Subscripts}
-Produces\index{subs|textbf} subscript numbers. Only produces oldstyle proportional and lining tabular figures:
-\subs{\oprop{2345} \ltab{8901}}.
+Produces\index{subs|textbf} subscripts,including oldstyle proportional and lining tabular figures
+(\subs{\oprop{2345} \ltab{8901}}) and the Latin and Greek letters included in the Unicode collection of subscripts
+(\subs{\,a e h i j k l m n o p r s t u v x β γ ρ φ χ\,})
 
 \section{Punctuation and Symbols}
+
 MUFI encodes nearly twenty marks of punctuation in the PUA. In Junicode these can be accessed in
 either of two ways: all are indexed variants of \textex{.} (period), and all are associated with the Unicode marks of
 punctuation they most resemble (but it should not be inferred that the medieval marks are semantically identical with
@@ -1202,7 +1376,11 @@ Colons,\index{ss18|textbf} semicolons, parentheses, quotation marks and several 
 (\unic{U+204A / U+2E52}, Tironian nota)}
 1=\cvd{69}{⁊⹒}, 2=\cvd[1]{69}{⁊⹒}, 3=\cvd[2]{69}{⁊⹒}, 4=\cvd[3]{69}{⁊⹒}, 5=\cvd[4]{69}{⁊⹒},
 6=\cvd[5]{69}{⁊⹒}, 7=\cvd[6]{69}{⁊⹒}, 8=\cvd[7]{69}{⁊⹒}, 9=\cvd[8]{69}{⁊⹒},
-10=\cvd[9]{69}{⁊⹒}, 11=\cvd[10]{69}{⁊⹒}.\index{cv69|textbf}
+10=\cvd[9]{69}{⁊⹒}, 11=\cvd[10]{69}{⁊⹒}.\index{cv69|textbf} The Tironian \textit{nota} was
+used throughout the Middle Ages, and it took a wide variety of shapes. The default glyphs and those
+on indexes 3, 4, and 11 are suitable for early medieval text, while those on indexes 1, 2, and 5
+are more appropriate for later medieval text. Those on indexes 6, 7, and 8 are intended as
+compromises, suitable for text of any period.
 
 \subsection{\textSourceText{cv70} –
   Variants of . (period)}\index{cv70|textbf}
@@ -1210,7 +1388,10 @@ Colons,\index{ss18|textbf} semicolons, parentheses, quotation marks and several 
 7=\cvd[6]{70}{.}, 8=\cvd[7]{70}{.}, 9=\cvd[8]{70}{.}, 10=\cvd[9]{70}{.}, 11=\cvd[10]{70}{.}, 12=\cvd[11]{70}{.},
 13=\cvd[12]{70}{.}, 14=\cvd[13]{70}{.}, 15=\cvd[14]{70}{.}, 16=\cvd[15]{70}{.}, 17=\cvd[16]{70}{.},
 18=\cvd[17]{70}{.}, 19=\cvd[18]{70}{.}, 20=\cvd[19]{70}{.}, 21=\cvd[20]{70}{.}, 22=\cvd[21]{70}{.},
-23=\cvd[22]{70}{.}. This feature provides access to all non-Unicode MUFI punctuation marks. Some of them 
+23=\cvd[22]{70}{.}, 24=\cvd[23]{70}{.}, 25=\cvd[24]{70}{.}, 26=\cvd[25]{70}{.}, 27=\cvd[26]{70}{.},
+28=\cvd[27]{70}{.}, 29=\cvd[28]{70}{.}.
+
+. This feature provides access to all non-Unicode MUFI punctuation marks. Some of them
 are available via other features (see below).
 
 \subsection{\textSourceText{cv71} – Variant of {\textperiodcentered} (\unic{U+00B7}, middle dot)}\index{cv71|textbf}
@@ -1223,7 +1404,7 @@ Variants of , (comma)}\index{cv72|textbf}
 \subsection{\textSourceText{cv73} –
 Variants of ; (semicolon)}\index{cv73|textbf}
 1=\cvd{73}{;} (\textit{punctus versus}), 2=\cvd[1]{73}{;}, 3=\cvd[2]{73}{;}, 4=\cvd[3]{73}{;},
-5=\cvd[4]{73}{;}, 6=\cvd[5]{73}{;}, 7=\cvd[6]{73}{;}, 8=\cvd[7]{73}{;}. Several complex
+5=\cvd[4]{73}{;}, 6=\cvd[5]{73}{;}, 7=\cvd[6]{73}{;}, 8=\cvd[7]{73}{;}, 9=\cvd[8]{73}{;}. Several complex
 punctuation marks are gathered here. This does not imply that these marks are variants of
 the semicolon.
 
@@ -1280,8 +1461,24 @@ for other spacing marks of abbreviation.
 The degree sign is often used as an editorial sign in editions of the Greek New Testament. This feature
 scales and positions it to match other editorial signs (U+2E00--u+2E0D).
 
-\section{Combining Marks}\index{cv84|textbf}
-\subsection{\textSourceText{cv84} – MUFI combining marks (variants of \unic{U+0304})}\hypertarget{cv84}{}
+\section{Combining Marks}
+
+Junicode provides more than 350 combining marks, including nearly 150 Unicode-encoded marks, variants of these,
+and unencoded equivalents of MUFI diacritics (which, being PUA-encoded, do not function well as combining marks).
+All of Junicode’s unencoded marks are accessible via OpenType features (listed below) or tags. Most are
+produced by positioning the mark directly after the base character: for example, the combination
+\textex{a\char"035B} is produced by the sequence \textex{a \unic{U+035B}}. Several are “double” marks, marking
+the relationship between two characters. These are produced by placing the double mark \textit{between}
+the two base characters: \unic{U+035C} (\textex{◌͜◌}), \unic{U+035F} (\textex{◌͟◌}),
+\unic{U+0362} (\textex{◌͢◌}), \unic{U+035D} (\textex{◌͝◌}), \unic{U+035E} (\textex{◌͞◌}),
+\unic{U+0360} (\textex{◌͠◌}), \unic{U+0361} (\textex{◌͡◌}), \unic{U+1DCD} (\textex{◌᷍◌}). The height of 
+these double marks is automatically adjusted to clear neighboring letters and combining marks, e.g.
+\textex{l͡o}, \textex{a̍͠o}, \textex{æ\char"1DD3\char"034F\char"1DCDu}, \textex{o\char"033B\char"035Ce}. If a double
+diacritic appears too high or too low (e.g. \textex{l\char"035Eo\char"030E}), place \unic{U+200C}
+\textUName{zero-width non-joiner} somewhere between the double diacritic and the combining mark:
+\textex{l \unic{U+035E} \unic{U+200C} o \unic{U+030E}} produces \textex{l\char"035E\char"200Co\char"030E}.
+
+\subsection{\textSourceText{cv84} – MUFI combining marks (variants of \unic{U+0304})}\hypertarget{cv84}{}\index{cv84|textbf}
 MUFI encodes a number of combining marks in the PUA (with code points between \unic{E000} and \unic{F8FF}), but when these characters
 are entered directly, they can interfere with searching and accessibility, and some important applications fail to
 position them correctly over their base characters. To avoid these problems, enter \unic{U+0304} (◌̄, \textUName{combining
@@ -1482,61 +1679,20 @@ attention to them, since they will likely have their own method of representing 
 \hyperlink{tagchapter}{Chapter 6, Entering Characters with Tags}.
 
 \subsection{\textSourceText{ss20} – Low Diacritics}
-The\index{ss20|textbf} MUFI recommendation includes a number of precomposed characters with base letters
-{\addfontfeature{Language=Icelandic}b, h, k, {\th}, ꝺ and {\dh}} and a number of combining
-marks. Instead of being positioned above ascender height as usual (e.g.
+The\index{ss20|textbf} MUFI recommendation includes a number of precomposed characters consisting of
+base letters with ascenders (e.g. \textex{b}, \textex{þ}) and a number of combining marks.
+Instead of being positioned above ascender height as usual (e.g.
 \textex{hͣ}), the MUFI glyphs have the marks positioned above the x-height
 (e.g. \textex{\addfontfeature{StylisticSet=20}hͣ}).
 Using the MUFI code points for these precomposed glyphs can interfere with searching
 and drastically reduce accessibility. Users of Junicode should instead use a sequence of base character + combining
-mark, and apply \textSourceText{ss20} to the two glyphs. Variant shapes of \textex{ꝺ} and \textex{{\dh}}
+mark, and apply \textSourceText{ss20} to the two glyphs. Affected base letters are
+\textex{b}, \textex{d}, \textex{ð}, \textex{ꝺ}, \textex{h}, \textex{ħ}, \textex{k}, \textex{þ},
+and \textex{ꟓ} with variants: other letters are not affected.
+Variant shapes of \textex{ꝺ} and \textex{{\dh}}
 that accommodate the combining mark will be substituted for the normal base characters (but this is not necessary for
-the other base characters). Examples:
-\textex{\addfontfeature{StylisticSet=20}bͦ ꝺᷦ \cvd[14]{84}{h̄} kͤ {\th}ͭ ðᷢ}. These marks are affected by this
-feature:
-
-\begin{multicols}{3}
-  \jSmCond\color{BrickRed}◌ͣ (\unic{U+0363})
-
-  ◌ᷓ (\unic{U+1DD3})
-
-  ◌ͤ (\unic{U+0364})
-
-  \cvd[14]{84}{◌͏̄} (\unic{U+0304}\slash\textSourceText{cv84[15]})\index{cv84}
-
-  ◌ᷞ (\unic{U+1DDE})
-
-  \cvd[18]{84}{◌͏̄} (\unic{U+0304}\slash\textSourceText{cv84[19]})\index{cv84}.
-
-  ◌ͦ (\unic{U+0366})
-
-  ◌ͬ (\unic{U+036C})
-
-  ◌ᷢ (\unic{U+1DE2})
-
-  ◌ᷣ (\unic{U+1DE3})
-
-  \cvd{87}{◌ᷣ} (\unic{U+1DE3}\slash\textSourceText{cv87[1]})
-
-  ◌ͭ (\unic{U+036D})
-
-  ◌ᫎ (\unic{U+1ACE})
-
-  ◌ͧ (\unic{U+0367})
-
-  ◌ͮ (\unic{U+036E})
-
-  ◌ᷦ (\unic{U+1DE6})
-
-  ◌͛ (\unic{U+035B})
-  \end{multicols}
-  
-\noindent\textSourceText{ss20} is intended for use only with the diacritics and base characters listed here; other
-base+diacritic combinations may be disrupted by the feature. You should therefore apply it only to
-relevant base+diacritic pairs (e.g. via a style in InDesign or a word processor or a command in
-{\LuaTeX}).
-
-
+other base characters). Examples:
+\textex{\addfontfeature{StylisticSet=20}bͦ ꝺᷦ \cvd[14]{84}{h̄} kͤ {\th}ͭ ðᷢ}.
 
 \subsection{\textSourceText{cv85} – Variant of ◌ᷓ (U+1DD3, combining open a)}
 1=\cvd{85}{◌ᷓ}.\index{cv85|textbf}
@@ -1649,63 +1805,63 @@ Produces ornaments (fleurons) in either of two ways: as an indexed variant of th
 variants of a-z, A-C:
 
 \begin{multicols}{4}
-a, 1{\tabto{4em}}\ornm{a}
+a,  0{\tabto{4em}}\ornm{a}
 
-b, 2{\tabto{4em}}\ornm{b}
+b,  1{\tabto{4em}}\ornm{b}
 
-c, 3{\tabto{4em}}\ornm{c}
+c,  2{\tabto{4em}}\ornm{c}
 
-d, 4{\tabto{4em}}\ornm{d}
+d,  3{\tabto{4em}}\ornm{d}
 
-e, 5{\tabto{4em}}\ornm{e}
+e,  4{\tabto{4em}}\ornm{e}
 
-f, 6{\tabto{4em}}\ornm{f}
+f,  5{\tabto{4em}}\ornm{f}
 
-g, 7{\tabto{4em}}\ornm{g}
+g,  6{\tabto{4em}}\ornm{g}
 
-h, 8{\tabto{4em}}\ornm{h}
+h,  7{\tabto{4em}}\ornm{h}
 
-i, 9{\tabto{4em}}\ornm{i}
+i,  8{\tabto{4em}}\ornm{i}
 
-j, 10{\tabto{4em}}\ornm{j}
+j,  9{\tabto{4em}}\ornm{j}
 
-k, 11{\tabto{4em}}\ornm{k}
+k, 10{\tabto{4em}}\ornm{k}
 
-l, 12{\tabto{4em}}\ornm{l}
+l, 11{\tabto{4em}}\ornm{l}
 
-m, 13{\tabto{4em}}\ornm{m}
+m, 12{\tabto{4em}}\ornm{m}
 
-n, 14{\tabto{4em}}\ornm{n}
+n, 13{\tabto{4em}}\ornm{n}
 
-o, 15{\tabto{4em}}\ornm{o}
+o, 14{\tabto{4em}}\ornm{o}
 
-p, 16{\tabto{4em}}\ornm{p}
+p, 15{\tabto{4em}}\ornm{p}
 
-q, 17{\tabto{4em}}\ornm{q}
+q, 16{\tabto{4em}}\ornm{q}
 
-r, 18{\tabto{4em}}\ornm{r}
+r, 17{\tabto{4em}}\ornm{r}
 
-s, 19{\tabto{4em}}\ornm{s}
+s, 18{\tabto{4em}}\ornm{s}
 
-t, 20{\tabto{4em}}\ornm{t}
+t, 19{\tabto{4em}}\ornm{t}
 
-u, 21{\tabto{4em}}\ornm{u}
+u, 20{\tabto{4em}}\ornm{u}
 
-v, 22{\tabto{4em}}\ornm{v}
+v, 21{\tabto{4em}}\ornm{v}
 
-w, 23{\tabto{4em}}\ornm{w}
+w, 22{\tabto{4em}}\ornm{w}
 
-x, 24{\tabto{4em}}\ornm{x}
+x, 23{\tabto{4em}}\ornm{x}
 
-y, 25{\tabto{4em}}\ornm{y}
+y, 24{\tabto{4em}}\ornm{y}
 
-z, 26{\tabto{4em}}\ornm{z}
+z, 25{\tabto{4em}}\ornm{z}
 
-A, 27{\tabto{4em}}\ornm{A}
+A, 26{\tabto{4em}}\ornm{A}
 
-B, 28{\tabto{4em}}\ornm{B}
+B, 27{\tabto{4em}}\ornm{B}
 
-C, 29{\tabto{4em}}\ornm{C}
+C, 28{\tabto{4em}}\ornm{C}
 \end{multicols}
 
 \noindent The method with letters of the alphabet is easier, but the method with bullets will produce a more satisfactory result
@@ -1714,7 +1870,7 @@ implemented.\index{ornm|textbf}
 
 \subsection{Lady Junicode}
 Lady Junicode cannot be produced by an OpenType feature, believing that it would be vulgar to make herself so accessible. She has, indeed,
-commanded that the author of this document not publish her code point, located in one of the more private corners of the 
+commanded that the author of this document not publish her code point, located in one of the more private corners of the
 Private Use Area. She has, however, given permission to publish her miniature:
 \begin{center}
 {\huge\char"0F19F}
@@ -1722,11 +1878,11 @@ Private Use Area. She has, however, given permission to publish her miniature:
 If you encounter her while adventuring in her domains, greet her respectfully, and she will welcome you graciously.
 
 \section{Required Features}\hypertarget{req}{}\index{ccmp|textbf}\index{calt|textbf}\index{liga|textbf}%
-\index{loca|textbf}\index{rlig|textbf}\index{kern|textbf}\index{mark|textbf}\index{mkmk|textbf}
+\index{locl|textbf}\index{rlig|textbf}\index{kern|textbf}\index{mark|textbf}\index{mkmk|textbf}
 Required features, which provide some of the font’s most basic functionality—ligatures, support for
 other features, kerning, and more—include \textSourceText{ccmp} (Glyph Composition/Decomposition),
 \textSourceText{calt} (Contextual Alternates), \textSourceText{liga} (Standard Ligatures),
-\textSourceText{loca} (Localized Forms), \textSourceText{rlig} (Required Ligatures),
+\textSourceText{locl} (Localized Forms), \textSourceText{rlig} (Required Ligatures),
 \textSourceText{kern} (Horizontal Kerning), and \textSourceText{mark}/\textSourceText{mkmk} (Mark
 Positioning). In MS Word these features have to be explicitly enabled on the Advanced tab of the Font dialog (Ctrl-D or
 Cmd-D: enable Kerning, Standard Ligatures, and Contextual Alternates, and the others will be enabled automatically),

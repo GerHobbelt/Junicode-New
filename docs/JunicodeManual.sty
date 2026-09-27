@@ -81,7 +81,13 @@
 \usepackage{metalogo}
 \usepackage{hyperref}
 \hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue,%
-  urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+  urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=,}
+\pdfstringdefDisableCommands{%
+	\def\unic{}%
+	\def\textSourceText{}%
+	\def\addfontfeature\@gobble
+}
+\urlstyle{same}
 % Footnotes configuration
 \makeatletter
 \renewcommand\thefootnote{\arabic{footnote}}
@@ -127,6 +133,7 @@
 \newcommand{\ctosc}[1]{{\addfontfeature{Letters=UppercaseSmallCaps}#1}}
 \newcommand{\secletter}[1]{\textbf{#1}}
 \newcommand{\fspec}{{\sffamily fontspec}}
+\newcommand{\grk}[1]{{\addfontfeature{Language=Greek}#1}}
 \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr}
 \makeatother

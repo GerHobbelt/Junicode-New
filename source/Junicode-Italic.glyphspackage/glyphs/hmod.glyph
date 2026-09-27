@@ -3,6 +3,16 @@ color = 4;
 glyphname = hmod;
 layers = (
 {
+anchors = (
+{
+name = bottom;
+pos = (159,284);
+},
+{
+name = top;
+pos = (261,718);
+}
+);
 guides = (
 {
 angle = 76.2756;
@@ -90,6 +100,16 @@ nodes = (
 width = 295;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (179,284);
+},
+{
+name = top;
+pos = (281,718);
+}
+);
 guides = (
 {
 pos = (-3,663);
@@ -189,6 +209,16 @@ nodes = (
 width = 317;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (162,284);
+},
+{
+name = top;
+pos = (264,718);
+}
+);
 guides = (
 {
 angle = 76.4673;
@@ -280,6 +310,16 @@ nodes = (
 width = 288;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (139,284);
+},
+{
+name = top;
+pos = (241,718);
+}
+);
 guides = (
 {
 angle = 78.5535;
@@ -367,6 +407,16 @@ nodes = (
 width = 254;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (199,284);
+},
+{
+name = top;
+pos = (301,718);
+}
+);
 guides = (
 {
 angle = 76.5421;
@@ -374,7 +424,7 @@ pos = (468,723);
 },
 {
 angle = 76.5205;
-pos = (215,619);
+pos = (279,619);
 }
 );
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -458,6 +508,16 @@ nodes = (
 width = 357;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (164,284);
+},
+{
+name = top;
+pos = (266,718);
+}
+);
 guides = (
 {
 angle = 180;

@@ -3,10 +3,24 @@ color = 4;
 glyphname = imod;
 layers = (
 {
+anchors = (
+{
+name = bottom;
+pos = (123,284);
+},
+{
+name = top;
+pos = (221,731);
+}
+);
 guides = (
 {
 angle = 253.8644;
 pos = (115,435);
+},
+{
+pos = (228,452);
+showMeasurement = 1;
 }
 );
 layerId = master01;
@@ -75,6 +89,16 @@ nodes = (
 width = 181;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (132,284);
+},
+{
+name = top;
+pos = (226,731);
+}
+);
 guides = (
 {
 angle = 251.6915;
@@ -147,6 +171,16 @@ nodes = (
 width = 212;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (122,284);
+},
+{
+name = top;
+pos = (217,731);
+}
+);
 layerId = "7904EAEE-2B64-409E-B923-0048172372BE";
 shapes = (
 {
@@ -213,6 +247,16 @@ nodes = (
 width = 186;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (106,284);
+},
+{
+name = top;
+pos = (205,731);
+}
+);
 guides = (
 {
 angle = 253.5325;
@@ -285,6 +329,16 @@ nodes = (
 width = 182;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (126,284);
+},
+{
+name = top;
+pos = (223,731);
+}
+);
 guides = (
 {
 angle = 253.8644;
@@ -357,6 +411,16 @@ nodes = (
 width = 194;
 },
 {
+anchors = (
+{
+name = bottom;
+pos = (123,284);
+},
+{
+name = top;
+pos = (221,731);
+}
+);
 layerId = "997BDFA1-EC67-4686-8CFE-E56BDBE179FE";
 shapes = (
 {
