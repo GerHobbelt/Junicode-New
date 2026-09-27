@@ -84,6 +84,19 @@ gladıo meo· domınabıt᷑ manꝰ mea· Sed \
 extendıt dexterā suā & deuorauıt eos  t̄ra· \
 & popꝉm suum sanguınıs suı pr&ıo lıƀerauıt;";
 
+var greektext = "Ὃ ἦν ἀπ’ ἀρχῆς, ὃ ἀκηκόαμεν, ὃ ἑωράκαμεν τοῖς ὀφθαλμοῖς ἡμῶν, ὃ ἐθεασάμεθα καὶ αἱ χεῖρες \
+ἡμῶν ἐψηλάφησαν, περὶ τοῦ λόγου τῆς ζωῆς καὶ ἡ ζωὴ ἐφανερώθη, καὶ ἑωράκαμεν καὶ μαρτυροῦμεν καὶ ἀπαγγέλλομεν \
+ὑμῖν τὴν ζωὴν τὴν αἰώνιον ἥτις ἦν πρὸς τὸν πατέρα καὶ ἐφανερώθη ἡμῖν ὃ ἑωράκαμεν καὶ ἀκηκόαμεν ἀπαγγέλλομεν \
+καὶ ὑμῖν, ἵνα καὶ ὑμεῖς κοινωνίαν ἔχητε μεθ’ ἡμῶν. καὶ ἡ κοινωνία δὲ ἡ ἡμετέρα μετὰ τοῦ πατρὸς καὶ μετὰ τοῦ υἱοῦ \
+αὐτοῦ Ἰησοῦ Χριστοῦ. καὶ ταῦτα γράφομεν ἡμεῖς ἵνα ἡ χαρὰ ἡμῶν ᾖ πεπληρωμένη. Καὶ ἔστιν αὕτη ἡ ἀγγελία ἣν \
+ἀκηκόαμεν ἀπ’ αὐτοῦ καὶ ἀναγγέλλομεν ὑμῖν, ὅτι ὁ θεὸς φῶς ἐστιν καὶ σκοτία ἐν αὐτῷ οὐκ ἔστιν οὐδεμία. Ἐὰν \
+εἴπωμεν ὅτι κοινωνίαν ἔχομεν μετ’ αὐτοῦ καὶ ἐν τῷ σκότει περιπατῶμεν, ψευδόμεθα καὶ οὐ ποιοῦμεν τὴν ἀλήθειαν: \
+ἐὰν δὲ ἐν τῷ φωτὶ περιπατῶμεν ὡς αὐτός ἐστιν ἐν τῷ φωτί, κοινωνίαν ἔχομεν μετ’ ἀλλήλων καὶ τὸ αἷμα Ἰησοῦ τοῦ \
+υἱοῦ αὐτοῦ καθαρίζει ἡμᾶς ἀπὸ πάσης ἁμαρτίας. ἐὰν εἴπωμεν ὅτι ἁμαρτίαν οὐκ ἔχομεν, ἑαυτοὺς πλανῶμεν καὶ ἡ \
+ἀλήθεια οὐκ ἔστιν ἐν ἡμῖν. ἐὰν ὁμολογῶμεν τὰς ἁμαρτίας ἡμῶν, πιστός ἐστιν καὶ δίκαιος ἵνα ἀφῇ ἡμῖν τὰς ἁμαρτίας \
+καὶ καθαρίσῃ ἡμᾶς ἀπὸ πάσης ἀδικίας. ἐὰν εἴπωμεν ὅτι οὐχ ἡμαρτήκαμεν, ψεύστην ποιοῦμεν αὐτὸν καὶ ὁ λόγος αὐτοῦ \
+οὐκ ἔστιν ἐν ἡμῖν.";
+
     var oldenglishtext = "Her on ðisum geare forðferde \
       Ælfgiue Ymma Eadwardes cynges modor ⁊ Hardacnutes cynges. ⁊ on \
       þam sylfan geare gerædde se cyng ⁊ his witan þæt mann sceolde \
@@ -133,14 +146,27 @@ langron huila.’   Thuo uuarth it san gilestid so,\n\
 giuuorđan te uuaron   so thar on them uuihe gisprak\n\
 engil thes alouualdon:  uuart ald gumo\n\
 spraka bilosid,   thuo hie spahan hugi\n\
-bari an is briostun."
+bari an is briostun.";
+
+var oldirishtext = "Longuis Aedh adhaigh domhnaidh & an rigraidh: & cia ro \
+loing Aed, ni sib digh, uair ní bai corn lais, \
+or do baitheadh a cuirnn & a cuaich ac Ath Enaigh uas Eas Ruaidh, oc tiachtain don t-sluadh thairis. As amlaid imorro \
+robai Aed cona sibh digh a leastur aile o ra dealuigh re cich a mathar acht a curn namha. Ba bron tra do righ Corca \
+Tri & dia seithid, each ic ol & righ Erenn gin ol. Togbuis Angal a lamha fri Dia, & feicis gin codladh gin tomailt \
+co madain, gu n-eabert a bean fris ara barach, ‘Eirg,’ ar si, ‘co Dirlus Guaire mic Colmain, uair ba tealach feile & \
+naire o aimsir Dathi anall, dus an fuigbithea corn tria firta na feile ann.’ Cechaing Angal righ Corca Tri tar dorus na \
+ratha amach, & tuisleas a cois deas, co ra tuisil cloch leis isin lis .i. an cloch do bai ar belaib an t-suirn a rabudar \
+na tri cuirn as deach robai a n-Eirinn .i. an Cam-corn & an Litan & an Easgung. Cuirn sin tucad do Cormac u Cuinn dar \
+muir, & ro folaig Niamh mac Lugna Firtri an dara comalta do Cormac u Cuinn, iar n-dith Cormuic, co toracht Coirpri \
+Lifeachuir dar muir & cia ro fritha na cuirn aile la Cairpri, ni fritha na cuirn-siu co h-aimsir na næmh & Aeda Oirdnidi \
+mic Neill, or tucad cealtar tairsib o Dia, co ru-s-foillsid do righ Corca Tri tria firta na feile.";
 
 	// Clear the menus and boxes (in case the page is being reloaded) and
 	// display the default (modern English) text.
 
 	var fstring = "\"ss08\" on, \"dlig\" on";
 	$("#textbox").css("font-feature-settings", fstring).text(modtext);
-	$( "input[type='checkbox']" ).not("#ss08, #dlig").prop("checked", false);
+	$( "input[type='checkbox']" ).not("#italbutton, #ss08, #dlig").prop("checked", false);
 	$( "#ss08, #dlig" ).prop("checked", true);
 
 	function selectElement(id, valueToSelect) {
@@ -163,55 +189,70 @@ bari an is briostun."
 
 		switch ( $("#languages option:selected").attr("value") ) {
 			case "ModEnglish":
-				$( "input[type='checkbox']" ).not("#ss08, #dlig").prop("checked", false);
+				$( "input[type='checkbox']" ).not("#italbutton, #ss08, #dlig").prop("checked", false);
 				$("#ss08, #dlig").prop("checked",true).change();
 				break;
 			case "OldEnglish":
 				// lang code is ang, but we use en to trigger English thorn and eth.
 				t = oldenglishtext;
-				$( "input[type='checkbox']" ).prop("checked", false).first().change();
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
+				break;
+			case "OldIrish":
+				t = oldirishtext;
+				l = "ga";
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
+				$("#ss02").prop("checked",true).change();
 				break;
 			case "MiddleEnglish":
 				t = middleenglishtext;
-				// r rotunda with rules; always long s; crossed Tironian nota
-				$( "input[type='checkbox']" ).not("#hist, #ss16, #cv402").prop("checked", false);
-				$("#hist, #ss16, #cv402").prop("checked",true).change();
+				// r rotunda with rules; always long s; crossed Ti.ronian nota
+				$( "input[type='checkbox']" ).not("#italbutton, #cv383, #ss16, #cv691").prop("checked", false);
+				$("#cv383, #ss16, #cv691").prop("checked",true).change();
+				break;
+			case "Greek":
+				l = "el"
+				t = greektext;
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
 				break;
 			case "Latin":
 				l = "la"
 				t = latintext;
-				$( "input[type='checkbox']" ).not("#hist").prop("checked", false);
-				$("#hist").prop("checked",true).change();
+				$( "input[type='checkbox']" ).not("#italbutton, #cv383").prop("checked", false);
+				$("#cv383").prop("checked",true).change();
 				break;
 			case "Gothic":
 				// lang code for Gothic is got. Here it simply means "not English."
 				t = gothictext;
 				l = "got";
-				$( "input[type='checkbox']" ).prop("checked", false).first().change();
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
 				break;
 			case "OldIcelandic":
 				l = "is";
 				t = norsetext;
-				$( "input[type='checkbox']" ).prop("checked", false).first().change();
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
 				break;
 			case "OldSaxon":
 				// lang code is osx.
 				l = "osx";
 				t = oldsaxontext;
 				whitespace = "pre-wrap";
-				$( "input[type='checkbox']" ).prop("checked", false).first().change();
+				$( "input[type='checkbox']" ).not("#italbutton").prop("checked", false).first().change();
 				break;
 			case "German":
 				l = "de";
 				t = germantext;
 				// Long s is done manually for German. Use r rotunda with rules.
-				$( "input[type='checkbox']" ).not("#ss16").prop("checked", false);
+				$( "input[type='checkbox']" ).not("#italbutton, #ss16").prop("checked", false);
 				$("#ss16").prop("checked",true).change();
 
 		}
 
+		font_style = "normal"
+		if ($("#italbutton").is(":checked")) {
+			font_style = "italic"
+		}
 		$("#textbox").attr("lang",l)
-			.css({"white-space": whitespace})
+			.css({"white-space": whitespace, "font-style": font_style})
 			.text(t);
 
 	});
@@ -252,12 +293,6 @@ bari an is briostun."
 			case "SemicompressedMedium":
 				newClass = "tbc-medium-semicompressed";
 				break;
-			case "SemicompressedSemibold":
-				newClass = "tbc-semibold-semicompressed";
-				break;
-			case "SemicompressedBold":
-				newClass = "tbc-bold-semicompressed";
-				break;
 			case "CompressedLight":
 				newClass = "tbc-light-compressed";
 				break;
@@ -267,12 +302,31 @@ bari an is briostun."
 			case "CompressedMedium":
 				newClass = "tbc-medium-compressed";
 				break;
-			case "CompressedSemibold":
-				newClass = "tbc-semibold-compressed";
-				break;
-			case "CompressedBold":
-				newClass = "tbc-bold-compressed";
-		}
+			case  "SmExp":
+				newClass = "";
+				break
+			case  "SmExpMedium":
+				newClass = "tbc-smexp-medium";
+				break
+			case  "SmExpSmBold":
+				newClass = "tbc-smexp-smbold";
+				break
+			case  "SmExpBold":
+				newClass = "tbc-smexp-bold";
+				break
+			case  "Exp":
+				newClass = "tbc-exp";
+				break
+			case  "ExpMedium":
+				newClass = "tbc-exp-medium";
+				break
+			case  "ExpSmBold":
+				newClass = "tbc-exp-smbold";
+				break
+			case  "ExpBold":
+				newClass = "tbc-exp-bold";
+				break
+																														}
 
     $("#textbox").removeClass().addClass(newClass);
 
@@ -295,6 +349,15 @@ bari an is briostun."
 	// unchecked.
 
 	$(".check").change(function() {
+
+		if ($("#italbutton").is(":checked")) {
+			// $("#textbox").css("font-style", "italic");
+			font_style = "italic"
+		}
+		else {
+			// $("#textbox").css("font-style", "normal");
+			font_style = "normal"
+		}
 
 		fstring = "";
 
@@ -321,7 +384,7 @@ bari an is briostun."
 		if (fstring.length == 0)
 			fstring = "normal";
 
-		$("#textbox").css("font-feature-settings", fstring);
+		$("#textbox").css({"font-feature-settings": fstring, "font-style": font_style});
 
 	});
 });
