@@ -1,6 +1,6 @@
-# Junicode – The Font for Medievalists
+![Sample Image](junicode-banner.jpg)
 
-This is the development site for Junicode 2, a radically rebuilt version of the
+This is the development and distribution site for Junicode 2, a radically rebuilt version of the
 widely used free font for medievalists, linguists, and specialists in many academic
 disciplines. (Junicode 1.003, the last in the Junicode 1 series, can also be
 downloaded here.) Junicode 2 features full compliance with the recommendation of the
@@ -23,15 +23,23 @@ The Junicode 2 font
 - and an expanded collection of OpenType features—carefully chosen and organized to promote
 the display of accessible text.
 
-![Sample Image](sample-image.jpg)
-
 Users of the various versions of Junicode 1 need to be aware that documents
 originally set in Junicode 1 may reflow when set in Junicode 2. Further,
 documents that use the OpenType features of Junicode 1 (aside from basics like
 kerning and standard ligatures) may not be displayed properly when changed over
 to Junicode 2.
 
-The latest version of Junicode can be downloaded [here](https://github.com/psb1558/Junicode-font/releases)
+The latest version of Junicode can be downloaded [here](https://github.com/psb1558/Junicode-font/releases).
+
+**PLEASE NOTE:** A great many commercial websites offer versions of Junicode. The fonts offered
+by these sites are always *seriously* out of date. Often they are accompanied by incorrect licenses
+or other faulty information, and often the packages they offer are incomplete.
+If the archives in which these fonts are packaged are
+corrupt or infected with malware, **that is not the responsibility of Junicode’s developer.**
+Always use versions of Junicode downloaded from this site, or from reputable Open Source repositories
+like Homebrew or those that serve Linux distributions. This site **will not support** versions of Junicode downloaded
+from commercial websites.
+
 
 # Resources
 
@@ -46,7 +54,7 @@ An [essay](https://psb1558.github.io/Junicode-font/Searchability.html) on making
 An [introduction](https://psb1558.github.io/Junicode-font/EnlargedAxis.html) to the Enlarge axis: what it's for and how to use it.
 
 [Test/demonstration](https://psb1558.github.io/Junicode-font/Junicode-2-feature-test.html) of
-high-level CSS font properties in Junicode 2
+high-level CSS font properties in Junicode 2.
 
 # Building Junicode
 
