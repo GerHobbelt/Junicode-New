@@ -15,7 +15,7 @@ ref = E;
 ref = commareversedabovecomb_acutecomb.case;
 }
 );
-width = 900;
+width = 895;
 },
 {
 layerId = "75918100-ED89-42A8-B0FE-888EB9C86810";
@@ -71,21 +71,21 @@ ref = E;
 ref = commareversedabovecomb_acutecomb.case;
 }
 );
-width = 986;
+width = 976;
 },
 {
 layerId = "00F4936D-6309-4DEC-83B3-42806ED1A477";
 shapes = (
 {
 alignment = -1;
-pos = (290,0);
+pos = (289,0);
 ref = E;
 },
 {
 ref = commareversedabovecomb_acutecomb.case;
 }
 );
-width = 900;
+width = 895;
 }
 );
 metricRight = E;

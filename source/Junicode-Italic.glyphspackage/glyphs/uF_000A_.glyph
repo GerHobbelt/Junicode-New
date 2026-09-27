@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uF000A;
-kernLeft = KO_a.enlarged;
 layers = (
 {
 layerId = master01;
@@ -54,9 +54,10 @@ shapes = (
 ref = eogonek.alt1;
 }
 );
-width = 340;
+width = 477;
 }
 );
+script = latin;
 unicode = 983050;
 userData = {
 KernOnSpecialSpacing = {

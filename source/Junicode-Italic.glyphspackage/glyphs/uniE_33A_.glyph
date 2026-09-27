@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE33A;
-kernLeft = KO_V;
-kernRight = KO_V;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = V;
 },
 {
 alignment = 1;
-pos = (296,0);
+pos = (299,0);
 ref = acutecomb.case;
 }
 );
@@ -82,7 +80,7 @@ ref = V;
 },
 {
 alignment = 1;
-pos = (271,0);
+pos = (299,0);
 ref = acutecomb.case;
 }
 );

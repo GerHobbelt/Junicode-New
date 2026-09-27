@@ -1,6 +1,5 @@
 {
 glyphname = uniF22C;
-kernLeft = KO_v.enlarged;
 layers = (
 {
 layerId = master01;
@@ -54,7 +53,7 @@ shapes = (
 ref = Q.alt;
 }
 );
-width = 572;
+width = 567;
 }
 );
 metricLeft = "=|P";

@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF202;
-kernLeft = KO_a;
 layers = (
 {
 layerId = master01;
@@ -9,7 +9,7 @@ shapes = (
 ref = a.alt2;
 }
 );
-width = 448;
+width = 438;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -59,9 +59,10 @@ shapes = (
 ref = a.alt2;
 }
 );
-width = 665;
+width = 438;
 }
 );
+script = latin;
 unicode = 61954;
 userData = {
 KernOnSpecialSpacing = {

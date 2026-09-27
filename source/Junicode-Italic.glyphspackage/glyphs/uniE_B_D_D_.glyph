@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBDD;
-kernLeft = KO_n.alt2;
-kernRight = KO_h.sc;
 layers = (
 {
 layerId = master01;
@@ -10,7 +9,7 @@ shapes = (
 ref = m.sc;
 },
 {
-pos = (445,0);
+pos = (448,0);
 ref = dotaccentcomb.sc;
 }
 );
@@ -53,7 +52,7 @@ pos = (358,0);
 ref = dotaccentcomb.sc;
 }
 );
-width = 541;
+width = 542;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -75,13 +74,14 @@ shapes = (
 ref = m.sc;
 },
 {
-pos = (446,0);
+pos = (448,0);
 ref = dotaccentcomb.sc;
 }
 );
 width = 666;
 }
 );
+script = latin;
 unicode = 60381;
 userData = {
 KernOnSpecialSpacing = {

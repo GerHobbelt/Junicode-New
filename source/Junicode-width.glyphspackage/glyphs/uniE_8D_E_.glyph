@@ -1,7 +1,5 @@
 {
 glyphname = uniE8DE;
-kernLeft = KO_H;
-kernRight = KO_l_l;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = P_s_i.hlig;
 }
 );
-width = 744;
+width = 739;
 }
 );
 metricLeft = I;

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniE734;
-kernLeft = KO_uniA7D7;
-kernRight = KO_o;
 layers = (
 {
 layerId = master01;
@@ -66,8 +65,7 @@ ref = thorn_longs.hlig;
 width = 405;
 }
 );
-metricLeft = longs;
-metricRight = p;
+script = latin;
 unicode = 59188;
 userData = {
 KernOnSpecialSpacing = {

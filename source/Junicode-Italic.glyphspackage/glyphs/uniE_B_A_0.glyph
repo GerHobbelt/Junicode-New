@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBA0;
-kernLeft = KO_uniA7D7;
-kernRight = KO_f_adieresis;
 layers = (
 {
 layerId = master01;
@@ -55,9 +54,10 @@ shapes = (
 ref = longs_adieresis.hlig;
 }
 );
-width = 755;
+width = 684;
 }
 );
+script = latin;
 unicode = 60320;
 userData = {
 KernOnSpecialSpacing = {

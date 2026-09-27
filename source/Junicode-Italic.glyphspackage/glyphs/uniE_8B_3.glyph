@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE8B3;
-kernLeft = KO_d;
-kernRight = KO_c_k.hlig;
 layers = (
 {
 layerId = master01;
@@ -56,11 +54,9 @@ shapes = (
 ref = q_rrotunda.hlig;
 }
 );
-width = 741;
+width = 740;
 }
 );
-metricLeft = q;
-metricRight = rrotunda;
 script = latin;
 subCategory = Lowercase;
 unicode = 59571;

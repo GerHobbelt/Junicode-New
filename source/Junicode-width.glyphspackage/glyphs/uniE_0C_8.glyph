@@ -1,7 +1,5 @@
 {
 glyphname = uniE0C8;
-kernLeft = KO_H;
-kernRight = KO_E;
 layers = (
 {
 layerId = master01;
@@ -75,11 +73,11 @@ shapes = (
 ref = E;
 },
 {
-pos = (312,4);
+pos = (307,4);
 ref = dotacutecomb.case;
 }
 );
-width = 610;
+width = 606;
 }
 );
 unicode = 57544;

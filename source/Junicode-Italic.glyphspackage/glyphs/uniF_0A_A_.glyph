@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF0AA;
-kernLeft = KO_acomb;
-kernRight = KO_Mcomb;
 layers = (
 {
 layerId = master01;
@@ -11,7 +10,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (353,-1);
+pos = (356,-1);
 ref = rcomb;
 }
 );
@@ -81,13 +80,14 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (328,-1);
+pos = (356,-1);
 ref = rcomb;
 }
 );
 width = 420;
 }
 );
+script = latin;
 unicode = 61610;
 userData = {
 KernOnSpecialSpacing = {

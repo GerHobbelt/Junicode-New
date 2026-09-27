@@ -1,7 +1,5 @@
 {
 glyphname = uniE168;
-kernLeft = KO_H;
-kernRight = KO_K;
 layers = (
 {
 layerId = master01;
@@ -81,11 +79,11 @@ ref = K;
 },
 {
 alignment = 1;
-pos = (345,0);
+pos = (340,0);
 ref = dotaccentcomb.case;
 }
 );
-width = 660;
+width = 655;
 }
 );
 unicode = 57704;

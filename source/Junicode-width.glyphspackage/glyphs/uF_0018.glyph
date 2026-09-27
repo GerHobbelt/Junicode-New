@@ -1,7 +1,5 @@
 {
 glyphname = uF0018;
-kernLeft = KO_y;
-kernRight = KO_y;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = v.highoverline;
 }
 );
-width = 838;
+width = 409;
 }
 );
 unicode = 983064;

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEEE4;
-kernLeft = KO_d_e.hlig;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -58,6 +57,7 @@ ref = dinsular.enlarged;
 width = 467;
 }
 );
+script = latin;
 unicode = 61156;
 userData = {
 KernOnSpecialSpacing = {

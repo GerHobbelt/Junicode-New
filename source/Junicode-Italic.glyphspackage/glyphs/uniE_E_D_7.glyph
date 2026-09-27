@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEED7;
-kernLeft = KO_longs.alt4;
-kernRight = KO_o;
 layers = (
 {
 layerId = master01;
@@ -55,9 +54,10 @@ shapes = (
 ref = pflourish_p.hlig;
 }
 );
-width = 712;
+width = 713;
 }
 );
+script = latin;
 unicode = 61143;
 userData = {
 KernOnSpecialSpacing = {

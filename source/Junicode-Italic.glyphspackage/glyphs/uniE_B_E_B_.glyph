@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBEB;
-kernLeft = KO_d;
-kernRight = KO_e;
 layers = (
 {
 layerId = master01;
@@ -82,6 +81,7 @@ ref = ogonekabovecomb;
 width = 742;
 }
 );
+script = latin;
 unicode = 60395;
 userData = {
 KernOnSpecialSpacing = {

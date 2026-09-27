@@ -1,7 +1,5 @@
 {
 glyphname = uniE8F1;
-kernLeft = KO_y;
-kernRight = KO_y;
 layers = (
 {
 layerId = master01;
@@ -29,7 +27,7 @@ pos = (554,0);
 ref = icomb;
 }
 );
-width = 704;
+width = 700;
 },
 {
 layerId = "6ABD9449-5E80-4451-809E-12ADEB9E9AB4";
@@ -53,11 +51,11 @@ ref = w;
 },
 {
 alignment = 1;
-pos = (430,6);
+pos = (431,6);
 ref = icomb;
 }
 );
-width = 542;
+width = 540;
 },
 {
 layerId = "9E6FDE2E-55A6-44A9-9556-F1822294BF26";
@@ -67,11 +65,11 @@ ref = w;
 },
 {
 alignment = 1;
-pos = (591,-6);
+pos = (590,-6);
 ref = icomb;
 }
 );
-width = 775;
+width = 776;
 },
 {
 layerId = "00F4936D-6309-4DEC-83B3-42806ED1A477";
@@ -81,11 +79,11 @@ ref = w;
 },
 {
 alignment = 1;
-pos = (670,248);
+pos = (669,248);
 ref = icomb;
 }
 );
-width = 963;
+width = 961;
 }
 );
 unicode = 59633;

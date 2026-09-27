@@ -1,7 +1,5 @@
 {
 glyphname = uniF19A;
-kernLeft = KO_n;
-kernRight = KO_n.mecurl;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = n.mecurl;
 }
 );
-width = 778;
+width = 774;
 }
 );
 unicode = 61850;

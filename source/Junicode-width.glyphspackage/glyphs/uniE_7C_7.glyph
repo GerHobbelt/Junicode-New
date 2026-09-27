@@ -1,6 +1,5 @@
 {
 glyphname = uniE7C7;
-kernLeft = KO_h_longshighstroke;
 layers = (
 {
 layerId = master01;
@@ -54,7 +53,7 @@ shapes = (
 ref = h_longshighstroke;
 }
 );
-width = 538;
+width = 536;
 }
 );
 unicode = 59335;

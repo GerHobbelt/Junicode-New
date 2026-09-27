@@ -1,6 +1,5 @@
 {
 glyphname = uniEFA1;
-kernLeft = KO_a.alt5;
 layers = (
 {
 layerId = master01;
@@ -54,7 +53,7 @@ shapes = (
 ref = ae.alt1;
 }
 );
-width = 580;
+width = 576;
 }
 );
 unicode = 61345;

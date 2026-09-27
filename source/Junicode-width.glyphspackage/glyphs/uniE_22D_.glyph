@@ -1,7 +1,5 @@
 {
 glyphname = uniE22D;
-kernLeft = KO_O;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -83,7 +81,7 @@ ref = O;
 },
 {
 alignment = 1;
-pos = (406,0);
+pos = (405,0);
 ref = dieresiscomb.case;
 },
 {

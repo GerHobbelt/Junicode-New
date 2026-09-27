@@ -1,7 +1,5 @@
 {
 glyphname = uniF149;
-kernLeft = KO_b;
-kernRight = KO_p;
 layers = (
 {
 layerId = master01;
@@ -81,7 +79,7 @@ ref = thorn;
 },
 {
 anchor = center_left;
-pos = (89,321);
+pos = (89,311);
 ref = slashshortcomb;
 }
 );

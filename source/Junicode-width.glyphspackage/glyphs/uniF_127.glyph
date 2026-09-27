@@ -1,6 +1,5 @@
 {
 glyphname = uniF127;
-kernLeft = KO_n.alt2;
 layers = (
 {
 layerId = master01;
@@ -60,7 +59,7 @@ shapes = (
 ref = longs.alt2;
 }
 );
-width = 289;
+width = 285;
 }
 );
 metricLeft = f;

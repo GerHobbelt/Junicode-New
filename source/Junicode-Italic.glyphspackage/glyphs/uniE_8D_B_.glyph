@@ -1,4 +1,5 @@
 {
+category = Letter;
 glyphname = uniE8DB;
 layers = (
 {
@@ -132,8 +133,9 @@ shapes = (
 ref = Y.alt;
 }
 );
-width = 694;
+width = 695;
 }
 );
+script = latin;
 unicode = 59611;
 }

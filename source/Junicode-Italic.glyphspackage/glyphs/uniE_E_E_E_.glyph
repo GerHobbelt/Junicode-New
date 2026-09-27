@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEEEE;
-kernLeft = KO_u.enlarged;
-kernRight = KO_i;
 layers = (
 {
 guides = (
@@ -64,6 +63,7 @@ ref = m.enlarged;
 width = 895;
 }
 );
+script = latin;
 unicode = 61166;
 userData = {
 KernOnSpecialSpacing = {

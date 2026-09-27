@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE59E;
-kernLeft = KO_l;
-kernRight = KO_l;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = l;
 },
 {
-pos = (282,280);
+pos = (282,289);
 ref = dotaccentcomb;
 }
 );

@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF0AB;
-kernLeft = KO_acomb;
 layers = (
 {
 layerId = master01;
@@ -10,7 +10,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (441,-1);
+pos = (532,-1);
 ref = Rcomb;
 }
 );
@@ -24,7 +24,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (461,-1);
+pos = (524,-1);
 ref = Rcomb;
 }
 );
@@ -38,7 +38,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (435,-1);
+pos = (535,-1);
 ref = Rcomb;
 }
 );
@@ -52,7 +52,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (367,-1);
+pos = (471,-1);
 ref = Rcomb;
 }
 );
@@ -66,7 +66,7 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (504,-1);
+pos = (588,-2);
 ref = Rcomb;
 }
 );
@@ -80,13 +80,14 @@ ref = eth.withdiacritic;
 },
 {
 anchor = top_xheight;
-pos = (416,-1);
+pos = (542,-1);
 ref = Rcomb;
 }
 );
 width = 420;
 }
 );
+script = latin;
 unicode = 61611;
 userData = {
 KernOnSpecialSpacing = {

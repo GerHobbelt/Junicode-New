@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE1D2;
-kernLeft = KO_H;
-kernRight = KO_H;
 layers = (
 {
 layerId = master01;
@@ -62,7 +60,7 @@ shapes = (
 ref = M.highoverline;
 }
 );
-width = 940;
+width = 941;
 }
 );
 script = latin;

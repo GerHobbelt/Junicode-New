@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE5D2;
-kernLeft = KO_B.alt1;
-kernRight = KO_m.medhighoverline;
 layers = (
 {
 layerId = master01;
@@ -56,7 +54,7 @@ shapes = (
 ref = m.medhighoverline;
 }
 );
-width = 702;
+width = 742;
 }
 );
 script = latin;

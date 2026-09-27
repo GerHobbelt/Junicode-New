@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBDC;
-kernLeft = KO_n.alt2;
-kernRight = KO_L;
 layers = (
 {
 layerId = master01;
@@ -10,7 +9,7 @@ shapes = (
 ref = l.sc;
 },
 {
-pos = (242,0);
+pos = (245,0);
 ref = dotaccentcomb.sc;
 }
 );
@@ -75,13 +74,14 @@ shapes = (
 ref = l.sc;
 },
 {
-pos = (242,0);
+pos = (245,0);
 ref = dotaccentcomb.sc;
 }
 );
 width = 458;
 }
 );
+script = latin;
 unicode = 60380;
 userData = {
 KernOnSpecialSpacing = {

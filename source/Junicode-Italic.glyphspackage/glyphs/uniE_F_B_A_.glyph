@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEFBA;
-kernLeft = KO_o_c.hlig;
-kernRight = KO_c_k.hlig;
 layers = (
 {
 layerId = master01;
@@ -58,6 +57,7 @@ ref = o_rumrotunda;
 width = 726;
 }
 );
+script = latin;
 unicode = 61370;
 userData = {
 KernOnSpecialSpacing = {

@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE596;
-kernLeft = KO_l;
-kernRight = KO_l;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = l;
 },
 {
-pos = (281,280);
+pos = (281,289);
 ref = macroncomb;
 }
 );

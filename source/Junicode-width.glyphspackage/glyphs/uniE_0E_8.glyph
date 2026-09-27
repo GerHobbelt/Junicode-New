@@ -1,7 +1,5 @@
 {
 glyphname = uniE0E8;
-kernLeft = KO_H;
-kernRight = KO_E;
 layers = (
 {
 layerId = master01;
@@ -75,11 +73,11 @@ shapes = (
 ref = E;
 },
 {
-pos = (531,-15);
+pos = (526,-15);
 ref = ogonekdotcomb;
 }
 );
-width = 610;
+width = 606;
 }
 );
 metricLeft = E;

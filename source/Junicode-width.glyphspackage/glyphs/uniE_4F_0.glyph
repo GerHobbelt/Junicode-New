@@ -1,7 +1,5 @@
 {
 glyphname = uniE4F0;
-kernLeft = KO_f;
-kernRight = KO_f;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ ref = f;
 },
 {
 alignment = 1;
-pos = (203,28);
+pos = (203,43);
 ref = acutecomb.case;
 }
 );

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF196;
-kernLeft = KO_g;
-kernRight = KO_t.mecurl;
 layers = (
 {
 layerId = master01;
@@ -55,11 +54,10 @@ shapes = (
 ref = g.mecurl;
 }
 );
-width = 614;
+width = 613;
 }
 );
-metricLeft = g;
-metricRight = c.mecurl;
+script = latin;
 unicode = 61846;
 userData = {
 KernOnSpecialSpacing = {

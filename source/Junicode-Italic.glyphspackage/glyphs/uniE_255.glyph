@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE255;
-kernLeft = KO_B.alt1;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = Oslash;
 },
 {
-pos = (453,-20);
+pos = (456,-20);
 ref = ogonekcomb;
 }
 );
@@ -54,7 +52,7 @@ pos = (382,-20);
 ref = ogonekcomb;
 }
 );
-width = 574;
+width = 572;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -76,7 +74,7 @@ shapes = (
 ref = Oslash;
 },
 {
-pos = (428,-20);
+pos = (456,-20);
 ref = ogonekcomb;
 }
 );

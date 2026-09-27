@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEEDA;
-kernLeft = KO_tinsular;
-kernRight = KO_c;
 layers = (
 {
 layerId = master01;
@@ -58,8 +57,7 @@ ref = tinsular_tinsular.hlig;
 width = 810;
 }
 );
-metricLeft = tinsular;
-metricRight = tinsular;
+script = latin;
 unicode = 61146;
 userData = {
 KernOnSpecialSpacing = {

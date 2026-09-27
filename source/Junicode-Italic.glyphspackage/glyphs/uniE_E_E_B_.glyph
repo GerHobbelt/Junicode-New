@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEEEB;
-kernLeft = KO_f.enlarged;
-kernRight = KO_j;
 layers = (
 {
 layerId = master01;
@@ -58,6 +57,7 @@ ref = j.enlarged;
 width = 253;
 }
 );
+script = latin;
 unicode = 61163;
 userData = {
 KernOnSpecialSpacing = {

@@ -1,7 +1,5 @@
 {
 glyphname = uniEBAD;
-kernLeft = KO_f;
-kernRight = KO_h_r;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = h_longs.hlig;
 }
 );
-width = 539;
+width = 537;
 }
 );
 metricLeft = longs;

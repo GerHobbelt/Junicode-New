@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE8C3;
-kernLeft = KO_l;
-kernRight = KO_h;
 layers = (
 {
 layerId = master01;
@@ -56,7 +54,7 @@ shapes = (
 ref = h_r.hlig;
 }
 );
-width = 430;
+width = 431;
 }
 );
 script = latin;

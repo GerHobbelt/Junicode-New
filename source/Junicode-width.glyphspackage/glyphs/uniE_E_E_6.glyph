@@ -1,7 +1,5 @@
 {
 glyphname = uniEEE6;
-kernLeft = KO_e.alt3;
-kernRight = KO_e.enlarged;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = e.enlarged;
 }
 );
-width = 465;
+width = 457;
 }
 );
 unicode = 61158;

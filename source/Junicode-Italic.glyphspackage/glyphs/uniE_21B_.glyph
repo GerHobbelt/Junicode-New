@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE21B;
-kernLeft = KO_O;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -11,12 +9,12 @@ shapes = (
 ref = O;
 },
 {
-pos = (354,0);
+pos = (357,0);
 ref = macroncomb.case;
 },
 {
 alignment = 1;
-pos = (337,138);
+pos = (340,138);
 ref = brevecomb.case;
 }
 );
@@ -101,12 +99,12 @@ shapes = (
 ref = O;
 },
 {
-pos = (329,0);
+pos = (357,0);
 ref = macroncomb.case;
 },
 {
 alignment = 1;
-pos = (312,138);
+pos = (340,138);
 ref = brevecomb.case;
 }
 );

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniE8DD;
-kernLeft = KO_p_s.hlig;
-kernRight = KO_p_s.hlig;
 layers = (
 {
 layerId = master01;
@@ -58,6 +57,7 @@ ref = p_s.hlig;
 width = 396;
 }
 );
+script = latin;
 unicode = 59613;
 userData = {
 KernOnSpecialSpacing = {

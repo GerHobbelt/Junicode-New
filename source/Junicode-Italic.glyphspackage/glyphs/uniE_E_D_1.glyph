@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEED1;
-kernLeft = KO_d;
-kernRight = KO_j;
 layers = (
 {
 layerId = master01;
@@ -10,7 +9,7 @@ shapes = (
 ref = g_g.hlig;
 }
 );
-width = 710;
+width = 700;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -55,11 +54,10 @@ shapes = (
 ref = g_g.hlig;
 }
 );
-width = 711;
+width = 700;
 }
 );
-metricLeft = gsingle;
-metricRight = gsingle;
+script = latin;
 unicode = 61137;
 userData = {
 KernOnSpecialSpacing = {

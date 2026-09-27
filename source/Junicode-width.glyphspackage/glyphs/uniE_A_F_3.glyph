@@ -1,7 +1,5 @@
 {
 glyphname = uniEAF3;
-kernLeft = KO_e.alt3;
-kernRight = KO_e.enlarged;
 layers = (
 {
 layerId = master01;
@@ -55,7 +53,7 @@ shapes = (
 ref = eogonek.enlarged;
 }
 );
-width = 465;
+width = 457;
 }
 );
 unicode = 60147;

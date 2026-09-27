@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF09B;
-kernLeft = KO_dinsular;
-kernRight = KO_h;
 layers = (
 {
 layerId = master01;
@@ -11,7 +10,7 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (463,0);
+pos = (551,0);
 ref = Rcomb;
 }
 );
@@ -25,7 +24,7 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (509,0);
+pos = (572,0);
 ref = Rcomb;
 }
 );
@@ -39,7 +38,7 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (452,0);
+pos = (552,0);
 ref = Rcomb;
 }
 );
@@ -53,7 +52,7 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (396,0);
+pos = (500,0);
 ref = Rcomb;
 }
 );
@@ -67,7 +66,7 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (517,0);
+pos = (601,-1);
 ref = Rcomb;
 }
 );
@@ -81,13 +80,14 @@ ref = dinsular;
 },
 {
 anchor = top_xheight;
-pos = (561,182);
+pos = (659,182);
 ref = Rcomb;
 }
 );
 width = 445;
 }
 );
+script = latin;
 unicode = 61595;
 userData = {
 KernOnSpecialSpacing = {

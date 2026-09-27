@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBF1;
-kernLeft = KO_a;
-kernRight = KO_b;
 layers = (
 {
 layerId = master01;
@@ -82,6 +81,7 @@ ref = ogonekcomb;
 width = 902;
 }
 );
+script = latin;
 unicode = 60401;
 userData = {
 KernOnSpecialSpacing = {

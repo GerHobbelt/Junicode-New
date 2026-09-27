@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniEBE8;
-kernLeft = KO_V;
-kernRight = KO_V;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = VY;
 },
 {
 alignment = 1;
-pos = (513,0);
+pos = (516,0);
 ref = dieresiscomb.case;
 }
 );
@@ -40,7 +38,7 @@ ref = VY;
 },
 {
 alignment = 1;
-pos = (473,0);
+pos = (513,0);
 ref = dieresiscomb.case;
 }
 );
@@ -82,7 +80,7 @@ ref = VY;
 },
 {
 alignment = 1;
-pos = (488,0);
+pos = (516,0);
 ref = dieresiscomb.case;
 }
 );

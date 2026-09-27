@@ -1,7 +1,6 @@
 {
 category = Letter;
 glyphname = uniE8B7;
-kernLeft = KO_A;
 layers = (
 {
 layerId = master01;
@@ -55,7 +54,7 @@ shapes = (
 ref = longs.alt3;
 }
 );
-width = 471;
+width = 470;
 }
 );
 script = latin;

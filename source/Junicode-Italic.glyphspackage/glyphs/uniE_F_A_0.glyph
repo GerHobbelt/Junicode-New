@@ -1,4 +1,5 @@
 {
+category = Letter;
 glyphname = uniEFA0;
 layers = (
 {
@@ -8,7 +9,7 @@ shapes = (
 ref = aa.alt;
 }
 );
-width = 580;
+width = 570;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -53,9 +54,10 @@ shapes = (
 ref = aa.alt;
 }
 );
-width = 581;
+width = 570;
 }
 );
+script = latin;
 unicode = 61344;
 userData = {
 KernOnSpecialSpacing = {

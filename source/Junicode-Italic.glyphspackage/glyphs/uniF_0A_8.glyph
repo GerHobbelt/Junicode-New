@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF0A8;
-kernLeft = KO_acomb;
 layers = (
 {
 layerId = master01;
@@ -9,7 +9,7 @@ shapes = (
 ref = eth.withdiacritic;
 },
 {
-pos = (523,-1);
+pos = (526,-1);
 ref = muncialcomb.low;
 }
 );
@@ -74,13 +74,14 @@ shapes = (
 ref = eth.withdiacritic;
 },
 {
-pos = (498,-1);
+pos = (526,-1);
 ref = muncialcomb.low;
 }
 );
 width = 420;
 }
 );
+script = latin;
 unicode = 61608;
 userData = {
 KernOnSpecialSpacing = {

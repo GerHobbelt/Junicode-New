@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF149;
-kernLeft = KO_longs.alt2;
-kernRight = KO_o;
 layers = (
 {
 layerId = master01;
@@ -82,6 +81,7 @@ ref = slashshortcomb;
 width = 557;
 }
 );
+script = latin;
 unicode = 61769;
 userData = {
 KernOnSpecialSpacing = {

@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniEFFE;
-kernLeft = KO_A;
-kernRight = KO_A;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = AA;
 },
 {
 alignment = 1;
-pos = (531,0);
+pos = (534,0);
 ref = dieresiscomb.case;
 }
 );
@@ -40,7 +38,7 @@ ref = AA;
 },
 {
 alignment = 1;
-pos = (491,0);
+pos = (531,0);
 ref = dieresiscomb.case;
 }
 );
@@ -82,7 +80,7 @@ ref = AA;
 },
 {
 alignment = 1;
-pos = (505,0);
+pos = (534,0);
 ref = dieresiscomb.case;
 }
 );

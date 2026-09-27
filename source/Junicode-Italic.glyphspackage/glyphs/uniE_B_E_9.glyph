@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBE9;
-kernLeft = KO_vy;
-kernRight = KO_vy;
 layers = (
 {
 layerId = master01;
@@ -10,7 +9,7 @@ shapes = (
 ref = vy;
 },
 {
-pos = (370,-2);
+pos = (372,-2);
 ref = dieresiscomb;
 }
 );
@@ -75,13 +74,14 @@ shapes = (
 ref = vy;
 },
 {
-pos = (344,-2);
+pos = (372,-2);
 ref = dieresiscomb;
 }
 );
 width = 616;
 }
 );
+script = latin;
 unicode = 60393;
 userData = {
 KernOnSpecialSpacing = {

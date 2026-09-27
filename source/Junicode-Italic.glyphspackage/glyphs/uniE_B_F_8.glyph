@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniEBF8;
-kernLeft = KO_O;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = O;
 },
 {
-pos = (313,0);
+pos = (316,0);
 ref = dotacutecomb.case;
 }
 );
@@ -76,7 +74,7 @@ shapes = (
 ref = O;
 },
 {
-pos = (288,0);
+pos = (316,0);
 ref = dotacutecomb.case;
 }
 );

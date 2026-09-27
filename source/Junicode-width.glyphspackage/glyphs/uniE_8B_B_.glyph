@@ -1,6 +1,5 @@
 {
 glyphname = uniE8BB;
-kernLeft = KO_y;
 layers = (
 {
 layerId = master01;
@@ -64,7 +63,7 @@ shapes = (
 ref = v.alt2;
 }
 );
-width = 626;
+width = 442;
 }
 );
 metricLeft = v;

@@ -1,4 +1,5 @@
 {
+category = Letter;
 glyphname = uniEBBB;
 layers = (
 {
@@ -9,7 +10,7 @@ ref = vend;
 },
 {
 alignment = 1;
-pos = (196,-2);
+pos = (198,-2);
 ref = acutecomb;
 }
 );
@@ -79,13 +80,14 @@ ref = vend;
 },
 {
 alignment = 1;
-pos = (171,-2);
+pos = (198,-2);
 ref = acutecomb;
 }
 );
 width = 430;
 }
 );
+script = latin;
 unicode = 60347;
 userData = {
 KernOnSpecialSpacing = {

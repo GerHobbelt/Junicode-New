@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEFF1;
-kernLeft = KO_a;
-kernRight = KO_ay;
 layers = (
 {
 layerId = master01;
@@ -82,6 +81,7 @@ ref = dotaccentcomb;
 width = 899;
 }
 );
+script = latin;
 unicode = 61425;
 userData = {
 KernOnSpecialSpacing = {

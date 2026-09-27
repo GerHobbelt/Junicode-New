@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE8A2;
-kernLeft = KO_j;
-kernRight = KO_j;
 layers = (
 {
 layerId = master01;
@@ -59,7 +57,7 @@ pos = (131,-72);
 ref = strokeshortcomb;
 }
 );
-width = 207;
+width = 237;
 },
 {
 layerId = "E06D8587-1A71-4EC2-BD94-397D882F5FC1";

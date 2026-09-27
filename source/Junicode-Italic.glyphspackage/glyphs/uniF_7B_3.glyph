@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF7B3;
-kernLeft = KO_Z;
-kernRight = KO_X;
 layers = (
 {
 layerId = master01;
@@ -58,6 +57,7 @@ ref = X.highoverline;
 width = 662;
 }
 );
+script = latin;
 unicode = 63411;
 userData = {
 KernOnSpecialSpacing = {

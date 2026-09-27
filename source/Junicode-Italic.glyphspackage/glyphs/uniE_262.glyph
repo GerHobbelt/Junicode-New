@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE262;
-kernLeft = KO_O;
-kernRight = KO_E;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = OE;
 },
 {
-pos = (604,-20);
+pos = (607,-20);
 ref = ogonekcomb;
 }
 );
@@ -76,11 +74,11 @@ shapes = (
 ref = OE;
 },
 {
-pos = (579,-20);
+pos = (607,-20);
 ref = ogonekcomb;
 }
 );
-width = 968;
+width = 967;
 }
 );
 script = latin;

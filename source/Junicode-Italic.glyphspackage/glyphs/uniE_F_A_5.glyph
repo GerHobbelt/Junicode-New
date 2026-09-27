@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEFA5;
-kernLeft = KO_a_f.hlig;
-kernRight = KO_j;
 layers = (
 {
 layerId = master01;
@@ -55,11 +54,10 @@ shapes = (
 ref = a_g.hlig;
 }
 );
-width = 641;
+width = 642;
 }
 );
-metricLeft = ae.square;
-metricRight = gsingle;
+script = latin;
 unicode = 61349;
 userData = {
 KernOnSpecialSpacing = {

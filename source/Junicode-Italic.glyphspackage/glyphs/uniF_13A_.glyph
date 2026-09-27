@@ -1,7 +1,6 @@
 {
 category = Letter;
 glyphname = uniF13A;
-kernLeft = KO_Z;
 layers = (
 {
 layerId = master01;
@@ -58,8 +57,6 @@ ref = A.alt2;
 width = 642;
 }
 );
-metricLeft = A;
-metricWidth = A;
 script = latin;
 subCategory = Uppercase;
 unicode = 61754;

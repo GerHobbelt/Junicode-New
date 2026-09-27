@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniEBC6;
-kernLeft = KO_B.alt1;
-kernRight = KO_O;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = Oslash;
 },
 {
 alignment = 1;
-pos = (364,0);
+pos = (367,0);
 ref = hungarumlautcomb.case;
 }
 );
@@ -57,7 +55,7 @@ pos = (317,0);
 ref = hungarumlautcomb.case;
 }
 );
-width = 574;
+width = 572;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -81,7 +79,7 @@ ref = Oslash;
 },
 {
 alignment = 1;
-pos = (339,0);
+pos = (367,0);
 ref = hungarumlautcomb.case;
 }
 );

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBEF;
-kernLeft = KO_o;
-kernRight = KO_h;
 layers = (
 {
 layerId = master01;
@@ -15,7 +14,7 @@ pos = (239,0);
 ref = brevecomb;
 }
 );
-width = 398;
+width = 388;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -88,6 +87,7 @@ ref = brevecomb;
 width = 581;
 }
 );
+script = latin;
 unicode = 60399;
 userData = {
 KernOnSpecialSpacing = {

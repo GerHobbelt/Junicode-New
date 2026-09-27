@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniF07F;
-kernLeft = KO_l;
-kernRight = KO_k;
 layers = (
 {
 layerId = master01;
@@ -88,6 +87,7 @@ ref = zcomb;
 width = 578;
 }
 );
+script = latin;
 unicode = 61567;
 userData = {
 KernOnSpecialSpacing = {

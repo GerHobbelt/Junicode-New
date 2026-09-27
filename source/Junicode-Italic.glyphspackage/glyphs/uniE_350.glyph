@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE350;
-kernLeft = KO_V;
-kernRight = KO_V;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (513,0);
+pos = (516,0);
 ref = hungarumlautcomb.case;
 }
 );
@@ -76,7 +74,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (487,0);
+pos = (516,0);
 ref = hungarumlautcomb.case;
 }
 );

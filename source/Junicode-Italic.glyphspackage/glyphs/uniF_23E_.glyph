@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF23E;
-kernLeft = KO_m.alt1;
 layers = (
 {
 layerId = master01;
@@ -9,7 +9,7 @@ shapes = (
 ref = m.alt1;
 },
 {
-pos = (370,-2);
+pos = (373,-2);
 ref = acutecomb;
 }
 );
@@ -74,13 +74,14 @@ shapes = (
 ref = m.alt1;
 },
 {
-pos = (345,-2);
+pos = (373,-2);
 ref = acutecomb;
 }
 );
 width = 701;
 }
 );
+script = latin;
 unicode = 62014;
 userData = {
 KernOnSpecialSpacing = {

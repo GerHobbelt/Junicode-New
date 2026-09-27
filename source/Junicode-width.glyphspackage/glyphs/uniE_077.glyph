@@ -1,7 +1,5 @@
 {
 glyphname = uniE077;
-kernLeft = KO_H;
-kernRight = KO_D;
 layers = (
 {
 layerId = master01;
@@ -75,11 +73,11 @@ shapes = (
 ref = D;
 },
 {
-pos = (331,0);
+pos = (326,0);
 ref = acutecomb.case;
 }
 );
-width = 753;
+width = 748;
 }
 );
 unicode = 57463;

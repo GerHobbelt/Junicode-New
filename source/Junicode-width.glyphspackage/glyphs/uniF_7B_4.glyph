@@ -1,6 +1,5 @@
 {
 glyphname = uniF7B4;
-kernLeft = KO_H;
 layers = (
 {
 layerId = master01;
@@ -54,7 +53,7 @@ shapes = (
 ref = L.highoverline;
 }
 );
-width = 664;
+width = 659;
 }
 );
 unicode = 63412;

@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEBA8;
-kernLeft = KO_uniA7D7;
-kernRight = KO_l;
 layers = (
 {
 layerId = master01;
@@ -14,11 +13,11 @@ pos = (232,0);
 ref = longs.llongsrtall;
 },
 {
-pos = (467,0);
+pos = (457,0);
 ref = l.lf;
 }
 );
-width = 680;
+width = 670;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -99,13 +98,14 @@ pos = (232,0);
 ref = longs.llongsrtall;
 },
 {
-pos = (468,0);
+pos = (457,0);
 ref = l.lf;
 }
 );
-width = 680;
+width = 670;
 }
 );
+script = latin;
 unicode = 60328;
 userData = {
 KernOnSpecialSpacing = {

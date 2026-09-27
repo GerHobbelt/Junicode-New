@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniE8DA;
-kernLeft = KO_A;
 layers = (
 {
 layerId = master01;
@@ -57,6 +57,7 @@ ref = A.alt3;
 width = 542;
 }
 );
+script = latin;
 unicode = 59610;
 userData = {
 KernOnSpecialSpacing = {

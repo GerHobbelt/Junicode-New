@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE34E;
-kernLeft = KO_V;
-kernRight = KO_V;
 layers = (
 {
 layerId = master01;
@@ -11,7 +9,7 @@ shapes = (
 ref = V;
 },
 {
-pos = (367,248);
+pos = (370,248);
 ref = verticallineabovecomb;
 }
 );
@@ -76,7 +74,7 @@ shapes = (
 ref = V;
 },
 {
-pos = (342,248);
+pos = (370,248);
 ref = verticallineabovecomb;
 }
 );

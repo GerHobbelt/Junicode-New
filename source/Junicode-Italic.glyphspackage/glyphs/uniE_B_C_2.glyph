@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniEBC2;
-kernLeft = KO_A;
-kernRight = KO_V;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = Av;
 },
 {
 alignment = 1;
-pos = (471,0);
+pos = (474,0);
 ref = hungarumlautcomb.case;
 }
 );
@@ -82,7 +80,7 @@ ref = Av;
 },
 {
 alignment = 1;
-pos = (446,0);
+pos = (474,0);
 ref = hungarumlautcomb.case;
 }
 );

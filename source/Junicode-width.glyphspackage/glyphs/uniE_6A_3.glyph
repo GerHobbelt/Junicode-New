@@ -1,7 +1,5 @@
 {
 glyphname = uniE6A3;
-kernLeft = KO_r;
-kernRight = KO_r;
 layers = (
 {
 layerId = master01;
@@ -10,7 +8,7 @@ shapes = (
 ref = r;
 },
 {
-pos = (169,0);
+pos = (126,0);
 ref = ringbelowcomb;
 }
 );
@@ -23,7 +21,7 @@ shapes = (
 ref = r;
 },
 {
-pos = (179,0);
+pos = (136,0);
 ref = ringbelowcomb;
 }
 );
@@ -36,7 +34,7 @@ shapes = (
 ref = r;
 },
 {
-pos = (166,0);
+pos = (124,0);
 ref = ringbelowcomb;
 }
 );
@@ -50,7 +48,7 @@ ref = r;
 },
 {
 alignment = 1;
-pos = (144,0);
+pos = (111,0);
 ref = ringbelowcomb;
 }
 );
@@ -64,7 +62,7 @@ ref = r;
 },
 {
 alignment = 1;
-pos = (195,0);
+pos = (143,0);
 ref = ringbelowcomb;
 }
 );

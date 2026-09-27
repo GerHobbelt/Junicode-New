@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEF2C;
-kernLeft = KO_s.sc;
-kernRight = KO_s.sc;
 layers = (
 {
 layerId = master01;
@@ -10,7 +9,7 @@ shapes = (
 ref = s.sc;
 },
 {
-pos = (183,0);
+pos = (186,0);
 ref = dotbelowcomb;
 }
 );
@@ -75,13 +74,14 @@ shapes = (
 ref = s.sc;
 },
 {
-pos = (158,0);
+pos = (186,0);
 ref = dotbelowcomb;
 }
 );
-width = 346;
+width = 345;
 }
 );
+script = latin;
 unicode = 61228;
 userData = {
 KernOnSpecialSpacing = {

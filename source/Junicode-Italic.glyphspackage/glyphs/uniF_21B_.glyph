@@ -1,7 +1,6 @@
 {
 category = Letter;
 glyphname = uniF21B;
-kernLeft = KO_i.alt;
 layers = (
 {
 layerId = master01;
@@ -61,7 +60,7 @@ shapes = (
 ref = f.alt2;
 }
 );
-width = 467;
+width = 466;
 }
 );
 script = latin;

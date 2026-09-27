@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE02C;
-kernLeft = KO_A;
-kernRight = KO_A;
 layers = (
 {
 layerId = master01;
@@ -12,7 +10,7 @@ ref = A;
 },
 {
 alignment = 1;
-pos = (382,248);
+pos = (385,248);
 ref = ecomb;
 }
 );
@@ -82,7 +80,7 @@ ref = A;
 },
 {
 alignment = 1;
-pos = (357,248);
+pos = (385,248);
 ref = ecomb;
 }
 );

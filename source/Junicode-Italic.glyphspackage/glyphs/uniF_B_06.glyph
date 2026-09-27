@@ -1,7 +1,7 @@
 {
 glyphname = uniFB06;
 kernLeft = KO_s;
-kernRight = KO_c_t.dlig;
+kernRight = KO_t;
 layers = (
 {
 layerId = master01;
@@ -55,11 +55,9 @@ shapes = (
 ref = s_t.dlig;
 }
 );
-width = 552;
+width = 553;
 }
 );
-metricLeft = s;
-metricRight = t;
 unicode = 64262;
 userData = {
 KernOnSpecialSpacing = {

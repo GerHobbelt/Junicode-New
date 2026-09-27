@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uF000B;
-kernLeft = KO_f;
-kernRight = KO_f.alt;
 layers = (
 {
 layerId = master01;
@@ -19,7 +18,7 @@ shapes = (
 ref = f.alt;
 }
 );
-width = 218;
+width = 232;
 },
 {
 layerId = "7904EAEE-2B64-409E-B923-0048172372BE";
@@ -28,7 +27,7 @@ shapes = (
 ref = f.alt;
 }
 );
-width = 243;
+width = 238;
 },
 {
 layerId = "E06D8587-1A71-4EC2-BD94-397D882F5FC1";
@@ -37,7 +36,7 @@ shapes = (
 ref = f.alt;
 }
 );
-width = 126;
+width = 182;
 },
 {
 layerId = "8F7CDE40-C368-4484-AA71-76B7ABD5539F";
@@ -46,7 +45,7 @@ shapes = (
 ref = f.alt;
 }
 );
-width = 336;
+width = 282;
 },
 {
 layerId = "997BDFA1-EC67-4686-8CFE-E56BDBE179FE";
@@ -55,9 +54,10 @@ shapes = (
 ref = f.alt;
 }
 );
-width = 291;
+width = 282;
 }
 );
+script = latin;
 unicode = 983051;
 userData = {
 KernOnSpecialSpacing = {

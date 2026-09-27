@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF22C;
-kernLeft = KO_Q.alt;
 layers = (
 {
 layerId = master01;
@@ -54,9 +54,10 @@ shapes = (
 ref = Q.alt;
 }
 );
-width = 524;
+width = 523;
 }
 );
+script = latin;
 unicode = 61996;
 userData = {
 KernOnSpecialSpacing = {

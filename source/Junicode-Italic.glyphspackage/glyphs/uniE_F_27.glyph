@@ -1,7 +1,6 @@
 {
+category = Letter;
 glyphname = uniEF27;
-kernLeft = KO_o_c.hlig;
-kernRight = KO_i;
 layers = (
 {
 layerId = master01;
@@ -10,11 +9,11 @@ shapes = (
 ref = g.sc;
 },
 {
-pos = (324,0);
+pos = (325,0);
 ref = dotbelowcomb;
 }
 );
-width = 508;
+width = 509;
 },
 {
 layerId = "2438E31C-45B5-47A7-9B3D-1A0FEFB47671";
@@ -75,13 +74,14 @@ shapes = (
 ref = g.sc;
 },
 {
-pos = (324,0);
+pos = (326,0);
 ref = dotbelowcomb;
 }
 );
-width = 533;
+width = 509;
 }
 );
+script = latin;
 unicode = 61223;
 userData = {
 KernOnSpecialSpacing = {

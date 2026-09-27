@@ -1,6 +1,6 @@
 {
+category = Letter;
 glyphname = uniF128;
-kernLeft = KO_ssigmoid;
 layers = (
 {
 layerId = master01;
@@ -57,8 +57,7 @@ ref = ssigmoid;
 width = 272;
 }
 );
-metricLeft = s;
-metricRight = s;
+script = latin;
 unicode = 61736;
 userData = {
 KernOnSpecialSpacing = {

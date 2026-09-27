@@ -1,8 +1,6 @@
 {
 category = Letter;
 glyphname = uniE551;
-kernLeft = KO_j;
-kernRight = KO_j;
 layers = (
 {
 layerId = master01;
@@ -41,7 +39,7 @@ pos = (258,0);
 ref = dotbelowcomb;
 }
 );
-width = 207;
+width = 237;
 },
 {
 layerId = "E06D8587-1A71-4EC2-BD94-397D882F5FC1";

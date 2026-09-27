@@ -1,7 +1,5 @@
 {
 glyphname = uniEBC1;
-kernLeft = KO_a;
-kernRight = KO_o;
 layers = (
 {
 layerId = master01;
@@ -75,7 +73,7 @@ shapes = (
 ref = ao;
 },
 {
-pos = (459,246);
+pos = (474,246);
 ref = hungarumlautcomb;
 }
 );
