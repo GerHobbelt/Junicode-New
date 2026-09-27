@@ -110,7 +110,7 @@ ref = f.lf;
 width = 488;
 }
 );
-unicode = 64256;
+production = f_f;
 userData = {
 KernOnSpecialSpacing = {
 L = NoKerning;

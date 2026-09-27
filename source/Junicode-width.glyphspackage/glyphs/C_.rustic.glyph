@@ -1,5 +1,4 @@
 {
-export = 0;
 glyphname = C.rustic;
 kernLeft = O.rustic;
 kernRight = C.rustic;

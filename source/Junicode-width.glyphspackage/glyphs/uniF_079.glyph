@@ -9,7 +9,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (503,0);
+pos = (530,10);
 ref = ocomb.low;
 }
 );
@@ -23,7 +23,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (546,0);
+pos = (571,10);
 ref = ocomb.low;
 }
 );
@@ -37,7 +37,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (491,0);
+pos = (516,10);
 ref = ocomb.low;
 }
 );
@@ -51,7 +51,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (445,0);
+pos = (465,10);
 ref = ocomb.low;
 }
 );
@@ -65,7 +65,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (566,0);
+pos = (596,10);
 ref = ocomb.low;
 }
 );
@@ -79,7 +79,7 @@ ref = k;
 },
 {
 anchor = top_xheight;
-pos = (573,169);
+pos = (583,179);
 ref = ocomb.low;
 }
 );

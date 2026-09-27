@@ -2,7 +2,7 @@
 color = 9;
 glyphname = oslash;
 kernLeft = KO_o;
-kernRight = KO_s;
+kernRight = KO_o;
 layers = (
 {
 anchors = (
@@ -391,7 +391,7 @@ pos = (449,39);
 },
 {
 name = ogonek_above;
-pos = (307,641);
+pos = (307,657);
 },
 {
 name = top;

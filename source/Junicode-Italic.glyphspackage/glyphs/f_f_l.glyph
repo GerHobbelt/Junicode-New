@@ -107,7 +107,7 @@ ref = l.lf;
 width = 676;
 }
 );
-unicode = 64260;
+production = f_f_l;
 userData = {
 KernOnSpecialSpacing = {
 L = NoKerning;

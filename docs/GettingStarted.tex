@@ -29,14 +29,14 @@ and there are good reasons to choose
 the variable version of Junicode for any web project. The greatest reason to go
 with the variable version is to speed the loading of web pages: users will never
 have to download more than two font files (the size of which can be radically
-reduced via subsetting, explained in Section 9 of this Manual). Additionally,
+reduced via subsetting, explained in Section 8 of this Manual). Additionally,
 however, variable fonts can make a page of text more dynamic and visually
 interesting. See Mozilla's
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide}%
 {Variable Fonts Guide} for more information about using variable fonts on the web.
 
 A growing number of desktop applications support variable fonts. Use the variable version of
-Junicode in Adobe InDesign (always with the World-Ready Paragraph Composer).\footnote{%
+Junicode in Adobe InDesign (always with the World-Ready Paragraph Composer).\footnote{\ %
 The choice of a Composer is well hidden in the “Justification” section of the
 “Paragraph Style Options” dialog. Use of the default “Adobe Paragraph Composer”
 with Junicode VF may cause InDesign to crash or otherwise misbehave. To prevent crashes
@@ -46,19 +46,22 @@ a font upgrade. To do this, press Shift-Alt-Control (on Windows) or
 Shift-Control-Option-Command (on the Mac) all together, \textit{immediately} after
 clicking to launch InDesign.} LibreOffice
 has supported variable fonts since version 7.5 (2023). {\LuaTeX} has excellent support
-for variable fonts: make sure your TeX installation is up to date (since in
+for variable fonts: make sure your {\TeX} installation is up to date (since in
 recent years support for variable fonts has improved with every release), and always choose “harf”
 mode in your font-selection code. For an example of font-selection code for a
 variable font, see the file
-\href{https://github.com/psb1558/Junicode-font/blob/master/docs/language_samples.tex}%
-{language\_samples.tex} in the “docs” directory of the GitHub Junicode site (you
-are welcome to copy and modify this code). A number of graphical design apps 
+\href{https://github.com/psb1558/Junicode-font/blob/master/docs/JunicodeManual.sty}%
+{JunicodeManual.sty} (part of the source for this manual) in the “docs” directory of the GitHub Junicode site.
+You are welcome to copy and modify this code. A number of graphical design apps 
 also support variable fonts, including Adobe Illustrator, PhotoShop, Figma,
 Sketch, and CorelDRAW.
 
 The static version of Junicode has five weights and five widths, which are combined in many ways
 for a total of nineteen styles in
-both roman and italic. It is not necessary to install all of these; in fact,
+both roman and italic.\footnote{\ Several of the twenty-five possible combinations
+(e.g. {\jExpLight light expanded})
+have been omitted as unlikely to be useful; however, these can be accessed via the variable font.}
+It is not necessary to install all of these; in fact,
 your life will be simplified (font menus easier to navigate) if you
 make a selection. You will probably want the traditional Regular, Bold, Italic, and Bold
 Italic fonts, but you should survey the styles displayed in the Specimen
@@ -86,8 +89,8 @@ Medieval Unicode Font Initiative as being of interest to medievalists. Junicode
 contains all of these characters. There are two versions of the \textit{Recommendation}:
 you will probably find the “Alphabetical Order” version most helpful.
 
-From the \textit{MUFI Character Recommendation} or, alternatively, the Junicode
-\textit{List of Encoded Characters} (packaged with the font) you can find out
+From the \textit{MUFI Character Recommendation} and Chapter 10 (“Encoded Glyphs in
+Junicode”) of this manual, you can find out
 the \textbf{code points}\footnote{\ A Unicode code point is a numerical identifier for a character.
 It is generally expressed as a
 four-digit hexadecimal (or base-16) number with a prefix of ``U+''. The letter
@@ -118,8 +121,9 @@ enter bases and marks separately.
 To position a mark correctly over a base character, first enter the base,
 followed by the mark or marks.
 The sequence \textbf{m} + \textbf{◌ᷙ} (\unic{U+1DD9})
-will make \textbf{mᷙ}; \textbf{y} + \textbf{◌̄} (\unic{U+0304}) + \textbf{◌̆} (\unic{U+0306}) will make \textbf{ȳ̆};
-\textbf{e} + \textbf{◌̣} (\unic{U+0323}) + \textbf{◌ᷠ} (\unic{U+1DE0}) will make \textbf{ẹᷠ}.
+will make \textex{mᷙ};
+\mbox{\textbf{y} + \textbf{◌̄}} (\unic{U+0304}) + \textbf{◌̆} (\unic{U+0306}) will make \textex{ȳ̆};
+\textbf{e} + \textbf{◌̣} (\unic{U+0323}) + \textbf{◌ᷠ} (\unic{U+1DE0}) will make \textex{ẹᷠ}.
 
 More than sixteen hundred characters in Junicode can only be accessed via OpenType features—that is,
 by way of the programming built into the font—and many others \textit{should} be
@@ -163,8 +167,8 @@ Programs like Word will automatically set the language to the default for your s
 change to a language other than your own for a passage (or even a single word),
 you should set the language for that passage appropriately. This will unlock
 a number of capabilities. For example, in Old and Middle English, Word and
-other programs will use the English form of thorn and eth ({\eng þð}) instead of
-the modern Icelandic ({\icel þð}), and in ancient
+other programs will use the English form of thorn and eth ({\addfontfeature{Language=English} þð}) instead of
+the modern Icelandic ({\addfontfeature{Language=Icelandic} þð}), and in ancient
 Greek you will be able to type accents after vowels instead of looking up
 the codes for hundreds of polytonic vowel + accent combinations. But these and other capabilities
 are only available when you set the language correctly.

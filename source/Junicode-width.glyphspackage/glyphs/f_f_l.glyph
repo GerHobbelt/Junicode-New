@@ -174,8 +174,7 @@ width = 801;
 );
 metricLeft = f;
 metricRight = l;
-production = uniFB04;
-unicode = 64260;
+production = f_f_i;
 userData = {
 KernOnSpecialSpacing = {
 L = NoKerning;

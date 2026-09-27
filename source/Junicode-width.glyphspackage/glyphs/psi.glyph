@@ -1,8 +1,8 @@
 {
 color = 7;
 glyphname = psi;
-kernLeft = KO_g_eth.hlig;
-kernRight = KO_o;
+kernLeft = eta;
+kernRight = GK_omicron;
 layers = (
 {
 anchors = (

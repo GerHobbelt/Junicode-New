@@ -1,8 +1,8 @@
 {
 color = 7;
 glyphname = xi;
-kernLeft = KO_dinsular;
-kernRight = KO_xi;
+kernLeft = xi;
+kernRight = GK_xi;
 layers = (
 {
 anchors = (

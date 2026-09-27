@@ -52,7 +52,7 @@ ref = jdotless;
 },
 {
 alignment = 1;
-pos = (49,1);
+pos = (49,0);
 ref = ecomb;
 }
 );
@@ -66,7 +66,7 @@ ref = jdotless;
 },
 {
 alignment = 1;
-pos = (105,-1);
+pos = (105,0);
 ref = ecomb;
 }
 );

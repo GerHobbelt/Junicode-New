@@ -39,6 +39,12 @@ name = zzcurly;
 pos = (191,548);
 }
 );
+guides = (
+{
+angle = 77.0386;
+pos = (123,342);
+}
+);
 layerId = master01;
 shapes = (
 {
@@ -468,6 +474,12 @@ pos = (315,415);
 {
 name = zzcurly;
 pos = (163,548);
+}
+);
+guides = (
+{
+pos = (178,288);
+showMeasurement = 1;
 }
 );
 layerId = "997BDFA1-EC67-4686-8CFE-E56BDBE179FE";
